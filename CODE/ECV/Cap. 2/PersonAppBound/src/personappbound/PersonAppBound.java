@@ -16,6 +16,7 @@ public class PersonAppBound {
     public static void main(String[] args) {
         Person homero = new Person("Homero", "Simpson", Gender.MALE );
         Person marge = new Person("Marge", "Simpson", Gender.FEMALE);
+        Person ernesto = new Person("Ernesto", "Cantu", Gender.MALE);
        
         final PropertyChangeListener pcl = new PropertyChangeListener() {
 
@@ -29,20 +30,25 @@ public class PersonAppBound {
         
         homero.addPropertyChangeListener(pcl);
         marge.addPropertyChangeListener(pcl);
+        ernesto.addPropertyChangeListener("firstName", pcl);
         
         
         homero.setMiddleName("Chester");
         marge.setMiddleName("Lousie");
         homero.setSuffix("Junior");
         homero.setLastName("Jones");
-
+        ernesto.setMiddleName("Ninguno");
+        ernesto.setFirstName("ERNESTINHO"); //Si se detecta el cambio.
+        
         System.out.println(homero);
         System.out.println(marge);
+        System.out.println(ernesto);
         // old and new value same, no pce generated
         homero.setMiddleName("Chester");
 
         homero.removePropertyChangeListener(pcl);
         marge.removePropertyChangeListener(pcl);
+        ernesto.removePropertyChangeListener("firstName", pcl);
         
     }
     

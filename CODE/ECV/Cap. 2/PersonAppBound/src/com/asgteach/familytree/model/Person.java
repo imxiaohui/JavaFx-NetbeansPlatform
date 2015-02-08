@@ -93,6 +93,14 @@ public class Person implements Serializable{
         getPropertyChangeSupport().removePropertyChangeListener(listener);
     }
     
+    public void addPropertyChangeListener(String propertyName,PropertyChangeListener listener){
+        getPropertyChangeSupport().addPropertyChangeListener(propertyName, listener);
+    }
+    
+    public void removePropertyChangeListener(String propertyName,PropertyChangeListener listener){
+        getPropertyChangeSupport().removePropertyChangeListener(propertyName, listener);
+    }
+    
     public long getId() {
         return id;
     }
