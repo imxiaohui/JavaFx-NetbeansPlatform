@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Windows2">
+        <folder name="Modes">
+            <file name="m1.wsmode" url="m1Wsmode.xml"/>
+            <file name="m2.wsmode" url="m2Wsmode.xml"/>
+            <file name="m3.wsmode" url="m3Wsmode.xml"/>
+            <file name="m4.wsmode" url="m4Wsmode.xml"/>
+        </folder>
+    </folder>
+</filesystem>

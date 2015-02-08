@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.smartphone.tabledata.api
+OpenIDE-Module-Localizing-Bundle: org/smartphone/tabledata/api/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

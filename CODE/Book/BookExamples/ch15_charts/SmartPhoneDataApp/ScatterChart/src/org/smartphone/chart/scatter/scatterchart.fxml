@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+
+<StackPane id="StackPane" fx:id="stackpane" 
+           xmlns:fx="http://javafx.com/fxml" 
+           fx:controller="org.smartphone.chart.scatter.ScatterChartController">
+    <ScatterChart fx:id="chart" > 
+        <xAxis>  
+            <CategoryAxis fx:id="xAxis"/>  
+        </xAxis>  
+        <yAxis>  
+            <NumberAxis fx:id="yAxis"/>  
+        </yAxis>
+    </ScatterChart>                   
+</StackPane>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.asgteach.familytree.actions
+OpenIDE-Module-Localizing-Bundle: com/asgteach/familytree/actions/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

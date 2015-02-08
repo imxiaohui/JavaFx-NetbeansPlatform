@@ -1,0 +1,26 @@
+Book Examples for Dialogs
+Chapter 11
+
+ch11_dialogs
+
+DialogExample
+
+	Project DialogExample contains a single top component with buttons 
+	to show the various dialog types discussed in the chapter.
+
+	The project includes a Login Dialog that appears right 
+	after the NetBeans Platform splash screen. 
+
+	To successfully login, make the username and password the same!
+
+RoleExample
+
+	Project RoleExample is the sample project for the section 
+	'Putting It All Together'.
+
+	For the Login dialog, use 
+
+	Meg for username and Meg for password (this is role "Admin") or 
+	Joe for username and Joe for password (this is role "User").
+
+	Use the same values for Menu/Tools - Change Role action.

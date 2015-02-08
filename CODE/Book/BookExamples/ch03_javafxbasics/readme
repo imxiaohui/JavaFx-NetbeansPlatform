@@ -1,0 +1,22 @@
+Book Examples for Introduction to JavaFX 
+Chapter 3
+
+ch03_javafxbasics 
+
+Building JavaFX Programs
+	MyRectangleApp
+	MyRectangleFXApp
+	MyRectangleCSSApp (includes rotation animation)
+
+JavaFX Properties
+	MyChangeListener
+	MyInvalidationListener
+	MyBind
+	MyBindBidirectional
+	MyFluentBind
+	MyCustomBind (includes ObjectBinding example)
+
+Putting It All Together
+	RaceTrackFXApp - uses FXML
+	RaceTrack - uses JavaFX/Java APIs only (no FXML)
+

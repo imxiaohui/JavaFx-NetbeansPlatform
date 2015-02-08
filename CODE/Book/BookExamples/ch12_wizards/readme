@@ -1,0 +1,13 @@
+Book Examples for Wizards 
+Chapter 12
+
+ch12_wizards
+
+wizards1/WizardExample - Through Wizard Validation
+wizards_validationlibrary/WizardExample - Uses Validation API
+wizards2/WizardExample - Finishing Early Option
+wizards3/WizardExample - Asynchronous Validation
+wizards4/PizzaWizard - Dynamic Sequence Wizards - uses Approach I for Pickup/Delivery Sequence
+wizards5/PizzaWizard - Dynamic Sequence Wizards - uses Approach II for Pickup/Delivery Sequence
+wizards6/PizzaWizard - Integrating Progress Bar using ProgressInstantiatingIterator
+wizards7/PizzaWizard - Uses BackgroundInstantiatingIterator (not included in text)

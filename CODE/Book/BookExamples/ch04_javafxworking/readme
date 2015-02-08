@@ -1,0 +1,18 @@
+Book Examples for Working with JavaFX 
+Chapter 4
+
+ch04_javafxworking 
+
+Creating JavaFX Properties and Observable Lists
+	PersonFXAppBound
+	PersonFXAppCoarse
+
+JavaFX Applications
+	PersonFXMLAppEnhancedUI
+
+Concurrency and Thread Safety
+JavaFX Background Tasks
+	PersonFXMLAppMultiThread
+	PersonFXMLAPPFXWorker
+	PersonFXMLAPPFXWorker2
+	PersonFXMLAPPFXWorker3

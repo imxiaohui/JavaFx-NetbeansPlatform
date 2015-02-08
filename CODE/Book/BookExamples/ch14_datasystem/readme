@@ -1,0 +1,28 @@
+Book Examples for Data System 
+Chapter 14
+
+ch14_datasystem 
+
+FileTypeFTR
+	Project: FileTypeApp
+		Modules: 	
+			Manipulations - Implements Tools | File Manipulations Action
+				This action illustrates all the code 
+				samples in Section 14.1
+			FamilyTreeSupport - Implements new FTR File Type,
+					including Plain Text Editor
+					Visual View (Visual Library)
+					VisualFX View (JavaFX content)
+					File | Get Info Action
+
+FileTypeXML
+	Project: FamilyTreeApp
+		Module: 
+			PersonFileType
+				new XML file type
+				VisualFX View
+				XML Editor
+
+Icons:
+All icons for this chapter are in directory Icons
+

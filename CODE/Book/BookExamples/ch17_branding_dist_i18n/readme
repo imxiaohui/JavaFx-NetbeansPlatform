@@ -1,0 +1,82 @@
+Book Examples for Branding, Distribution, and Internationalization 
+Chapter 17
+
+ch17_branding_dist_i18n
+
+Projects:
+
+branding
+	FamilyTreeApp - Branding for application title, splash screen, version number
+
+distribution_updates
+	FamilyTreeApp
+	Includes Update UI modules so you can use Tools | PlugIns menu item
+
+localization
+	SmartPhoneSales.sql - SQL file
+	SmartPhoneDataServer - RESTful web services application
+	SmartPhoneDataApp - NetBeans Platform application RESTful client - 
+		This version contains the localized files for Spanish and Portuguese. 
+		The default locale has been set to ES.
+
+
+Important Note:
+[These are the same instructions provided in the ch16_webservices readme file.]
+Before running these applications, you must perform the following steps 
+(detailed instructions follow).
+	**Start the JavaDB Database Server.
+	**Create the database.
+	**Populate the database with data.
+	**Start GlassFish server.
+	**Deploy the SmartPhoneDataServer (this is the RESTful web services application).
+
+
+Steps to start the JavaDB server.
+
+1. In the NetBeans IDE, click the Services Tab.
+2. Expand the Databases node, right click on Java DB, and select Start Server.
+
+Steps to create the database.
+
+1. After the Server starts up, right click on Java DB, and select Create Database ….
+2. In the Create Java DB Database dialog, specify phonedata for all fields 
+(database name, user name, password, and confirm password) and click OK.
+
+Steps to populate the database with data.
+
+1. In the NetBeans IDE, File | Open SmartPhoneDataSales.sql, which is found in this directory.
+2. In the SQL Editor window, click the Connection drop down 
+and select phonedata to connect to the phonedata database.
+3. In the SQL Editor window, click the Run SQL icon to execute the SQL file.
+
+The file creates the Salesdata and Company tables and populates them with data. 
+You can disregard any 'DROP TABLE' errors.
+You can re-execute this SQL to restore the data and the 'DROP TABLE' errors will no longer appear.
+
+Steps to start the GlassFish server.
+
+These projects use Java EE technologies and a bundled server (GlassFish), 
+optionally included with the NetBeans IDE. 
+Download and install these technologies if your configuration does not include them. 
+You can add them using the IDE's Plugin Manager (Tools | Plugins).
+
+(When you deploy project SmartPhoneDataServer, the GlassFish server will automatically start.)
+
+1. In the NetBeans IDE, click the Services Tab.
+2. Expand the Serviers node. Add GlassFish, if not listed.
+3. Right click on GlashFish and select Start Server.
+
+SmartPhoneDataServer -
+Depends on support Libraries for RESTful web services.
+
+SmartPhoneDataApp -
+Depends on support Libraries for RESTful web services.
+
+
+
+
+
+	
+
+
+

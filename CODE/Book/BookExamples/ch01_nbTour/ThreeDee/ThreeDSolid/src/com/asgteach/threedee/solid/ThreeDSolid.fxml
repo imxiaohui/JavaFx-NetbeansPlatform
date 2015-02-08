@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+
+<Group id="group" fx:id="root" 
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.asgteach.threedee.solid.ThreeDSolidController">
+                       
+</Group>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?> 
+
+<BorderPane  fx:controller="com.asgteach.coretableview.TableViewController" 
+             xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <GridPane alignment="center" hgap="10" vgap="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="%smartphonetitle" 
+                   GridPane.columnIndex="0" 
+                   GridPane.rowIndex="0"
+                   GridPane.halignment="center" 
+                   style="-fx-font: NORMAL 20 Tahoma;"/>
+        </GridPane>       
+    </top>
+    <center>   
+        <GridPane alignment="center" hgap="10" vgap="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>          
+            <TableView fx:id="tableview"
+                       editable="true"
+                       GridPane.columnIndex="0" 
+                       GridPane.rowIndex="0" >
+                <columns>
+                    <TableColumn fx:id="colCompany" text="%company"
+                                 sortable="false" minWidth="150" /> 
+                    <TableColumn fx:id="colYear" text="%year"
+                                 sortable="false" minWidth="150" />
+                    <TableColumn fx:id="colUnitsSold" text="%unitsSold"
+                                 editable="true" sortable="false" 
+                                 minWidth="175" />                   
+                </columns>
+            </TableView>
+        </GridPane>
+    </center>
+    <bottom>
+        <GridPane alignment="center" hgap="10" vgap="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <VBox spacing="10" alignment="BOTTOM_CENTER"
+                  GridPane.columnIndex="0" 
+                  GridPane.rowIndex="0">
+                <HBox spacing="10" alignment="CENTER" >
+                    <Label text="%filterLabel" />
+                    <TextField  fx:id="filterText" prefColumnCount="20" 
+                                promptText="%filterPrompt" /> 
+                </HBox>
+                <Button text="%refreshData" onAction="#refreshData" />
+                <Label fx:id="displayMessage" />
+                <ProgressIndicator fx:id="progress"
+                                   visible="false"
+                                   progress="-1" />
+            </VBox>                   
+        </GridPane>
+    </bottom>
+</BorderPane>
+    

@@ -1,0 +1,83 @@
+Book Examples for Using Web Services 
+Chapter 16
+
+ch16_webservices 
+
+Projects:
+SmartPhoneSales.sql - SQL file
+SmartPhoneDataServer - RESTful web services application
+SmartPhoneDataClient - Java application RESTful client
+SmartPhoneDataApp - NetBeans Platform application RESTful client
+**These projects all use support Libraries for RESTful web services, 
+which may reside at a different location on your computer.
+
+Important Note:
+Before running these applications, you must perform the following steps 
+(detailed instructions follow).
+	**Start the JavaDB Database Server.
+	**Create the database.
+	**Populate the database with data.
+	**Start GlassFish server.
+	**Deploy the SmartPhoneDataServer (this is the RESTful web services application).
+
+
+Steps to start the JavaDB server.
+
+1. In the NetBeans IDE, click the Services Tab.
+2. Expand the Databases node, right click on Java DB, and select Start Server.
+
+Steps to create the database.
+
+1. After the Server starts up, right click on Java DB, and select Create Database ….
+2. In the Create Java DB Database dialog, 
+specify phonedata for all fields 
+(database name, user name, password, and confirm password) and click OK.
+
+Steps to populate the database with data.
+
+1. In the NetBeans IDE, File | Open SmartPhoneDataSales.sql, 
+which is found in this directory.
+2. In the SQL Editor window, 
+click the Connection drop down and select phonedata to connect to the phonedata database.
+3. In the SQL Editor window, 
+click the Run SQL icon to execute the SQL file.
+
+The file creates the Salesdata and Company tables and populates them with data. 
+You can disregard any 'DROP TABLE' errors.
+You can re-execute this SQL to restore the data and the 'DROP TABLE' errors will no longer appear.
+
+Steps to start the GlassFish server.
+
+These projects use Java EE technologies and a bundled server (GlassFish), 
+optionally included with the NetBeans IDE. 
+Download and install these technologies if your configuration does not include them. 
+You can add them using the IDE's Plugin Manager (Tools | Plugins).
+
+(When you deploy project SmartPhoneDataServer, the GlassFish server will automatically start.)
+
+1. In the NetBeans IDE, click the Services Tab.
+2. Expand the Serviers node. Add GlassFish, if not listed.
+3. Right click on GlashFish and select Start Server.
+
+SmartPhoneDataServer -
+Depends on support Libraries for RESTful web services.
+
+SmartPhoneDataClient -
+This depends on SmartPhoneDataServer.war.
+When you open this project in the NetBeans IDE, you will be asked to Resolve Problems.
+Click Resolve Problems and click Resolve to tell NetBeans where
+SmartPhoneDataServer.war is located. 
+Make sure that SmartPhoneDataServer/dist/SmartPhoneDataServer.war exists.
+The support Libraries for RESTful clients may be in a different location on your machine.
+
+SmartPhoneDataApp -
+Depends on support Libraries for RESTful web services.
+
+
+
+
+
+	
+
+
+

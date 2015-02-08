@@ -1,0 +1,39 @@
+Book Examples for Building a CRUD Application 
+Chapter 10
+
+ch10_crudapps 
+
+Projects:
+Version1-CRUDActions/FamilyTreeApp
+Version2-UsingJavaDB-andJPA/FamilyTreeApp
+Version3-Concurrency/FamilyTreeApp
+
+Important Note:
+Version2-UsingJavaDB-andJPA/FamilyTreeApp and Version3-Concurrency/FamilyTreeApp 
+use EclipseLink and JavaDB for persistence. 
+
+Before running these applications, you must start the JavaDB Database Server.
+Before running the application the first time, you must create the database.
+
+Follow these steps to start the server.
+
+1. In the NetBeans IDE, click the Services Tab.
+2. Expand the Databases node, right click on Java DB, and select Start Server.
+
+Follow these steps to create the database.
+
+1. After the Server starts up, right click on Java DB, and select Create Database ….
+2. In the Create Java DB Database dialog, 
+specify personftm for all fields 
+(database name, user name, password, and confirm password) 
+and click OK.
+
+After you run the FamilyTreeApp the first time, 
+the database tables will be created as well as the Simpson Family test data.
+
+You can modify the persistence.xml file in module 
+FamilyTreeManagerJPA so that the tables aren't re-created each time. 
+Use "create-tables" or "none". 	
+
+
+

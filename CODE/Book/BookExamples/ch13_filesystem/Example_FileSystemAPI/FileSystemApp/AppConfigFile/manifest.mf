@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.asgteach.appconfigfile
+OpenIDE-Module-Layer: com/asgteach/appconfigfile/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/asgteach/appconfigfile/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
