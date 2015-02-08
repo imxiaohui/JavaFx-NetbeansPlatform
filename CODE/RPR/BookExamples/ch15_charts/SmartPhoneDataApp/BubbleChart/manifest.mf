@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.smartphone.chart.bubble
+OpenIDE-Module-Localizing-Bundle: org/smartphone/chart/bubble/Bundle.properties
+OpenIDE-Module-Requires: org.openide.windows.WindowManager
+OpenIDE-Module-Specification-Version: 1.0
+

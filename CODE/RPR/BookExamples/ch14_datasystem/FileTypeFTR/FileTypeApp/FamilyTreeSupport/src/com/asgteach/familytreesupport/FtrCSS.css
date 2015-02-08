@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 17, 2014, 8:51:36 AM
+    Author     : gail
+*/
+.ftr-rectangle {
+   -fx-fill: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+   -fx-effect: dropshadow( three-pass-box , gray , 10 , 0 , 5.0 , 5.0 );
+   -fx-stroke-width:3.0;
+   -fx-stroke: goldenrod;
+}
+.ftr-text {
+    -fx-font: Verdana;
+    -fx-font-weight: bold;
+    -fx-font-size: 14;    
+}
+.ftr-pane {
+    -fx-background-color: linear-gradient(lightblue, #c9d9e8, #ddeeeb);
+}

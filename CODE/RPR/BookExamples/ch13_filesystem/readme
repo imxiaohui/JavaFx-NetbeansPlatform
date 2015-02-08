@@ -1,0 +1,19 @@
+Book Examples for File System 
+Chapter 13
+
+ch13_filesystem 
+
+Projects:
+Example_FileSystemAPI/FileSystemApp
+
+	Modules:
+    FSExploration - Exploring the File System API
+    ChangeDetector - Monitoring File Changes
+    AppConfigFile - Including a File in Your Application
+    FileSystemViewer - Viewing the System FileSystem
+
+ModuleCommunication/FamilyTreeApp - inter-module communication using the Layer file
+
+Icons:
+All icons for this application are in directory Icons
+

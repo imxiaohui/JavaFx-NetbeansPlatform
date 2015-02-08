@@ -1,0 +1,27 @@
+Book Examples for NetBeans Platform Window System 
+Chapter 8
+
+ch08_windowsystem
+
+TopComponentProjects
+	SingletonTopComponent/WindowSystemApp - TopComponent Basics and TopComponent Persistence
+	NonSingletonTopComponent/WindowSystemApp - Creating a Non-Singleton TopComponent
+	OpenTopComponent/WindowSystemApp - Opening Windows from User Code
+
+
+TopComponentLifeCycle
+	WindowSystemApp - Window System Life Cycle Management
+
+ModeProjects
+	WindowSystemApp - TopComponent Modes
+	WindowModes - shows you all the default modes
+
+TopComponentGroups
+	WindowSystemApp - Window Groups
+
+WindowLayoutProjects
+	ModeApp - Window Layout - first example
+	ModeApp2 - A View-Only Window Layout
+
+Role-BasedWindowLayout
+	RoleExample - Window Layout Roles

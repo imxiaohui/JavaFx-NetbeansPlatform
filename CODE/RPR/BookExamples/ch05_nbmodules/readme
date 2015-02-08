@@ -1,0 +1,17 @@
+Book Examples for A Taste of Modularity 
+Chapter 5
+
+ch05_nbmodules 
+
+Icons - icons used in this chapter
+
+Projects	
+	PersonSwingAppEnhancedUI - only referenced (copied from Chapter 2)
+	FamilyTreeApp
+		FamilyTreeManagerImpl
+		FamilyTreeModel
+		PersonEditor
+		PersonViewer
+
+
+

@@ -1,0 +1,15 @@
+Book Examples for Tour of the NetBeans Platform 
+Chapter 1
+
+ch01_nbTour
+Project:
+	ThreeDee
+ 
+	An example NetBeans Platform application
+		with integrated JavaFX content showing JavaFX 3D
+
+	Note that you must have GPU hardware and up-to-date drivers
+	in order to run this example.
+
+
+

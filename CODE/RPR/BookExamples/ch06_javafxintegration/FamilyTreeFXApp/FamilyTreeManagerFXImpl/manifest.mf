@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.asgteach.familytree.managerfx.impl
+OpenIDE-Module-Localizing-Bundle: com/asgteach/familytree/managerfx/impl/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

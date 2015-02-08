@@ -1,0 +1,12 @@
+<root xmlns="familytree">
+    <person
+        firstname="Selma"
+        lastname="Bouvier" >
+        <gender>
+            female
+        </gender>
+        <notes>
+            Selma is Marge's sister
+        </notes>
+    </person>
+</root>

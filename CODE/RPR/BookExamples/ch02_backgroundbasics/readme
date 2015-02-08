@@ -1,0 +1,18 @@
+Book Examples for Background Basics 
+Chapter 2
+
+ch02_backgroundbasics
+JavaBeans and Properties
+	Basic JavaBean Example - PersonAppBasic
+	Bound Properties - PersonAppBound
+	Course-Grained Notification for JavaBean Objects - PersonAppCoarse
+
+Swing Basics	
+	Using Swing Components - PersonSwingApp
+
+Improving the User Experience
+	PersonSwingAppEnhancedUI
+
+Swing Background Tasks	
+	Introducing SwingWorker - PersonSwingMultiThread
+	Monitoring SwingWorker Status - PersonSwingAppSwingWorker

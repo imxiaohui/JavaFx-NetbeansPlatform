@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.asgteach.phonedatashareimpl
+OpenIDE-Module-Localizing-Bundle: com/asgteach/phonedatashareimpl/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

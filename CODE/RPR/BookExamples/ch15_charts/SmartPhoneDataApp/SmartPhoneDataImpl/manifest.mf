@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.smartphone.data.impl
+OpenIDE-Module-Localizing-Bundle: org/smartphone/data/impl/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

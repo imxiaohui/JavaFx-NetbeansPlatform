@@ -1,0 +1,41 @@
+Book Examples for JavaFX Integration 
+Chapter 6
+
+ch06_javafxintegration 
+
+Icons 
+
+personIcon -  
+Handy Icon Set
+by Double-J Design (http://www.doublejdesign.co.uk)
+----------------------------------------------------------------------
+Product Name:	Handy
+Product Type:	Icon Set	
+Quantity:	32 Icons (in 2 colour sechemes)
+File Format:	PNG
+License Type:	Free, Standard and Extended
+License Information
+----------------------------------------------------------------------
+1. Free License (Creative Common 3.0 Attribution)
+Licensee is granted a non-exclusive, non-transferrable license 
+to use the Work, for personal, commercial, and client projects. 	
+
+
+
+Projects:
+	MyRectangleCSSApp - copied from Chapter 3
+	PersonFXMLAppEnhancedUI - copied from Chapter 4
+
+	FXDemoApp - Deomonstrates JavaFX integration
+		FXDemoModule
+	FXDemoApp2 - Demonstrates SwingNode
+		FXDemoModule
+	
+	FamilyTreeFXApp
+		FamilyTreeManagerFXImpl
+		FamilyTreeFXModel
+		PersonFXEditor
+		PersonFXViewer
+
+
+
