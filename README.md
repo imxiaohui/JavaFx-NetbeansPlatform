@@ -6,3 +6,4 @@ Repositorio con pruebas,ejercicios y Documentacion
 Fuentes:
 
 JavaFX Rich Client Programming on the Netbeans Platform.
+De Gail y Paul Anderson
