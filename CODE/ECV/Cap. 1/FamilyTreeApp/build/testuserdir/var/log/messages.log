@@ -1,0 +1,347 @@
+-------------------------------------------------------------------------------
+>Log Session: Tuesday, February 10, 2015 12:37:55 PM CST
+>System Info: 
+  Product Version         = FamilyTreeApp 201403101706
+  Operating System        = Windows 7 version 6.1 running on amd64
+  Java; VM; Vendor        = 1.8.0; Java HotSpot(TM) 64-Bit Server VM 25.0-b70; Oracle Corporation
+  Runtime                 = Java(TM) SE Runtime Environment 1.8.0-b132
+  Java Home               = C:\Program Files\Java\jdk1.8.0\jre
+  System Locale; Encoding = es_MX (familytreeapp); Cp1252
+  Home Directory          = C:\Users\ernesto
+  Current Directory       = C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp
+  User Directory          = C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\testuserdir
+  Cache Directory         = C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\testuserdir\var\cache
+  Installation            = C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\cluster
+                            C:\Program Files\NetBeans 8.0\harness
+                            C:\Program Files\NetBeans 8.0\platform
+                            C:\Program Files\NetBeans 8.0\platform
+  Boot & Ext. Classpath   = C:\Program Files\Java\jdk1.8.0\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0\jre\classes;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0\jre\lib\ext\zipfs.jar
+  Application Classpath   = C:\Program Files\NetBeans 8.0\platform\lib\boot.jar;C:\Program Files\NetBeans 8.0\platform\lib\org-openide-modules.jar;C:\Program Files\NetBeans 8.0\platform\lib\org-openide-util-lookup.jar;C:\Program Files\NetBeans 8.0\platform\lib\org-openide-util.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\boot_ja.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\boot_pt_BR.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\boot_ru.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\boot_zh_CN.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-modules_ja.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-modules_pt_BR.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-modules_ru.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-modules_zh_CN.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util-lookup_ja.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util-lookup_pt_BR.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util-lookup_ru.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util-lookup_zh_CN.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util_ja.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util_pt_BR.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util_ru.jar;C:\Program Files\NetBeans 8.0\platform\lib\locale\org-openide-util_zh_CN.jar;C:\Program Files\Java\jdk1.8.0\lib\dt.jar;C:\Program Files\Java\jdk1.8.0\lib\tools.jar
+  Startup Classpath       = C:\Program Files\NetBeans 8.0\platform\core\core.jar;C:\Program Files\NetBeans 8.0\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 8.0\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\cluster\core\locale\core_familytreeapp.jar
+-------------------------------------------------------------------------------
+INFO [com.asgteach.familytree]: Logger level set
+INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
+	org.openide.util.lookup [8.24.1 201403101706]
+	org.openide.util [8.37.1 201403101706]
+	org.openide.modules [7.42.1 201403101706]
+	org.netbeans.api.annotations.common/1 [1.23.1 201403101706]
+	org.openide.filesystems [8.10.1 201403101706]
+	org.openide.awt [7.61.2 201404251830]
+	org.netbeans.api.progress/1 [1.37.1 201403101706]
+	org.openide.dialogs [7.36.1 201403101706]
+	org.openide.nodes [7.38.1 201403101706]
+	org.openide.windows [6.70.1 201403101706]
+	org.netbeans.modules.editor.mimelookup/1 [1.35.1 201403101706]
+	org.openide.text [6.61.1 201403101706]
+	org.netbeans.swing.tabcontrol [1.50.1 201403101706]
+	org.netbeans.swing.outline [1.29.1 201403101706]
+	org.openide.explorer [6.56.1 201403101706]
+	org.openide.actions [6.34.1 201403101706]
+	org.netbeans.modules.queries/1 [1.38.1 201403101706]
+	org.openide.loaders [7.56.2 201403101706]
+	org.openide.io [1.44.1 201403101706]
+	org.netbeans.swing.plaf [1.36.1 201403101706]
+	org.netbeans.spi.quicksearch [1.22.1 201403101706]
+	org.netbeans.modules.templates/1 [1.2.1 201403101706]
+	org.netbeans.bootstrap/1 [2.67.1 201403101706]
+	org.netbeans.core.startup/1 [1.53.1 201403101706]
+	org.netbeans.modules.settings/1 [1.44.1 201403101706]
+	org.netbeans.modules.sampler [1.9.1 201403101706]
+	org.netbeans.modules.progress.ui [1.28.1 201403101706]
+	org.netbeans.modules.print [7.21.1 201403101706]
+	org.netbeans.modules.keyring [1.19.1 201403101706]
+	org.netbeans.core/2 [3.45.1 201403101706]
+	org.netbeans.modules.options.api/1 [1.39.1 201403101706]
+	org.netbeans.modules.options.keymap [1.30.1 201403101706]
+	org.netbeans.libs.jna/1 [1.35.1 201403101706]
+	org.netbeans.modules.masterfs/2 [2.46.1 201403101706]
+	org.netbeans.modules.masterfs.windows [1.11.1 201403101706]
+	org.netbeans.modules.masterfs.nio2 [1.11.1 201403101706]
+	org.netbeans.modules.keyring.fallback [1.3.1 201403101706]
+	org.netbeans.modules.keyring.impl [1.18.1 201403101706]
+	org.netbeans.modules.editor.mimelookup.impl/1 [1.26.1 201403101706]
+	org.netbeans.modules.autoupdate.services [1.45.3 201404251830]
+	org.netbeans.modules.autoupdate.ui [1.40.1 201403101706]
+	org.netbeans.libs.osgi [1.17.1 201403101706]
+	org.netbeans.libs.jna.platform/1 [1.5.1 201403101706]
+	org.netbeans.libs.felix [2.11.1 201403101706]
+	org.netbeans.core.windows/2 [2.75.2 201404251830]
+	org.netbeans.core.ui/1 [1.40.1 201403101706]
+	org.netbeans.core.output2/1 [1.36.1 201403101706]
+	org.netbeans.core.network [1.4.1 201403101706]
+	org.netbeans.core.netigso [1.26.1 201403101706]
+	org.netbeans.core.nativeaccess/1 [1.26.1 201403101706]
+	org.netbeans.core.multitabs/1 [1.7.2.1 1 201404251830]
+	org.netbeans.core.io.ui/1 [1.25.1 201403101706]
+	org.apache.derby [1.0 150210]
+	org.eclipselink [1.0 150210]
+	com.asgteach.familytree.welcomewindow [1.0 150210]
+	com.asgteach.familytree.model [1.0 150210]
+	com.asgteach.familytree.editorinterfaces [1.0 150210]
+	com.asgteach.familytree.capabilityinterfaces [1.0 150210]
+	com.asgteach.familytree.utilities [1.0 150210]
+	com.asgteach.familytree.selectionviewer [1.0 150210]
+	com.asgteach.familytree.personviewer [1.0 150210]
+	com.asgteach.familytree.javafxtasks [1.0 150210]
+	com.asgteach.familytree.persontimeline [1.0 150210]
+	com.asgteach.familytree.personfxeditor [1.0 150210]
+	com.asgteach.familytree.eventsviewer [1.0 150210]
+	com.asgteach.familytree.eventnew [1.0 150210]
+	com.asgteach.familytree.eventfxeditor [1.0 150210]
+	com.asgteach.familytree.editormanagers [1.0 150210]
+	com.asgteach.familytree.dao.jpa [1.0 150210]
+	com.asgteach.familytree.actions [1.0 150210]
+INFO [com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA]: Entity Manager Factory Created.
+SEVERE [org.openide.util.RequestProcessor]: Error in RequestProcessor com.asgteach.familytree.model.data.DataInstaller
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+Error Code: 40000
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:324)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:319)
+	at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:138)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:162)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:582)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:206)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:472)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:188)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:277)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:290)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:268)
+	at com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA.newPerson(FamilyTreeDAOJPA.java:112)
+	at com.asgteach.familytree.model.data.DataInstaller.populateDatabase(DataInstaller.java:48)
+	at com.asgteach.familytree.model.data.DataInstaller.run(DataInstaller.java:43)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+Caused by: java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.jdbc.ClientDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:98)
+	... 13 more
+Caused by: org.apache.derby.client.am.DisconnectException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+	at org.apache.derby.client.net.NetAgent.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection.newAgent_(Unknown Source)
+	at org.apache.derby.client.am.Connection.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection40.<init>(Unknown Source)
+	at org.apache.derby.client.net.ClientJDBCObjectFactoryImpl40.newNetConnection(Unknown Source)
+	... 17 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:271)
+	at org.apache.derby.client.net.OpenSocketAction.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	... 23 more
+Caused: javax.persistence.PersistenceException
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:501)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:188)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:277)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:290)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:268)
+	at com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA.newPerson(FamilyTreeDAOJPA.java:112)
+	at com.asgteach.familytree.model.data.DataInstaller.populateDatabase(DataInstaller.java:48)
+	at com.asgteach.familytree.model.data.DataInstaller.run(DataInstaller.java:43)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+Caused: org.openide.util.RequestProcessor$SlowItem: task failed due to
+	at org.openide.util.RequestProcessor.post(RequestProcessor.java:419)
+	at org.netbeans.core.startup.NbStartStop.initialize(NbStartStop.java:87)
+	at org.netbeans.core.startup.NbInstaller.loadImpl(NbInstaller.java:359)
+	at org.netbeans.core.startup.NbInstaller.access$000(NbInstaller.java:105)
+	at org.netbeans.core.startup.NbInstaller$1.run(NbInstaller.java:346)
+	at org.openide.filesystems.FileUtil$2.run(FileUtil.java:447)
+	at org.openide.filesystems.EventControl.runAtomicAction(EventControl.java:127)
+	at org.openide.filesystems.FileSystem.runAtomicAction(FileSystem.java:609)
+	at org.openide.filesystems.FileUtil.runAtomicAction(FileUtil.java:431)
+	at org.openide.filesystems.FileUtil.runAtomicAction(FileUtil.java:451)
+	at org.netbeans.core.startup.NbInstaller.load(NbInstaller.java:343)
+	at org.netbeans.ModuleManager.enable(ModuleManager.java:1194)
+	at org.netbeans.ModuleManager.enable(ModuleManager.java:1017)
+	at org.netbeans.core.startup.ModuleList.installNew(ModuleList.java:340)
+	at org.netbeans.core.startup.ModuleList.trigger(ModuleList.java:276)
+	at org.netbeans.core.startup.ModuleSystem.restore(ModuleSystem.java:301)
+	at org.netbeans.core.startup.Main.getModuleSystem(Main.java:181)
+	at org.netbeans.core.startup.Main.getModuleSystem(Main.java:150)
+	at org.netbeans.core.startup.Main.start(Main.java:307)
+	at org.netbeans.core.startup.TopThreadGroup.run(TopThreadGroup.java:123)
+[catch] at java.lang.Thread.run(Thread.java:744)
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy resolver: Windows
+INFO [org.netbeans.core.network.proxy.windows.WindowsNetworkProxy]: Windows system proxy resolver: auto detect
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy reloading succeeded.
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy - mode: direct
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy: fell to default (correct if direct mode went before)
+INFO [org.netbeans.ui.metrics.laf]: USG_LOOK_AND_FEEL
+WARNING [org.openide.filesystems.Ordering]: Not all children in Windows2/Modes/output/ marked with the position attribute: [PersonTimeLineTopComponent.wstcref, SelectionTopComponent.wstcref], but some are: [output.wstcref]
+WARNING [com.asgteach.familytree.eventsviewer.AllPeopleFactory]
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+Error Code: 40000
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:324)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:319)
+	at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:138)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:162)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:582)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:206)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:472)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:188)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:277)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:290)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:268)
+	at com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA.getAllPeople(FamilyTreeDAOJPA.java:239)
+	at com.asgteach.familytree.utilities.PersonCapability.lambda$new$10(PersonCapability.java:66)
+	at com.asgteach.familytree.utilities.PersonCapability$$Lambda$2/749429492.reload(Unknown Source)
+	at com.asgteach.familytree.eventsviewer.AllPeopleFactory.createKeys(AllPeopleFactory.java:57)
+	at org.openide.nodes.AsynchChildren.run(AsynchChildren.java:209)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+Caused by: java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.jdbc.ClientDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:98)
+	... 15 more
+Caused by: org.apache.derby.client.am.DisconnectException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+	at org.apache.derby.client.net.NetAgent.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection.newAgent_(Unknown Source)
+	at org.apache.derby.client.am.Connection.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection40.<init>(Unknown Source)
+	at org.apache.derby.client.net.ClientJDBCObjectFactoryImpl40.newNetConnection(Unknown Source)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:271)
+	at org.apache.derby.client.net.OpenSocketAction.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	... 25 more
+Caused: javax.persistence.PersistenceException
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:501)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:188)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:277)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:290)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:268)
+	at com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA.getAllPeople(FamilyTreeDAOJPA.java:239)
+	at com.asgteach.familytree.utilities.PersonCapability.lambda$new$10(PersonCapability.java:66)
+	at com.asgteach.familytree.utilities.PersonCapability$$Lambda$2/749429492.reload(Unknown Source)
+[catch] at com.asgteach.familytree.eventsviewer.AllPeopleFactory.createKeys(AllPeopleFactory.java:57)
+	at org.openide.nodes.AsynchChildren.run(AsynchChildren.java:209)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+Diagnostic information
+Input arguments:
+	-Dnetbeans.logger.console=true
+	-ea
+	-Djdk.home=C:\Program Files\Java\jdk1.8.0
+	-Dnetbeans.home=C:\Program Files\NetBeans 8.0\platform
+	-Dnetbeans.user=C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\testuserdir
+	-Dnetbeans.default_userdir_root=
+	-XX:+HeapDumpOnOutOfMemoryError
+	-XX:HeapDumpPath=C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\testuserdir\var\log\heapdump.hprof
+	-Dsun.awt.keepWorkingSetOnMinimize=true
+	-Dnetbeans.dirs=C:\Users\ernesto\Desktop\Ernesto\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 1\FamilyTreeApp\build\cluster;C:\Program Files\NetBeans 8.0\harness;C:\Program Files\NetBeans 8.0\platform
+	exit
+Compiler: HotSpot 64-Bit Tiered Compilers
+Heap memory usage: initial 64.0MB maximum 891.0MB
+Non heap memory usage: initial 2.4MB maximum -1b
+Garbage collector: PS Scavenge (Collections=53 Total time spent=0s)
+Garbage collector: PS MarkSweep (Collections=5 Total time spent=0s)
+Classes: loaded=7015 total loaded=7015 unloaded 0
+INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4,197,871,616
+INFO [null]: Total physical memory 4,197,871,616
+WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-familytree-eventsviewer-EventsViewerTopComponent.shadow, com-asgteach-familytree-persontimeline-PersonTimeLineTopComponent.shadow, com-asgteach-familytree-personviewer-PersonViewerTopComponent.shadow, com-asgteach-familytree-selectionviewer-SelectionTopComponent.shadow, com-asgteach-familytree-welcomewindow-WelcomeTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]
+WARNING [com.asgteach.familytree.personviewer.RootNodeChildFactory]
+Local Exception Stack: 
+Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+Error Code: 40000
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:324)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:319)
+	at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:138)
+	at org.eclipse.persistence.sessions.DatasourceLogin.connectToDatasource(DatasourceLogin.java:162)
+	at org.eclipse.persistence.internal.sessions.DatabaseSessionImpl.loginAndDetectDatasource(DatabaseSessionImpl.java:582)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryProvider.login(EntityManagerFactoryProvider.java:206)
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:472)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:188)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:277)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:290)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:268)
+	at com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA.getAllPeople(FamilyTreeDAOJPA.java:239)
+	at com.asgteach.familytree.utilities.PersonCapability.lambda$new$10(PersonCapability.java:66)
+	at com.asgteach.familytree.utilities.PersonCapability$$Lambda$2/749429492.reload(Unknown Source)
+	at com.asgteach.familytree.personviewer.RootNodeChildFactory.createKeys(RootNodeChildFactory.java:57)
+	at org.openide.nodes.AsynchChildren.run(AsynchChildren.java:209)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+Caused by: java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+	at org.apache.derby.client.am.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.client.am.SqlException.getSQLException(Unknown Source)
+	at org.apache.derby.jdbc.ClientDriver.connect(Unknown Source)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.eclipse.persistence.sessions.DefaultConnector.connect(DefaultConnector.java:98)
+	... 15 more
+Caused by: org.apache.derby.client.am.DisconnectException: java.net.ConnectException : Error al conectarse al servidor localhost en el puerto 1527 con el mensaje Connection refused: connect.
+	at org.apache.derby.client.net.NetAgent.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection.newAgent_(Unknown Source)
+	at org.apache.derby.client.am.Connection.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection.<init>(Unknown Source)
+	at org.apache.derby.client.net.NetConnection40.<init>(Unknown Source)
+	at org.apache.derby.client.net.ClientJDBCObjectFactoryImpl40.newNetConnection(Unknown Source)
+	... 19 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:271)
+	at org.apache.derby.client.net.OpenSocketAction.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	... 25 more
+Caused: javax.persistence.PersistenceException
+	at org.eclipse.persistence.internal.jpa.EntityManagerSetupImpl.deploy(EntityManagerSetupImpl.java:501)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.getDatabaseSession(EntityManagerFactoryDelegate.java:188)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryDelegate.createEntityManagerImpl(EntityManagerFactoryDelegate.java:277)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManagerImpl(EntityManagerFactoryImpl.java:290)
+	at org.eclipse.persistence.internal.jpa.EntityManagerFactoryImpl.createEntityManager(EntityManagerFactoryImpl.java:268)
+	at com.asgteach.familytree.dao.jpa.FamilyTreeDAOJPA.getAllPeople(FamilyTreeDAOJPA.java:239)
+	at com.asgteach.familytree.utilities.PersonCapability.lambda$new$10(PersonCapability.java:66)
+	at com.asgteach.familytree.utilities.PersonCapability$$Lambda$2/749429492.reload(Unknown Source)
+[catch] at com.asgteach.familytree.personviewer.RootNodeChildFactory.createKeys(RootNodeChildFactory.java:57)
+	at org.openide.nodes.AsynchChildren.run(AsynchChildren.java:209)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+WARNING [org.netbeans.TopSecurityManager]: use of system property netbeans.home has been obsoleted in favor of InstalledFileLocator/Places at org.netbeans.Clusters.relativeDirsWithHome(Clusters.java:137)
+FINE [com.asgteach.familytree.dao.jpa.JPAShutdown]: Entity Manager closed

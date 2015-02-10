@@ -1,0 +1,10 @@
+C:\Program Files\NetBeans 8.0\platform=1404397426941
+cluster.C:/Users/ernesto/Desktop/Ernesto/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 1/FamilyTreeApp/build/cluster=1423593460775
+cluster.C:/Program Files/NetBeans 8.0/harness=1404397144130
+cluster.C:/Program Files/NetBeans 8.0/platform=1404397426941
+user=1423593460775
+crc=7
+locale=es_MX
+branding=familytreeapp
+java.version=1.8.0
+java.vm.version=25.0-b70

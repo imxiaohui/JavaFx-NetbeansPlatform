@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet eventfxStyleSheet.css?>
+
+<AnchorPane id="topNode" prefHeight="312.9998779296875" prefWidth="451.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.asgteach.familytree.eventnew.Visual1FXController">
+  <children>
+    <GridPane id="GridPane" hgap="20.0" minWidth="-Infinity" prefHeight="279.0" prefWidth="417.0" vgap="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <ImageView fitHeight="79.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.rowSpan="2">
+          <image>
+            <Image url="@eventIcon100.png" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+        <Label fx:id="eventName" style="-fx-font: Bold 14 papyrus" text="Marriage" textFill="#0076a3" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <RadioButton fx:id="birthRadioButton" mnemonicParsing="false" onAction="#eventSelectionBirth" selected="true" text="Birth" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <toggleGroup>
+            <ToggleGroup fx:id="eventToggleGroup" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="adoptRadioButton" mnemonicParsing="false" onAction="#eventSelectionAdoption" text="Adoption" toggleGroup="$eventToggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <RadioButton fx:id="marriageRadioButton" mnemonicParsing="false" onAction="#eventSelectionMarriage" text="Marriage" toggleGroup="$eventToggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <RadioButton fx:id="divorceRadioButton" mnemonicParsing="false" onAction="#eventSelectionDivorce" text="Divorce" toggleGroup="$eventToggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <RadioButton fx:id="deathRadioButton" mnemonicParsing="false" onAction="#eventSelectionDeath" text="Death" toggleGroup="$eventToggleGroup" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Label text="Event Type" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label fx:id="personLabel" prefHeight="33.0" prefWidth="272.0" text="Placeholder Text" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.rowSpan="2">
+          <font>
+            <Font name="System Bold" size="15.0" />
+          </font>
+        </Label>
+        <TextArea fx:id="eventDisplay" editable="false" prefHeight="66.0" prefWidth="380.0" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" GridPane.rowSpan="2" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="373.0" prefWidth="75.0" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="373.0" prefWidth="110.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="186.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="29.0" minHeight="8.0" prefHeight="13.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="9.0" prefHeight="16.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="28.0" minHeight="8.0" prefHeight="14.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="13.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="35.0" minHeight="0.0" prefHeight="17.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="35.0" minHeight="0.0" prefHeight="17.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

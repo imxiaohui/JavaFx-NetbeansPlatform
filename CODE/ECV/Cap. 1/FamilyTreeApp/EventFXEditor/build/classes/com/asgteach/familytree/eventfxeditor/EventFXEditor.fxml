@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-stylesheet eventfxEditorStyleSheet.css?>
+
+<AnchorPane id="topNode" prefHeight="312.9998779296875" prefWidth="589.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.asgteach.familytree.eventfxeditor.EventFXEditorController">
+  <children>
+    <GridPane id="GridPane" hgap="20.0" minWidth="-Infinity" prefHeight="279.0" prefWidth="569.0" vgap="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+      <children>
+        <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="Town" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label minWidth="-Infinity" text="State/Province" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label text="Country" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label fx:id="personLabel1Name" text="Parent" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Label id="relationship2Name" fx:id="personLabel2Name" text="Parent" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <Label fx:id="idNum" text="IDNum" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="NEVER" />
+        <TextField fx:id="townField" onKeyReleased="#handleKeyEvent" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+        <TextField fx:id="stateField" onKeyReleased="#handleKeyEvent" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+        <TextField fx:id="countryField" onKeyReleased="#handleKeyEvent" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+        <Label fx:id="relationship1Name" minWidth="-Infinity" text="Parent1_Name" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+        <Label fx:id="relationship2Name" minWidth="-Infinity" text="Parent2_Name" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+        <VBox id="VBox" alignment="CENTER" spacing="5.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="0" GridPane.rowSpan="6" GridPane.vgrow="NEVER">
+          <children>
+            <Label fx:id="eventName" style="-fx-font: Bold 20 papyrus" text="Marriage" textFill="#0076a3" />
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@eventIcon200.png" preserveRatio="false" smooth="false" />
+              </image>
+            </ImageView>
+          </children>
+        </VBox>
+        <Label fx:id="personName" style="-fx-font: Bold 14 tahoma" text="PersonName" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+        <TextField fx:id="dateField" onAction="#handleDateAction" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+        <Label text="Date" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Person" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="97.0" minWidth="-Infinity" prefWidth="97.0" />
+        <ColumnConstraints hgrow="ALWAYS" prefWidth="257.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="175.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="29.0" minHeight="8.0" prefHeight="25.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="9.0" prefHeight="28.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="28.0" minHeight="8.0" prefHeight="25.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="35.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

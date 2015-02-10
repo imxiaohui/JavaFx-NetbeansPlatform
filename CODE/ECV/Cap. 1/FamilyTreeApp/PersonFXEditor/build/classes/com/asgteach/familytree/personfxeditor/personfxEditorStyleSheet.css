@@ -1,0 +1,15 @@
+/* 
+    Document   : timeLineStyleSheet
+    Created on : Feb 3, 2013, 12:50:52 PM
+    Author     : gail
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#topNode {
+    -fx-background-color:
+/*        linear-gradient(to bottom, #f2f2e2, #c4c4d4);*/
+linear-gradient(to bottom,#d0dbe5,#badbd6);
+/*    linear-gradient(to bottom, #f2f2f2, #d4d4d4);*/
+}
+

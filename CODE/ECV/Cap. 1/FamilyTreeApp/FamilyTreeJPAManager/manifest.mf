@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.asgteach.familytree.jpaservice
+OpenIDE-Module-Install: org/asgteach/familytree/jpaservice/Installer.class
+OpenIDE-Module-Localizing-Bundle: org/asgteach/familytree/jpaservice/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

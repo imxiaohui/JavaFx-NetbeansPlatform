@@ -1,0 +1,14 @@
+OpenIDE-Module-Name=EventNew
+EventDisplay.jLabel1.text=jLabel1
+Visual2FXController.stateTextField.text=
+Visual2FXController.countryTextField.text=
+Visual2FXController.jLabel2.text=City/Town
+Visual2FXController.jLabel3.text=State/Province
+Visual2FXController.jLabel4.text=Country
+Visual2FXController.cityTextField.text=
+Visual2FXController.jLabel1.text=Date
+Visual2FXController.dateTextField.text=
+Visual3FXController.jLabel8.text=Parent
+Visual3FXController.jLabel9.text=Parent
+Visual3FXController.jLabel12.text=Ex
+Visual3FXController.jLabel11.text=Spouse

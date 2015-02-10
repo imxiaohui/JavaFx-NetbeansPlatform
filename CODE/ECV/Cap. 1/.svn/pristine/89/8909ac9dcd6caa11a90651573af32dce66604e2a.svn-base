@@ -1,0 +1,9 @@
+currentVersion=FamilyTreeApp {0}
+LBL_splash_window_title=Starting FamilyTreeApp
+SPLASH_HEIGHT=346
+SPLASH_WIDTH=400
+SplashProgressBarBounds=30,328,400,10
+SplashProgressBarColor=0x3366
+SplashRunningTextBounds=30,310,380,6
+SplashRunningTextColor=0x99
+SplashRunningTextFontSize=12

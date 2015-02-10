@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.capabilityinterfaces">
+    <module_version install_time="1423593443013" last="true" origin="installer" specification_version="1.0">
+        <file crc="992518589" name="config/Modules/com-asgteach-familytree-capabilityinterfaces.xml"/>
+        <file crc="2050033986" name="modules/com-asgteach-familytree-capabilityinterfaces.jar"/>
+    </module_version>
+</module>

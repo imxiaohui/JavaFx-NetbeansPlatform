@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-stylesheet eventfxStyleSheet.css?>
+
+<AnchorPane id="topNode" minWidth="436.0" prefHeight="312.9998779296875" prefWidth="436.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.asgteach.familytree.eventnew.Visual3FXController">
+  <children>
+    <GridPane id="GridPane" hgap="20.0" minWidth="-Infinity" prefHeight="279.0" prefWidth="417.0" vgap="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <ImageView fx:id="imageView" fitHeight="79.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.rowSpan="2">
+          <image>
+            <Image url="@eventIcon100.png" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+        <Label fx:id="eventName" style="-fx-font: Bold 14 papyrus" text="Marriage" textFill="#0076a3" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label text="Person" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label id="personName" fx:id="personLabel" style="-fx-font: Bold 14 tahoma" text="PersonName" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="NEVER" />
+        <Label fx:id="personLabel1" text="Parent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label fx:id="personLabel2" text="Parent" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <ComboBox fx:id="comboBox1" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <ComboBox fx:id="comboBox2" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <TextArea fx:id="eventDisplay" editable="false" prefHeight="64.0" prefWidth="378.0" wrapText="true" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" GridPane.rowSpan="2" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="97.0" minWidth="-Infinity" prefWidth="75.0" />
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="97.0" minWidth="-Infinity" prefWidth="97.0" />
+        <ColumnConstraints hgrow="ALWAYS" prefWidth="257.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="29.0" minHeight="8.0" prefHeight="28.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="33.0" minHeight="9.0" prefHeight="31.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="28.0" minHeight="8.0" prefHeight="28.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="28.0" minHeight="8.0" prefHeight="27.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="28.0" minHeight="8.0" prefHeight="27.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,14 @@
+/* 
+    Document   : welcomeStyleSheet
+    Created on : Feb 15, 2013, 2:17:26 PM
+    Author     : gail
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#topNode {
+    -fx-background-color:
+        /*linear-gradient(to bottom, #f2f2e2, #c4c4d4); */
+        radial-gradient(center 80% 10%, radius 80%, #f2f2e2,#d6d6c6, #c4c4d4);
+}
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.welcomewindow">
+    <module_version install_time="1423593455823" last="true" origin="installer" specification_version="1.0">
+        <file crc="3152060149" name="config/Modules/com-asgteach-familytree-welcomewindow.xml"/>
+        <file crc="1779266398" name="modules/com-asgteach-familytree-welcomewindow.jar"/>
+    </module_version>
+</module>

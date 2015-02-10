@@ -1,0 +1,66 @@
+
+FamilyTreeApp Reference Application
+
+Additional documentation about this project is available at
+www.asgteach.com/NetBeansPlatformBook/FamilyTreeApp.
+
+The application uses a local database (JavaDB). You must start the database server and
+create the "familytree" database, as follows:
+
+
+1. Start the JavaDB database server: From Services | Databases | JavaDB, 
+   right-click and select Start Server (if not already started). 
+
+2. Create the familytree database. Note: Only create the database Once.
+   Right-click and select Create Database. In the dialog, 
+   use 'familytree' (lowercase) for all fields: 
+
+- Database Name: familytree
+
+- User Name: familytree
+
+- Password: familytree
+
+Click OK.
+
+3. Open the FamilyTreeApp in NetBeans IDE. In the Projects window,
+   right-click on project FamilyTreeApp, 
+   and then choose "Run".
+
+NOTE: There is no initialization SQL script. The database is configured 
+via the persistence unit and the entity classes. 
+
+The data is initialized in the DataInstaller @OnStart Runnable class in module
+FamilyTreeModel. 
+Note that the data is re-initialized each time you run the application.
+
+See below for options on retaining the data or having no initial data. 
+
+***If you want to retain modified data in between runs of the application, make
+the following modifications:
+
+1. In the FamilyTreeModel module, 
+comment out the call to populateDatabase() in the DataInstaller run() method.
+
+2. In the FamilyTreeDAOJPAProvider module, in file META-INF/persistence.xml, 
+under General, change the Table Generation Strategy to None.
+
+***If you want to use a cleanly-initialized database with NO DATA:
+
+1. In the FamilyTreeModel module, 
+comment out the call to populateDatabase() in the DataInstaller run() method.
+
+2. In the FamilyTreeDAOJPAProvider module, in file META-INF.persistence.xml, 
+under General, keep the Table Generation Strategy as Drop and Create.
+
+3. Before running the FamilyTree App again, in order to retain any data you created, 
+in the FamilyTreeDAOJPAProvider module, in file META-INF.persistence.xml, 
+under General, change the Table Generation strategy to None.
+
+***If you want to use Nimbus Look and Feel:
+
+Add:
+
+run.args.extra=--laf Nimbus
+
+to the NetBeans Platform Config file under FamilyTreeApp | Important Files

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.javafxtasks">
+    <module_version install_time="1423593451280" last="true" origin="installer" specification_version="1.0">
+        <file crc="2538024410" name="config/Modules/com-asgteach-familytree-javafxtasks.xml"/>
+        <file crc="2304434317" name="modules/com-asgteach-familytree-javafxtasks.jar"/>
+    </module_version>
+</module>

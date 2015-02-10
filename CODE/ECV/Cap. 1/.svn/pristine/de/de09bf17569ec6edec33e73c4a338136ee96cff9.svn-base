@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane id="topNode" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.asgteach.familytree.welcomewindow.WelcomeController">    
+    <padding>
+        <Insets top="10" right="10" bottom="20" left="10"/>
+    </padding>
+    <top>
+        <HBox fx:id="topHBox"
+              alignment="center" 
+              spacing="20"  >                      
+        </HBox>              
+    </top>
+    <bottom>
+        <VBox alignment="center" 
+              spacing="5"  >
+            <Label fx:id="titleLabel"
+                   textFill="#3b596d" 
+                   style="-fx-font: Bold 20 papyrus"/>
+            <Label fx:id="infoLabel"
+                   textAlignment="center"
+                   style="-fx-font: Bold 10 Tahoma; -fx-text-fill: black"
+                   wrapText="true"/>                      
+        </VBox>
+    </bottom> 
+    
+    <!-- center is added last so that the images appear "on top"
+    in case there is any overlap -->      
+    <center>
+        <GridPane fx:id="gridpane" 
+                  alignment="center"
+                  opacity="1.0" 
+                  hgap="0" vgap="0">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+                      
+            <VBox alignment="bottom_center"
+                  GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <Rectangle height="3" width="90" fill="#0076a3"/>
+                <Rectangle height="10" width="3" fill="#0076a3"/>               
+            </VBox>           
+            <VBox alignment="bottom_center"
+                  GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Rectangle height="3" width="90" fill="#0076a3"/> 
+                <Rectangle height="20" width="3" fill="#0076a3"/>                                                            
+            </VBox>
+            <VBox alignment="center"
+                  GridPane.columnIndex="1" GridPane.rowIndex="1">                
+                <Rectangle height="3" width="90" fill="#0076a3"/>                                              
+            </VBox>
+            <VBox alignment="center"
+                  GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Rectangle height="20" width="3" fill="#0076a3"/>
+                <Rectangle height="3" width="90" fill="#0076a3"/>
+                <Rectangle height="20" width="3" fill="#0076a3"/>                                              
+            </VBox>
+            <VBox alignment="center"
+                  GridPane.columnIndex="3" GridPane.rowIndex="1">                
+                <Rectangle height="3" width="90" fill="#0076a3"/>                                              
+            </VBox>
+            <VBox alignment="bottom_center"
+                  GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <Rectangle height="3" width="90" fill="#0076a3"/> 
+                <Rectangle height="20" width="3" fill="#0076a3"/>                                                            
+            </VBox>
+            <!-- Add ImageView controls last -->
+            <!-- Homer -->
+            <VBox alignment="bottom_center"
+                  GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <ImageView fx:id="ivHomer"/>              
+            </VBox>
+            <!-- Marge -->
+            <VBox alignment="bottom_center"
+                  GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <ImageView fx:id="ivMarge"/>              
+            </VBox>
+            <!-- Bart -->
+            <VBox alignment="center"
+                  GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <ImageView fx:id="ivBart"/>              
+            </VBox>
+            <!-- Lisa -->
+            <VBox alignment="center"
+                  GridPane.columnIndex="2" GridPane.rowIndex="2">
+                <ImageView fx:id="ivLisa"/>              
+            </VBox>
+            <!-- Maggie -->
+            <VBox alignment="center"
+                  GridPane.columnIndex="4" GridPane.rowIndex="2">
+                <ImageView fx:id="ivMaggie"/>              
+            </VBox>
+        </GridPane>      
+    </center>                    
+</BorderPane>

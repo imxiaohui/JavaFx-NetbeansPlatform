@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.personfxeditor">
+    <module_version install_time="1423593452145" last="true" origin="installer" specification_version="1.0">
+        <file crc="939902127" name="config/Modules/com-asgteach-familytree-personfxeditor.xml"/>
+        <file crc="2718303535" name="modules/com-asgteach-familytree-personfxeditor.jar"/>
+    </module_version>
+</module>

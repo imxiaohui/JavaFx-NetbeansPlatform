@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.eclipselink">
+    <module_version install_time="1423593456901" last="true" origin="installer" specification_version="1.0">
+        <file crc="2725588782" name="config/Modules/org-eclipselink.xml"/>
+        <file crc="1115444591" name="modules/ext/eclipselink-2.3.0.jar"/>
+        <file crc="55498005" name="modules/ext/eclipselink-jpa-modelgen-2.3.0.jar"/>
+        <file crc="3929325330" name="modules/ext/javax.persistence-2.0.jar"/>
+        <file crc="3609428388" name="modules/ext/org.eclipse.persistence.jpa.jpql_1.0.0.jar"/>
+        <file crc="1866213177" name="modules/org-eclipselink.jar"/>
+    </module_version>
+</module>

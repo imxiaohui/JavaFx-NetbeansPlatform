@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.dao.jpa">
+    <module_version install_time="1423593460625" last="true" origin="installer" specification_version="1.0">
+        <file crc="3273095587" name="config/Modules/com-asgteach-familytree-dao-jpa.xml"/>
+        <file crc="3284752889" name="modules/com-asgteach-familytree-dao-jpa.jar"/>
+    </module_version>
+</module>

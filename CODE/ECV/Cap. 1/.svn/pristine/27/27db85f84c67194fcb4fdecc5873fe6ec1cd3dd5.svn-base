@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane id="topNode" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.asgteach.familytree.persontimeline.PersonTimeLineController">    
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <top>
+        <HBox spacing="10"  >
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="20"/>
+            </padding>
+            <ImageView fx:id="ivHeading"/>
+            <VBox fx:id="topVBox" spacing="10" >
+                <Label fx:id="personLabel"
+                       textFill="#0076a3"            
+                       style="-fx-font: Bold 20 papyrus"/>
+                <Label fx:id="personNotes"
+                       textFill="#0076a3"
+                       wrapText="true"
+                />
+            </VBox>
+            <ProgressIndicator fx:id="personProgress"
+                               visible="false"
+                               progress="-1" /> 
+            <ProgressIndicator fx:id="eventProgress"
+                               visible="false"
+                               progress="-1" />            
+        </HBox>              
+    </top>   
+    <center>
+        <HBox fx:id="eventsBox" 
+                  spacing="0" 
+                  alignment="bottom_center" />
+    </center>
+                     
+</BorderPane>

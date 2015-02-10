@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.selectionviewer">
+    <module_version install_time="1423593444162" last="true" origin="installer" specification_version="1.0">
+        <file crc="1248923922" name="config/Modules/com-asgteach-familytree-selectionviewer.xml"/>
+        <file crc="4223886738" name="modules/com-asgteach-familytree-selectionviewer.jar"/>
+    </module_version>
+</module>

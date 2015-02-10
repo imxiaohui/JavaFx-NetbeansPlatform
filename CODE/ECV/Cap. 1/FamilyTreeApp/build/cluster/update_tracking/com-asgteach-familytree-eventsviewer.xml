@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.eventsviewer">
+    <module_version install_time="1423593450201" last="true" origin="installer" specification_version="1.0">
+        <file crc="2235072844" name="config/Modules/com-asgteach-familytree-eventsviewer.xml"/>
+        <file crc="1010871725" name="modules/com-asgteach-familytree-eventsviewer.jar"/>
+    </module_version>
+</module>

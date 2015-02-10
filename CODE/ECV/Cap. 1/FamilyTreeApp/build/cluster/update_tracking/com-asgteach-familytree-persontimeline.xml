@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.persontimeline">
+    <module_version install_time="1423593453453" last="true" origin="installer" specification_version="1.0">
+        <file crc="2173762921" name="config/Modules/com-asgteach-familytree-persontimeline.xml"/>
+        <file crc="1163732923" name="modules/com-asgteach-familytree-persontimeline.jar"/>
+    </module_version>
+</module>

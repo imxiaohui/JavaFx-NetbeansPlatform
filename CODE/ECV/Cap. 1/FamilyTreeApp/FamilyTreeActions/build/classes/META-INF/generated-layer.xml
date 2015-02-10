@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="PersonNode">
+            <file name="com-asgteach-familytree-actions-AddPictureAction.instance">
+                <!--com.asgteach.familytree.actions.AddPictureAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_AddPictureAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.context" name="instanceCreate"/>
+                <attr name="type" stringvalue="com.asgteach.familytree.capabilityinterfaces.AddPictureCapability"/>
+                <attr methodvalue="org.openide.awt.Actions.inject" name="delegate"/>
+                <attr name="injectable" stringvalue="com.asgteach.familytree.actions.AddPictureAction"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/add-picIcon.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+        <folder name="Extra">
+            <file name="com-asgteach-familytree-actions-HappyMammothAction.instance">
+                <!--com.asgteach.familytree.actions.HappyMammothAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_HappyMammoth" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.context" name="instanceCreate"/>
+                <attr name="type" stringvalue="com.asgteach.familytree.capabilityinterfaces.HappyMammothCapability"/>
+                <attr methodvalue="org.openide.awt.Actions.inject" name="delegate"/>
+                <attr name="injectable" stringvalue="com.asgteach.familytree.actions.HappyMammothAction"/>
+                <attr name="selectionType" stringvalue="ANY"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/mammoth_happy.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+        <folder name="RootNode">
+            <file name="org-openide-actions-NewAction.instance">
+                <!--com.asgteach.familytree.actions.NewPersonAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_NewPersonAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.context" name="instanceCreate"/>
+                <attr name="type" stringvalue="org.openide.util.datatransfer.NewType"/>
+                <attr methodvalue="org.openide.awt.Actions.inject" name="delegate"/>
+                <attr name="injectable" stringvalue="com.asgteach.familytree.actions.NewPersonAction"/>
+                <attr name="selectionType" stringvalue="EXACTLY_ONE"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/personIcon.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+        <folder name="OpenNode">
+            <file name="com-asgteach-familytree-actions-OpenNodeAction.instance">
+                <!--com.asgteach.familytree.actions.OpenNodeAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_OpenNodeAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.context" name="instanceCreate"/>
+                <attr name="type" stringvalue="org.netbeans.api.actions.Openable"/>
+                <attr methodvalue="org.openide.awt.Actions.inject" name="delegate"/>
+                <attr name="injectable" stringvalue="com.asgteach.familytree.actions.OpenNodeAction"/>
+                <attr name="selectionType" stringvalue="EXACTLY_ONE"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/open-file-icon.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+        <folder name="ReloadNode">
+            <file name="com-asgteach-familytree-utilities-ReloadAction.instance">
+                <!--com.asgteach.familytree.actions.ReloadAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_ReloadAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.context" name="instanceCreate"/>
+                <attr name="type" stringvalue="com.asgteach.familytree.capabilityinterfaces.ReloadableViewCapability"/>
+                <attr methodvalue="org.openide.awt.Actions.inject" name="delegate"/>
+                <attr name="injectable" stringvalue="com.asgteach.familytree.actions.ReloadAction"/>
+                <attr name="selectionType" stringvalue="EXACTLY_ONE"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Tools">
+            <file name="com-asgteach-familytree-actions-AddPictureAction.shadow">
+                <!--com.asgteach.familytree.actions.AddPictureAction-->
+                <attr name="originalFile" stringvalue="Actions/PersonNode/com-asgteach-familytree-actions-AddPictureAction.instance"/>
+                <attr intvalue="-100" name="position"/>
+            </file>
+            <file name="com-asgteach-familytree-actions-AddPictureAction-separatorAfter.instance">
+                <!--com.asgteach.familytree.actions.AddPictureAction-->
+                <attr name="instanceCreate" newvalue="javax.swing.JSeparator"/>
+                <attr intvalue="-50" name="position"/>
+            </file>
+            <file name="org-openide-actions-NewAction.shadow">
+                <!--com.asgteach.familytree.actions.NewPersonAction-->
+                <attr name="originalFile" stringvalue="Actions/RootNode/org-openide-actions-NewAction.instance"/>
+                <attr intvalue="75" name="position"/>
+            </file>
+        </folder>
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-HappyMammothAction.shadow">
+                <!--com.asgteach.familytree.actions.HappyMammothAction-->
+                <attr name="originalFile" stringvalue="Actions/Extra/com-asgteach-familytree-actions-HappyMammothAction.instance"/>
+                <attr intvalue="200" name="position"/>
+            </file>
+            <file name="com-asgteach-familytree-actions-OpenNodeAction.shadow">
+                <!--com.asgteach.familytree.actions.OpenNodeAction-->
+                <attr name="originalFile" stringvalue="Actions/OpenNode/com-asgteach-familytree-actions-OpenNodeAction.instance"/>
+                <attr intvalue="1200" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-AddPictureAction.shadow">
+                <!--com.asgteach.familytree.actions.AddPictureAction-->
+                <attr name="originalFile" stringvalue="Actions/PersonNode/com-asgteach-familytree-actions-AddPictureAction.instance"/>
+                <attr intvalue="150" name="position"/>
+            </file>
+            <file name="com-asgteach-familytree-actions-HappyMammothAction.shadow">
+                <!--com.asgteach.familytree.actions.HappyMammothAction-->
+                <attr name="originalFile" stringvalue="Actions/Extra/com-asgteach-familytree-actions-HappyMammothAction.instance"/>
+                <attr intvalue="200" name="position"/>
+            </file>
+            <file name="org-openide-actions-NewAction.shadow">
+                <!--com.asgteach.familytree.actions.NewPersonAction-->
+                <attr name="originalFile" stringvalue="Actions/RootNode/org-openide-actions-NewAction.instance"/>
+                <attr intvalue="50" name="position"/>
+            </file>
+            <file name="com-asgteach-familytree-actions-OpenNodeAction.shadow">
+                <!--com.asgteach.familytree.actions.OpenNodeAction-->
+                <attr name="originalFile" stringvalue="Actions/OpenNode/com-asgteach-familytree-actions-OpenNodeAction.instance"/>
+                <attr intvalue="-290" name="position"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>
