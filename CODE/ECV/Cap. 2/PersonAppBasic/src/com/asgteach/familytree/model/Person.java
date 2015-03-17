@@ -75,58 +75,116 @@ public class Person implements Serializable{
         this.notes     = copy.notes;
     }
 
+    
+    /**
+     * Metodo de acceso al atributo id.
+     * @return el atributo id.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Metodo de acceso al atributo firstName.
+     * @return el atributo firstName.
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Método modificador del atributo firstName.
+     * @param firstName 
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Metodo de acceso al atributo middeName.
+     * @return el atributo middeName.
+     */
     public String getMiddeName() {
         return middeName;
     }
 
+    
+    /**
+     * Método modificador del atributo middeName.
+     * @param middeName 
+     */
     public void setMiddeName(String middeName) {
         this.middeName = middeName;
     }
 
+    /**
+     * Metodo de acceso al atributo lastName.
+     * @return el atributo lastName.
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Método modificador del atributo lastName.
+     * @param lastName 
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Metodo de acceso al atributo suffix.
+     * @return el atributo suffix.
+     */
     public String getSuffix() {
         return suffix;
     }
 
+    /**
+     * Método modificador del atributo suffix.
+     * @param suffix 
+     */
     public void setSuffix(String suffix) {
         this.suffix = suffix;
     }
 
+    /**
+     * Metodo de acceso al atributo gender.
+     * @return el atributo gender.
+     */
     public Gender getGender() {
         return gender;
     }
 
+    /**
+     * Método modificador del atributo gender.
+     * @param gender 
+     */
     public void setGender(Gender gender) {
         this.gender = gender;
     }
 
+    /**
+     * Metodo de acceso al atributo notes.
+     * @return el atributo notes.
+     */
     public String getNotes() {
         return notes;
     }
 
+    /**
+     * Método modificador del atributo notes.
+     * @param notes 
+     */
     public void setNotes(String notes) {
         this.notes = notes;
     }
 
+    /**
+     * Sobre-escritura del método toString.
+     * @return cadena con el nombre de la persona.
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -134,17 +192,22 @@ public class Person implements Serializable{
             sb.append(firstName);
         }
         if(!middeName.isEmpty()){
-            sb.append(middeName);
+            sb.append(" ").append(middeName);
         }
         if(!lastName.isEmpty()){
-            sb.append(lastName);
+            sb.append(" ").append(lastName);
         }
         if(!suffix.isEmpty()){
-            sb.append(suffix);
+            sb.append(" ").append(suffix);
         }
         return sb.toString();
     }
 
+    /**
+     * Sobre-escritura del método hash.
+     * 
+     * @return el valor hash del objeto.
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -152,6 +215,11 @@ public class Person implements Serializable{
         return hash;
     }
 
+    /**
+     * Sobre-escritura del método equals.
+     * @param obj objeto contra el cual comparar.
+     * @return si ambos objetos son iguales
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -165,8 +233,5 @@ public class Person implements Serializable{
             return false;
         }
         return true;
-    }
-    
-    
-    
+    }    
 }
