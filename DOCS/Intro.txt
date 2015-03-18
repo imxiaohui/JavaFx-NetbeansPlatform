@@ -24,4 +24,5 @@ y el valor es la implementacion.
 -Window System Api:
 Permite crear y manejar ventanas para las aplicaciones de escritorio.
 
--File Sustem Api:
+-File System Api:
+Manejo de propiedades por medio de archivos. Consumo y escritura de archivos ademas
