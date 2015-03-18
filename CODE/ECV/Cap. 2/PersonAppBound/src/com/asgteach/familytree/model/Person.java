@@ -1,21 +1,15 @@
 package com.asgteach.familytree.model;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * JavaBean Person.
- * 
- * Un JavaBean es una clase capaz de almacenar información de negocio en Java y 
- * que contiene las siguientes características:
- * 
- * 1.- Implementa la interfaz "Serializable".
- * 2.- Sus atributos son privados (Tambien llamados propiedades)
- * 3.- Se accede y modifica el valor de sus propiedades por medio de getters y setters.
- * 4.- Se sobre-escriben los métodos toString, equals y hashcode.
  * 
  * @author Ernesto Cantú
- * 17/03/2015
+ * 18/03/2015
  */
 public class Person implements Serializable{
     
@@ -39,9 +33,28 @@ public class Person implements Serializable{
     
     /** Atributo notes. Notas*/
     private String notes;
+    
+    /** Atributo propertyChangeSupport. Da la capacidad a este java bean de
+     * notificar a objetos que fue modificado.
+     */
+    private PropertyChangeSupport propertyChangeSupport;
+      
+    
    
     /** Control del id*/
     private static long COUNT = 0;
+    
+    /*
+     * Constantes que me permiten darle un nombre a mis atributos a la hora de
+     * llamar al método firePropertyChange.
+     */
+    private static final String PROP_FIRST = "firstName";
+    private static final String PROP_MIDDLE = "middeName";
+    private static final String PROP_LAST = "lastName";
+    private static final String PROP_SUFFIX = "suffix";
+    private static final String PROP_GENDER = "gender";
+    private static final String PROP_NOTES = "notes";
+    
     
     /** Enum con tipos de genero válidos. */
     public enum Gender{
@@ -82,7 +95,32 @@ public class Person implements Serializable{
         this.gender    = copy.gender;
         this.notes     = copy.notes;
     }
-
+    
+    /**
+     * Método que inicializa el atributo propertyChangeSupport.
+     */
+    private PropertyChangeSupport getPropertyChangeSupport(){
+        if(this.propertyChangeSupport == null){
+            this.propertyChangeSupport=new PropertyChangeSupport(this);
+        }
+        return this.propertyChangeSupport;
+    }
+    
+    /**
+     * Método que da de alta a un objeto Listener 
+     * @param listener el objeto interesado en conocer los cambios.
+     */
+    public void addPropertyChangeListener(PropertyChangeListener listener){
+        getPropertyChangeSupport().addPropertyChangeListener(listener);
+    }
+    
+    /**
+     * Método que da de baja a un objeto Listener 
+     * @param listener el objeto no interesado en conocer los cambios.
+     */
+    public void removePropertyChangeListener(PropertyChangeListener listener){
+        getPropertyChangeSupport().removePropertyChangeListener(listener);
+    }
     
     /**
      * Metodo de acceso al atributo id.
@@ -105,7 +143,9 @@ public class Person implements Serializable{
      * @param firstName 
      */
     public void setFirstName(String firstName) {
+        String oldFirstName = this.firstName;
         this.firstName = firstName;
+        getPropertyChangeSupport().firePropertyChange(PROP_FIRST,oldFirstName,firstName);
     }
 
     /**
@@ -122,7 +162,9 @@ public class Person implements Serializable{
      * @param middeName 
      */
     public void setMiddeName(String middeName) {
+        String oldMiddleName = this.middeName;
         this.middeName = middeName;
+        getPropertyChangeSupport().firePropertyChange(PROP_MIDDLE, oldMiddleName, middeName);
     }
 
     /**
@@ -138,7 +180,9 @@ public class Person implements Serializable{
      * @param lastName 
      */
     public void setLastName(String lastName) {
+        String oldLastName = this.lastName;
         this.lastName = lastName;
+        getPropertyChangeSupport().firePropertyChange(PROP_LAST, oldLastName, lastName);
     }
 
     /**
@@ -154,7 +198,9 @@ public class Person implements Serializable{
      * @param suffix 
      */
     public void setSuffix(String suffix) {
+        String oldSuffix = this.suffix;
         this.suffix = suffix;
+        getPropertyChangeSupport().firePropertyChange(PROP_SUFFIX, oldSuffix, suffix);
     }
 
     /**
@@ -170,7 +216,9 @@ public class Person implements Serializable{
      * @param gender 
      */
     public void setGender(Gender gender) {
+        Person.Gender oldGender = this.gender;
         this.gender = gender;
+        getPropertyChangeSupport().firePropertyChange(PROP_GENDER, oldGender, gender);
     }
 
     /**
@@ -186,7 +234,9 @@ public class Person implements Serializable{
      * @param notes 
      */
     public void setNotes(String notes) {
+        String oldNotes = this.notes;
         this.notes = notes;
+        getPropertyChangeSupport().firePropertyChange(PROP_NOTES, oldNotes, notes);
     }
 
     /**
