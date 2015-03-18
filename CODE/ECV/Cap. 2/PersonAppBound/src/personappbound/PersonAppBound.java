@@ -39,7 +39,7 @@ public class PersonAppBound {
         };
         
         homer.addPropertyChangeListener(pcl);
-        marge.addPropertyChangeListener(pcl);
+        marge.addPropertyChangeListener("lastName",pcl);
         
         homer.setMiddeName("Jay");
         marge.setMiddeName("Louise");

@@ -115,11 +115,29 @@ public class Person implements Serializable{
     }
     
     /**
+     * Método que da de alta a un objeto Listener 
+     * @param propertyName propiedad a la cual se suscribirá el listener
+     * @param listener el objeto interesado en conocer los cambios.
+     */
+    public void addPropertyChangeListener(String propertyName,PropertyChangeListener listener){
+        getPropertyChangeSupport().addPropertyChangeListener(propertyName,listener);
+    }
+    
+    /**
      * Método que da de baja a un objeto Listener 
      * @param listener el objeto no interesado en conocer los cambios.
      */
     public void removePropertyChangeListener(PropertyChangeListener listener){
         getPropertyChangeSupport().removePropertyChangeListener(listener);
+    }
+    
+    /**
+     * Método que da de baja a un objeto Listener 
+     * @param propertyName propiedad a la cual se elimina la suscripcion del listener
+     * @param listener el objeto interesado en conocer los cambios.
+     */
+    public void removePropertyChangeListener(String propertyName,PropertyChangeListener listener){
+        getPropertyChangeSupport().removePropertyChangeListener(propertyName,listener);
     }
     
     /**
