@@ -2,6 +2,7 @@ package personswingapp;
 
 import com.asgtech.familytree.model.FamilyTreeManager;
 import com.asgtech.familytree.model.Person;
+import com.asgtech.familytree.model.Person.Gender;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -14,9 +15,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
+import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
 /**
@@ -60,7 +64,9 @@ public class PersonJFrame extends JFrame {
         buildData();
         initComponents();
         personTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-        //createNodes(top);
+        createNodes(top);
+        logger.log(Level.FINE,"Loaded Data");
+        
     }
 
     private void configureListeners(){
@@ -74,6 +80,10 @@ public class PersonJFrame extends JFrame {
         PersonJFrame pjf = new PersonJFrame();
         pjf.configureListeners();
         return pjf;
+    }
+    
+    private void createNodes(DefaultMutableTreeNode top){
+        ftm.getAllPeople().forEach(p->top.add(new DefaultMutableTreeNode(p)));
     }
     
     
@@ -98,7 +108,7 @@ public class PersonJFrame extends JFrame {
 
         genderButtonGroup = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        personTree = new javax.swing.JTree();
+        personTree = new javax.swing.JTree(top);
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -262,24 +272,9 @@ public class PersonJFrame extends JFrame {
 
         /* Create and display the form */
         SwingUtilities.invokeLater(()-> {
-            new PersonJFrame().setVisible(true);
+            PersonJFrame.newInstance().setVisible(true);
         });
     }
-    
-    
-    //ActionListeners
-    private final ActionListener updateListener = (ActionEvent e) ->{
-        
-    };
-    
-    private final PropertyChangeListener familyTreeListener = (PropertyChangeEvent e)->{
-    
-    };
-    
-    
-    private final TreeSelectionListener treeSelectionListener = (TreeSelectionEvent e)->{
-    
-    };
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton femaleButton;
@@ -302,4 +297,84 @@ public class PersonJFrame extends JFrame {
     private javax.swing.JRadioButton unknownButton;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
+
+   private void editPerson(Person person){
+       thePerson = person;
+       updateForm();
+   }
+   
+   private void updateForm(){
+       firstTextField.setText(thePerson.getFirstName());
+        middleTextField.setText(thePerson.getMiddeName());
+        lastTextField.setText(thePerson.getLastName());
+        suffixTextField.setText(thePerson.getSuffix());
+        if (thePerson.getGender().equals(Gender.MALE)) {
+            maleButton.setSelected(true);
+        } else if (thePerson.getGender().equals(Gender.FEMALE)) {
+            femaleButton.setSelected(true);
+        } else if (thePerson.getGender().equals(Gender.UNKNOWN)) {
+            unknownButton.setSelected(true);
+        }
+        notesTextArea.setText(thePerson.getNotes());
+        updateButton.setEnabled(true);
+   }
+    
+   private void updateModel() {
+        thePerson.setFirstName(firstTextField.getText());
+        thePerson.setMiddeName(middleTextField.getText());
+        thePerson.setLastName(lastTextField.getText());
+        thePerson.setSuffix(suffixTextField.getText());
+        if (maleButton.isSelected()) {
+            thePerson.setGender(Gender.MALE);
+        } else if (femaleButton.isSelected()) {
+            thePerson.setGender(Gender.FEMALE);
+        } else if (unknownButton.isSelected()) {
+            thePerson.setGender(Gender.UNKNOWN);
+        }
+        thePerson.setNotes(notesTextArea.getText());
+    }
+   
+   
+    //ActionListeners
+    private final ActionListener updateListener = (ActionEvent e) ->{
+        updateModel();
+        ftm.updatePerson(thePerson);
+    };
+    
+    private final PropertyChangeListener familyTreeListener = (PropertyChangeEvent evt)->{
+        if (evt.getNewValue() != null
+                && evt.getPropertyName().equals(FamilyTreeManager.PROP_PERSON_UPDATED)) {
+            Person person = (Person) evt.getNewValue();
+            DefaultTreeModel model = (DefaultTreeModel) personTree.getModel();
+            for (int i = 0; i < model.getChildCount(top); i++) {
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode) model.getChild(top, i);
+                if (person.equals(node.getUserObject())) {
+                    node.setUserObject(person);
+                    // Let the model know we made a change
+                    model.nodeChanged(node);
+                    logger.log(Level.FINE, "Node updated: {0}", node);
+                    break;
+                }
+            }
+        }
+    };
+    
+    
+    private final TreeSelectionListener treeSelectionListener = (TreeSelectionEvent e)->{
+        DefaultMutableTreeNode node
+                = (DefaultMutableTreeNode) personTree.getLastSelectedPathComponent();
+        if (node == null) {
+            updateButton.setEnabled(false);
+            return;
+        }
+        if (node.isLeaf()) {
+            Person person = (Person) node.getUserObject();
+            logger.log(Level.FINE, "{0} selected", person);
+            editPerson(person);
+        } else {
+            updateButton.setEnabled(false);
+        }
+    };
+
+
 }

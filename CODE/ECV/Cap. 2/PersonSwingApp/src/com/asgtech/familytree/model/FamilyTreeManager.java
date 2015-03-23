@@ -23,9 +23,9 @@ public class FamilyTreeManager {
     /*
      * Constantes que dan nombre a las acciones a informar. 
      */
-    private static final String PROP_PERSON_DESTROYED = "removePerson";
-    private static final String PROP_PERSON_ADDED = "addPerson";
-    private static final String PROP_PERSON_UPDATED = "updatePerson";
+    public static final String PROP_PERSON_DESTROYED = "removePerson";
+    public static final String PROP_PERSON_ADDED = "addPerson";
+    public static final String PROP_PERSON_UPDATED = "updatePerson";
     
     /* Singleton class*/
     private static FamilyTreeManager instance = null;
