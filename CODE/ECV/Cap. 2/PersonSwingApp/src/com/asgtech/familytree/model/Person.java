@@ -78,7 +78,7 @@ public class Person implements Serializable{
         this.lastName = lastName;
         this.suffix = "";
         this.gender = gender;
-        this.id = COUNT++;
+        this.id = ++COUNT;
     }
 
     /**

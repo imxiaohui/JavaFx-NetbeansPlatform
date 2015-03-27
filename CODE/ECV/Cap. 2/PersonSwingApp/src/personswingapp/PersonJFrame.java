@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
@@ -69,6 +70,13 @@ public class PersonJFrame extends JFrame {
         
     }
 
+    /**
+     * configureListeners.
+     * Creo Listeners para detectar cambios en propiedades.
+     * familiTreeListener es un Listener que detecta cambios en el HashMap de ftm (Objeto FamilyTreeManager).
+     * treeSelectionListener es un Listener que detecta cuando se selecciona un objeto en el JTree.
+     * updateListener es un Listener que detecta cuando se hace Click en el boton.
+     */
     private void configureListeners(){
         ftm.addPropertyChangeListener(familyTreeListener);
         personTree.addTreeSelectionListener(treeSelectionListener);
@@ -82,11 +90,18 @@ public class PersonJFrame extends JFrame {
         return pjf;
     }
     
+    /**
+     * Para cada objeto Person en el FamilyTreeManager,
+     * creo un nodo el cual agregaré a top.
+     * @param top el tree node principal.
+     */
     private void createNodes(DefaultMutableTreeNode top){
         ftm.getAllPeople().forEach(p->top.add(new DefaultMutableTreeNode(p)));
     }
     
-    
+    /**
+     * Procedimiento que agrega objetos Person al FamilyTree
+     */
     private void buildData() {
         ftm.addPerson(new Person("Homer", "Simpson", Person.Gender.MALE));
         ftm.addPerson(new Person("Marge", "Simpson", Person.Gender.FEMALE));
@@ -128,6 +143,7 @@ public class PersonJFrame extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        personTree.setToolTipText("");
         jScrollPane1.setViewportView(personTree);
 
         jLabel1.setText("First");
@@ -185,8 +201,8 @@ public class PersonJFrame extends JFrame {
                                 .addComponent(unknownButton))
                             .addComponent(jLabel5)
                             .addComponent(updateButton))
-                        .addGap(0, 63, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(0, 107, Short.MAX_VALUE)))
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,20 +244,17 @@ public class PersonJFrame extends JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 12, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -298,13 +311,25 @@ public class PersonJFrame extends JFrame {
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Procedimiento editPerson. Se ejecuta despues de que ocurre un evento en el
+     * treeSelectionListener.
+     * 
+     * Settea al objeto person de la clase y ejecuta el método updateForm().
+     * 
+     * @param person 
+     */
    private void editPerson(Person person){
        thePerson = person;
        updateForm();
    }
    
+   /**
+    * Método updateForm. Toma al atributo thePerson, y actualiza
+    * el frame.
+    */
    private void updateForm(){
-       firstTextField.setText(thePerson.getFirstName());
+        firstTextField.setText(thePerson.getFirstName());
         middleTextField.setText(thePerson.getMiddeName());
         lastTextField.setText(thePerson.getLastName());
         suffixTextField.setText(thePerson.getSuffix());
@@ -319,7 +344,11 @@ public class PersonJFrame extends JFrame {
         updateButton.setEnabled(true);
    }
     
-   private void updateModel() {
+    /**
+     * Método updateModel.
+     * Toma al atributo thePerson y actualiza sus propiedades.
+     */
+    private void updateModel() {
         thePerson.setFirstName(firstTextField.getText());
         thePerson.setMiddeName(middleTextField.getText());
         thePerson.setLastName(lastTextField.getText());
@@ -336,11 +365,19 @@ public class PersonJFrame extends JFrame {
    
    
     //ActionListeners
+   /**
+    * Este Action Listener ocurre al hacer click en el boton.
+    */
     private final ActionListener updateListener = (ActionEvent e) ->{
         updateModel();
         ftm.updatePerson(thePerson);
     };
     
+    /**
+     * Action Listener familiTreeListener.
+     * Este es un objeto de la clase PropertyChangeListener, implementa el método
+     * abstracto de la interfaz indicando cual es la accion a tomar una vez ocurrido un evento.
+     */
     private final PropertyChangeListener familyTreeListener = (PropertyChangeEvent evt)->{
         if (evt.getNewValue() != null
                 && evt.getPropertyName().equals(FamilyTreeManager.PROP_PERSON_UPDATED)) {
@@ -359,7 +396,10 @@ public class PersonJFrame extends JFrame {
         }
     };
     
-    
+    /**
+     * TreeSelectionListener. Se ejecuta cada vez que se selecciona un Nodo
+     * en el árbol.
+     */
     private final TreeSelectionListener treeSelectionListener = (TreeSelectionEvent e)->{
         DefaultMutableTreeNode node
                 = (DefaultMutableTreeNode) personTree.getLastSelectedPathComponent();
@@ -370,6 +410,7 @@ public class PersonJFrame extends JFrame {
         if (node.isLeaf()) {
             Person person = (Person) node.getUserObject();
             logger.log(Level.FINE, "{0} selected", person);
+            logger.log(Level.FINE, "{0} ID", person.getId());
             editPerson(person);
         } else {
             updateButton.setEnabled(false);
