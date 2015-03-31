@@ -8,6 +8,8 @@ package com.Service;
 import com.conciencia.DatabaseConnection.DatabaseConnection;
 import com.conciencia.DatabaseConnection.JDBCDriver;
 import com.model.DAO.Person;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,8 +34,13 @@ public class PersonServiceImplementation implements PersonService{
     String HOST = "localhost";
     String PORT = "3306";
     String DB_NAME = "testJDBC";
+    String PERSON_DELETED = "Deleted Person";
+    String PERSON_UPDATED = "Updated Person";
+    String PERSON_ADDED = "Person Added";
     
     private static PersonServiceImplementation instance = null;
+    
+    PropertyChangeSupport propertyChangeSupport;
     
     private PersonServiceImplementation() {
        
@@ -41,28 +48,75 @@ public class PersonServiceImplementation implements PersonService{
         DatabaseConnection.setHOST(HOST);
         DatabaseConnection.setPORT(PORT);
         DatabaseConnection.setDB_NAME(DB_NAME);
+        props = DatabaseConnection.setInfo(USER, PASSWORD);
+        
+    }
+    
+    public void addProertyChangeListener(PropertyChangeListener listener){
+        this.propertyChangeSupport.addPropertyChangeListener(listener);
+    }
+    
+    public void removePropertyChangeListener(PropertyChangeListener listener){
+        this.propertyChangeSupport.removePropertyChangeListener(listener);
     }
 
     public static PersonServiceImplementation getInstance(){
         if(instance == null){
             instance = new PersonServiceImplementation();
+            instance.propertyChangeSupport = new PropertyChangeSupport(instance);
         }
+        
         return instance;
     }
     
     @Override
     public Person findById(Long id) {
-        return null;
+        
+        Connection conn = DatabaseConnection.getConnection(props);
+        
+        Person person = new Person();
+        
+        String query = "SELECT * FROM testJDBC.people where testJDBC.people.id = " + id + ";";
+
+        try{
+            
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+
+            if(rs.next()){
+               person.setId(rs.getLong("id"));
+               person.setFirstName(rs.getString("firstName"));
+               person.setMiddeName(rs.getString("middleName"));
+               person.setLastName(rs.getString("lastName"));
+               person.setSuffix(rs.getString("suffix"));
+               if(rs.getString("gender").equalsIgnoreCase("Male")){
+                      person.setGender(Person.Gender.MALE);
+                  }
+                  if(rs.getString("gender").equalsIgnoreCase("Female")){
+                      person.setGender(Person.Gender.FEMALE);
+                  }
+                  else{
+                      person.setGender(Person.Gender.UNKNOWN);
+                  }
+            }
+            
+            conn.close();
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(PersonServiceImplementation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return person;
     }
     
     @Override
     public List<Person> findAll() {
-        Properties props = DatabaseConnection.setInfo(USER, PASSWORD);
+        
         Connection conn = DatabaseConnection.getConnection(props);
         
         List<Person> people = new LinkedList<>();
         
-        String query = "SELECT* FROM testJDBC.People;";
+        String query = "SELECT* FROM testJDBC.people;";
         
         try {
             Statement stm = conn.createStatement();
@@ -90,6 +144,9 @@ public class PersonServiceImplementation implements PersonService{
                 people.add(person);
             }
             
+            
+            conn.close();
+            
         } catch (SQLException ex) {
             Logger.getLogger(PersonServiceImplementation.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -98,18 +155,91 @@ public class PersonServiceImplementation implements PersonService{
     }
 
     @Override
-    public Person create() {
-        return null;
+    public Person create(Person person) {
+        
+        Connection conn = DatabaseConnection.getConnection(props);
+        
+        String query = "INSERT INTO `testJDBC`.`people` " +
+                        "( `firstName`, `middleName`,`lastName`,`suffix`,`gender`,`notes`) " +
+                        "VALUES ( " + person.getFirstName() + "," + person.getMiddeName() + "," +
+                        person.getLastName() + ", " + person.getSuffix() + ", " + person.getGender().getGenderString() + 
+                        ", "+ person.getNotes() + " ) ";
+                    
+        try {
+            
+            Statement stm = conn.createStatement();
+            stm.executeQuery(query);
+            
+            query = "Select max(id) from testJDBC.people;";
+            
+            ResultSet rs = stm.executeQuery(query);
+            if(rs.next()){
+                Long id = rs.getLong("id");
+                person = findById(id);
+                
+                propertyChangeSupport.firePropertyChange(PERSON_ADDED,null, person);
+            }
+            
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonServiceImplementation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return person;
     }
 
     @Override
-    public Person update(Long id) {
-        return null;
+    public Person update(Person person) {
+        
+        String query = "Update table `testJDBC`.`people` " +
+                "set firstName = " + person.getFirstName() + "," +
+                "middleNale = " + person.getMiddeName() + "," +
+                "lastName = " + person.getLastName() + "," +
+                "suffix = " + person.getSuffix() + "," +
+                "gender = " + person.getGender().getGenderString() + "," +
+                 "notes = " + person.getNotes() + " where id = " + person.getId();
+                
+        Connection conn = DatabaseConnection.getConnection(props);
+        
+        try {
+            
+            Statement stm = conn.createStatement();
+            stm.executeQuery(query);
+            
+            propertyChangeSupport.firePropertyChange(PERSON_UPDATED, null, person);
+            
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonServiceImplementation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return person;
+        
     }
 
     @Override
     public Person delete(Long id) {
-        return null;
+        
+        Person deleted;
+        
+        deleted = findById(id);
+        
+        String query = "Delete from `testJDBC`.`people` where id = " + id ;
+        Connection conn = DatabaseConnection.getConnection(props);
+        
+        try {
+            
+            Statement stm = conn.createStatement();
+            stm.executeQuery(query);
+            
+            propertyChangeSupport.firePropertyChange(PERSON_DELETED, null, deleted);
+            
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonServiceImplementation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return deleted;
     }
 
     

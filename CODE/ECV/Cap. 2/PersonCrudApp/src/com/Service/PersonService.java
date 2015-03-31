@@ -17,9 +17,9 @@ public interface PersonService {
     
     public List<Person> findAll();
         
-    public Person create();
+    public Person create(Person person);
     
-    public Person update(Long id);
+    public Person update(Person person);
     
     public Person delete(Long id);
         
