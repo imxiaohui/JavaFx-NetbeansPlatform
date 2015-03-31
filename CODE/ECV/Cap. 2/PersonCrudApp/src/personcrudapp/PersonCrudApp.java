@@ -74,6 +74,7 @@ public class PersonCrudApp extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         notesTextArea = new javax.swing.JTextArea();
         updateButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,6 +108,13 @@ public class PersonCrudApp extends javax.swing.JFrame {
 
         updateButton.setText("update");
 
+        deleteButton.setText("delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -114,33 +122,37 @@ public class PersonCrudApp extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(middleTextField)
-                            .addComponent(lastTextField)
-                            .addComponent(suffixTextField)
-                            .addComponent(firstTextField)))
+                            .addComponent(jScrollPane2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(middleTextField)
+                                    .addComponent(lastTextField)
+                                    .addComponent(suffixTextField)
+                                    .addComponent(firstTextField)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(maleButton)
+                                        .addGap(43, 43, 43)
+                                        .addComponent(femaleButton)
+                                        .addGap(47, 47, 47)
+                                        .addComponent(unknownButton))
+                                    .addComponent(jLabel5))
+                                .addGap(0, 111, Short.MAX_VALUE)))
+                        .addGap(27, 27, 27))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(maleButton)
-                                .addGap(43, 43, 43)
-                                .addComponent(femaleButton)
-                                .addGap(47, 47, 47)
-                                .addComponent(unknownButton))
-                            .addComponent(jLabel5)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(113, 113, 113)
-                                .addComponent(updateButton)))
-                        .addGap(0, 111, Short.MAX_VALUE)))
-                .addGap(27, 27, 27))
+                        .addComponent(updateButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(deleteButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,9 +182,11 @@ public class PersonCrudApp extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(updateButton)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateButton)
+                    .addComponent(deleteButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,6 +213,18 @@ public class PersonCrudApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_firstTextFieldActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        DefaultMutableTreeNode node
+                    = (DefaultMutableTreeNode) personTree.getLastSelectedPathComponent();
+        
+        if (node.isLeaf()) {
+            Person person = (Person) node.getUserObject();
+            thePerson = person;
+            personService.delete(thePerson.getId());
+            initNodes();
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
     
     private void updateShowForm(){
         firstTextField.setText(thePerson.getFirstName());
@@ -215,6 +241,32 @@ public class PersonCrudApp extends javax.swing.JFrame {
         notesTextArea.setText(thePerson.getNotes());
     }
     
+    private void updateModel() {
+        thePerson.setFirstName(firstTextField.getText());
+        thePerson.setMiddeName(middleTextField.getText());
+        thePerson.setLastName(lastTextField.getText());
+        thePerson.setSuffix(suffixTextField.getText());
+        if (maleButton.isSelected()) {
+            thePerson.setGender(Gender.MALE);
+        } else if (femaleButton.isSelected()) {
+            thePerson.setGender(Gender.FEMALE);
+        } else if (unknownButton.isSelected()) {
+            thePerson.setGender(Gender.UNKNOWN);
+        }
+        thePerson.setNotes(notesTextArea.getText());
+    }
+    
+    private void clearForm(){
+        firstTextField.setText("");
+        middleTextField.setText("");
+        lastTextField.setText("");
+        suffixTextField.setText("");
+        maleButton.setSelected(false);
+        femaleButton.setSelected(false);
+        unknownButton.setSelected(false);
+        notesTextArea.setText("");
+    }
+    
     private final TreeSelectionListener treeSelectionListener = new TreeSelectionListener() {
 
         public void valueChanged(TreeSelectionEvent e) {
@@ -223,6 +275,7 @@ public class PersonCrudApp extends javax.swing.JFrame {
             if (node.isLeaf()) {
                 Person person = (Person) node.getUserObject();
                 thePerson = person;
+                updateButton.setEnabled(false);
                 updateShowForm();
             }
         }
@@ -268,6 +321,7 @@ public class PersonCrudApp extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteButton;
     private javax.swing.JRadioButton femaleButton;
     private javax.swing.JTextField firstTextField;
     private javax.swing.JLabel jLabel1;

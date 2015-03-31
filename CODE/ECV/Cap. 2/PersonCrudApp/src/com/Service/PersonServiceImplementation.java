@@ -137,7 +137,7 @@ public class PersonServiceImplementation implements PersonService{
                 if(rs.getString("gender").equalsIgnoreCase("Female")){
                     person.setGender(Person.Gender.FEMALE);
                 }
-                else{
+                if(rs.getString("gender").equalsIgnoreCase("Unknown")){
                     person.setGender(Person.Gender.UNKNOWN);
                 }
                 
@@ -224,13 +224,13 @@ public class PersonServiceImplementation implements PersonService{
         
         deleted = findById(id);
         
-        String query = "Delete from `testJDBC`.`people` where id = " + id ;
+        String query = "Delete from testJDBC.people where id = " + id + ";";
         Connection conn = DatabaseConnection.getConnection(props);
         
         try {
             
             Statement stm = conn.createStatement();
-            stm.executeQuery(query);
+            stm.execute(query);
             
             propertyChangeSupport.firePropertyChange(PERSON_DELETED, null, deleted);
             
