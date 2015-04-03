@@ -9,6 +9,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -84,6 +86,7 @@ public class PersonJFrame extends JFrame {
         ftm.addPropertyChangeListener(familyTreeListener);
         personTree.addTreeSelectionListener(treeSelectionListener);
         updateButton.addActionListener(updateListener);
+        processAllButton.addActionListener(processAllListener);
         
         firstTextField.getDocument().addDocumentListener(docListener);
         middleTextField.getDocument().addDocumentListener(docListener);
@@ -94,6 +97,7 @@ public class PersonJFrame extends JFrame {
         maleButton.addActionListener(radioButtonListener);
         femaleButton.addActionListener(radioButtonListener);
         unknownButton.addActionListener(radioButtonListener);
+        
     }
     
     //factory method
@@ -156,7 +160,7 @@ public class PersonJFrame extends JFrame {
         processAllButton = new javax.swing.JButton();
         progressBar = new javax.swing.JProgressBar();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        statusTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -257,9 +261,9 @@ public class PersonJFrame extends JFrame {
 
         processAllButton.setText("Process All");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        statusTextArea.setColumns(20);
+        statusTextArea.setRows(5);
+        jScrollPane3.setViewportView(statusTextArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -340,7 +344,6 @@ public class PersonJFrame extends JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField lastTextField;
     private javax.swing.JRadioButton maleButton;
     private javax.swing.JTextField middleTextField;
@@ -348,6 +351,7 @@ public class PersonJFrame extends JFrame {
     private javax.swing.JTree personTree;
     private javax.swing.JButton processAllButton;
     private javax.swing.JProgressBar progressBar;
+    private javax.swing.JTextArea statusTextArea;
     private javax.swing.JTextField suffixTextField;
     private javax.swing.JRadioButton unknownButton;
     private javax.swing.JButton updateButton;
@@ -532,11 +536,61 @@ public class PersonJFrame extends JFrame {
                 int i = 0;
                 
                 for(Person p: processList){
-                    
+                    try{
+                        doProcess(p);
+                        logger.log(Level.FINE,"Processing person {0}",p);
+                        publish(p);
+                        setProgress(100 * (++i) / count );
+                        Thread.sleep(500);
+                    }
+                    catch(InterruptedException exc){
+                        logger.log(Level.WARNING,null,exc);
+                    }
                 }
                 
+                return processList;
+            }
+            
+            private void doProcess(Person p){
+                p.setFirstName(p.getFirstName().toUpperCase());
+                p.setMiddeName(p.getMiddeName().toUpperCase());
+                p.setLastName(p.getLastName().toUpperCase());
+                p.setSuffix(p.getSuffix().toUpperCase());
+            }
+            
+            @Override
+            protected void done(){
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done!",get());
+                    }
+                }
+                catch(InterruptedException | ExecutionException exc){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,exc);
+                }
+                
+                progressBar.setValue(0);
+                progressBar.setStringPainted(false);
+                statusTextArea.setText("");
+                processAllButton.setEnabled(true);
+            }
+            
+            @Override
+            protected void process(List<Person> chunks){
+                chunks.stream().forEach((p)-> {
+                    statusTextArea.append(p+"\n");
+                });
             }
         };
+        
+        
+        worker.addPropertyChangeListener((PropertyChangeEvent evt)->{
+            if("progress".equals(evt.getPropertyName())){
+                progressBar.setValue((Integer) evt.getNewValue());
+            }
+        });
+        
+        worker.execute();
     };
     
     
