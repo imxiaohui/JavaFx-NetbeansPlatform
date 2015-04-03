@@ -15,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -401,7 +403,39 @@ public class PersonJFrame extends JFrame {
     */
     private final ActionListener updateListener = (ActionEvent e) ->{
         updateModel();
-        ftm.updatePerson(thePerson);
+        final Person person = new Person(thePerson);
+        ftm.updatePerson(person);
+        SwingWorker<Person,Void> worker = new SwingWorker<Person, Void>(){
+
+            @Override
+            public Person doInBackground() throws Exception {
+                try{
+                    Thread.sleep(10000);
+                }
+                catch(InterruptedException e){
+                    logger.log(Level.WARNING,null,e);
+                }
+                
+                logger.log(Level.FINE,"calling ftm fro person {0}", person);
+                ftm.updatePerson(person);
+                return person;
+            }
+            
+            @Override
+            protected void done(){
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done!");
+                        JOptionPane.showMessageDialog(null, "Done!");
+                    }
+                }
+                catch(Exception e){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,e);
+                }
+            }
+        
+        };
+        worker.execute();
         updateButton.setEnabled(false);
     };
     
