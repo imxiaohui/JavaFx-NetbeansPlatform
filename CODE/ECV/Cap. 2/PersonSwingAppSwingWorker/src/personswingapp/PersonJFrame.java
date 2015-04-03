@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -152,7 +153,7 @@ public class PersonJFrame extends JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         notesTextArea = new javax.swing.JTextArea();
         updateButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        processAllButton = new javax.swing.JButton();
         progressBar = new javax.swing.JProgressBar();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -254,7 +255,7 @@ public class PersonJFrame extends JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("Process All");
+        processAllButton.setText("Process All");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -270,7 +271,7 @@ public class PersonJFrame extends JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jButton1)
+                            .addComponent(processAllButton)
                             .addGap(18, 18, 18)
                             .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -287,7 +288,7 @@ public class PersonJFrame extends JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(processAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -330,7 +331,6 @@ public class PersonJFrame extends JFrame {
     private javax.swing.JRadioButton femaleButton;
     private javax.swing.JTextField firstTextField;
     private javax.swing.ButtonGroup genderButtonGroup;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -346,6 +346,7 @@ public class PersonJFrame extends JFrame {
     private javax.swing.JTextField middleTextField;
     private javax.swing.JTextArea notesTextArea;
     private javax.swing.JTree personTree;
+    private javax.swing.JButton processAllButton;
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JTextField suffixTextField;
     private javax.swing.JRadioButton unknownButton;
@@ -511,6 +512,33 @@ public class PersonJFrame extends JFrame {
             updateButton.setEnabled(false);
         }
     };
+    
+    
+    
+    private final ActionListener processAllListener = (ActionEvent e)->{
+        final Collection<Person> processList = ftm.getAllPeople();
+        processAllButton.setEnabled(false);
+        progressBar.setValue(0);
+        progressBar.setStringPainted(true);
+        logger.log(Level.FINE,"Process All requested for {0}",processList);
+        
+        SwingWorker<Collection<Person>,Person> worker = new SwingWorker<Collection<Person>, Person>() {
+
+            final int count = processList.size();
+            
+            @Override
+            protected Collection<Person> doInBackground() throws Exception {
+                
+                int i = 0;
+                
+                for(Person p: processList){
+                    
+                }
+                
+            }
+        };
+    };
+    
     
     
     private DocumentListener docListener = new DocumentListener() {
