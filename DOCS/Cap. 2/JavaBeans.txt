@@ -1,0 +1,24 @@
+2.1 Java Beans and Properties.
+
+Qué es un java bean?
+
+Una clase que almacena o encapsula información o datos como campos de la clase.
+Se accede la información mediante métodos llamados setters y se lee la información
+mediante métodos llamados getters.
+
+Para ser un java bean la clase:
+1.- Debe tener un constructor sin argumentos
+2.- Todos sus atributos deben ser privados
+3.- Debe tener un acceso a sus propiedades por medio de 
+    getters y setters
+4.- Debe ser serializable
+
+Si se siguen todas estas convenciones, entonces la clase es un java bean. Su objetivo:
+
+Representar un objeto de negocio.
+
+Si los métodos de acceso a los campos privados siguen un estandar en los nombres, entonces a los 
+campos se les denomina "propiedades" del java bean.
+
+Es importante recordar que el concepto de java bean es solo un estandar, pero es importante
+ya que se utiliza mucho para desarrollar sobre el netbeans platform.
