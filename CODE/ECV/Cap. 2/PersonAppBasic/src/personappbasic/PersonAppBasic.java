@@ -8,7 +8,7 @@ import com.asgteach.familytree.model.Person.Gender;
  * 
  * Pag. 25
  * 
- * @author ernesto
+ * @author Ernesto Cantú
  */
 public class PersonAppBasic {
 

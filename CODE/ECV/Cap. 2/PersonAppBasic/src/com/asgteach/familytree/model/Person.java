@@ -24,7 +24,7 @@ import java.util.Objects;
  *	2.- Todos sus atributos o campos son privados
  *	3.- Se accede a sus atributos por medio de getters y setters
  * 	4.- Tiene un constructor vacio.
- * @author ernesto
+ * @author Ernesto Cantú
  */
 public class Person implements Serializable{
 
@@ -52,6 +52,7 @@ public class Person implements Serializable{
 	Constructores.
     */
     
+    //Constructor vacio. Parte del estandar de java beans.
     public Person(){
 	this("","",Gender.UNKNOWN);
     }
@@ -77,6 +78,10 @@ public class Person implements Serializable{
 	this.id = person.getId();
     }
 
+    
+    /*
+        Métodos getters y setters. Parte del estandar de java beans.
+    */
     public long getId(){
 	return id;
     }  
@@ -129,6 +134,10 @@ public class Person implements Serializable{
 	this.notes = notes;
     }
 
+    /*
+        Sobreescritura de métodos.
+    */
+    
     @Override
     public int hashCode(){
 	int hash = 3;
