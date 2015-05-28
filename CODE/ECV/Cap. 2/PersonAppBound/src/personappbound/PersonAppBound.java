@@ -15,9 +15,11 @@ public class PersonAppBound {
         
         Person homer = new Person("Homer", "Simpson", Gender.MALE);
         Person marge = new Person("Marge", "Simpson", Gender.FEMALE);
+        Person bart = new Person("Bart", "Simpson", Gender.MALE);
         
+        //Implemento la clase PropertyChangeListener aquí
         final PropertyChangeListener pcl = new PropertyChangeListener(){
-
+            
             @Override
             public void propertyChange(PropertyChangeEvent evt) {
                 System.out.println("Property " + evt.getPropertyName() + " changed for " + evt.getSource());
@@ -25,8 +27,9 @@ public class PersonAppBound {
             
         };
         
-        homer.addPropertyChangeSupport(pcl);
-        marge.addPropertyChangeSupport(pcl);
+        homer.addPropertyChangeListener(pcl);
+        marge.addPropertyChangeListener(pcl);
+        bart.addPropertyChangeListener("firstName",pcl);
         
         homer.setMiddleName("Jay");
         marge.setMiddleName("Louise");
@@ -34,12 +37,15 @@ public class PersonAppBound {
         homer.setSuffix("Junior");
         marge.setLastName("Jones");
         
+        bart.setMiddleName("J.");
+        bart.setFirstName("Bartolome");
+        
         System.out.println(homer);
         System.out.println(marge);
         
         homer.setMiddleName("Chester");
         
-        homer.removePropertyChangeSupport(pcl);
-        marge.removePropertyChangeSupport(pcl);
+        homer.removePropertyChangeListener(pcl);
+        marge.removePropertyChangeListener(pcl);
     }    
 }

@@ -5,11 +5,6 @@ import java.awt.event.*;
 public class SimpleGui1B {
 
    JButton button;
-   ActionListener listener = new ActionListener(){
-	public void actionPerformed(ActionEvent event){
-	   button.setText("i've been clicked");
-        }
-   };
 
    public static void main(String[] args){
 	SimpleGui1B gui = new SimpleGui1B();
@@ -20,6 +15,14 @@ public class SimpleGui1B {
    public void go(){
       JFrame frame = new JFrame();
       button = new JButton("Click me");
+
+      ActionListener listener = new ActionListener(){
+
+         @Override
+         public void actionPerformed(ActionEvent event){
+            JOptionPane.showMessageDialog(null,"Button has been clicked");
+         }
+      };
 
       button.addActionListener(listener);
 
