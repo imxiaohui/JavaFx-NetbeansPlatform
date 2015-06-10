@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * FamilyTreeManager.
@@ -24,7 +20,7 @@ public class FamilyTreeManager {
     
     private final Map<Long,Person> personMap = new HashMap<>();
     private PropertyChangeSupport propertyChangeSupport = null;
-    private final Logger logger = Logger.getLogger(FamilyTreeManager.class.getName());
+    
     //PropertyChange Strings
     public static final String PROP_PERSON_DESTROYED = "removePerson";
     public static final String PROP_PERSON_ADDED = "addPerson";
@@ -32,12 +28,7 @@ public class FamilyTreeManager {
     
     private static FamilyTreeManager instance = null;
     
-    protected FamilyTreeManager(){
-        logger.setLevel(Level.FINE);
-        Handler handler = new ConsoleHandler();
-        handler.setLevel(Level.FINE);
-        logger.addHandler(handler);
-    }
+    protected FamilyTreeManager(){}
     
     public static FamilyTreeManager getInstance(){
     
@@ -51,19 +42,16 @@ public class FamilyTreeManager {
     //Agrego y elmimino listeners!!!
     public void addPropertyChangeListener(PropertyChangeListener listener){
 	this.propertyChangeSupport.addPropertyChangeListener(listener);
-        logger.log(Level.FINE, "Listener added");
     }
     
     public void removePropertyChangeListener(PropertyChangeListener listener){
 	this.propertyChangeSupport.removePropertyChangeListener(listener);
-        logger.log(Level.FINE, "Listener removed");
     }
     
     public void addPerson(Person p){
     
         Person person = new Person(p);
         personMap.put(person.getId(),person);
-        logger.log(Level.FINE, "Person added");
         this.propertyChangeSupport.firePropertyChange(PROP_PERSON_ADDED, null, person);
     }
     
@@ -71,7 +59,6 @@ public class FamilyTreeManager {
     
         Person person = new Person(p);
         personMap.put(person.getId(),person);
-        logger.log(Level.FINE, "Person updated");
         this.propertyChangeSupport.firePropertyChange(PROP_PERSON_UPDATED, null, person);
     }
     
@@ -80,7 +67,6 @@ public class FamilyTreeManager {
         Person person = personMap.remove(p.getId());
         
         if(person != null){
-            logger.log(Level.FINE, "Person deleted");
             this.propertyChangeSupport.firePropertyChange(PROP_PERSON_DESTROYED, null, person);
         }
     }
@@ -94,7 +80,6 @@ public class FamilyTreeManager {
 //    }
     
     public List<Person> getAllPeople(){
-        logger.log(Level.FINE,"Getting all people");
         List<Person> copyList = new ArrayList<>();
         personMap.values().forEach((Person p) -> {
             copyList.add(p);
