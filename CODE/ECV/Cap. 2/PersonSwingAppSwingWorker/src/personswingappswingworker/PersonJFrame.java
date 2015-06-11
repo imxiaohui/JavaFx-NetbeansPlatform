@@ -427,7 +427,7 @@ public class PersonJFrame extends javax.swing.JFrame {
     private final ActionListener updateListener = (ActionEvent evt)->{
         updateModel();
         try{
-           Thread.sleep(1000);
+           Thread.sleep(100000);
         }catch(InterruptedException exc){
         
         }
