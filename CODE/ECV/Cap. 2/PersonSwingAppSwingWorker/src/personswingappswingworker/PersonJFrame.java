@@ -1,4 +1,4 @@
-package personswingappmultithread;
+package personswingappswingworker;
 
 import com.asgteach.familytree.model.FamilyTreeManager;
 import com.asgteach.familytree.model.Person;
@@ -323,6 +323,7 @@ public class PersonJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PersonJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
         
         /* Create and display the form */
         SwingUtilities.invokeLater(()->
@@ -425,6 +426,12 @@ public class PersonJFrame extends javax.swing.JFrame {
     //Despues, actualiza el familyTreeManager
     private final ActionListener updateListener = (ActionEvent evt)->{
         updateModel();
+        try{
+           Thread.sleep(1000);
+        }catch(InterruptedException exc){
+        
+        }
+        
         ftm.updatePerson(thePerson);
     };
     
