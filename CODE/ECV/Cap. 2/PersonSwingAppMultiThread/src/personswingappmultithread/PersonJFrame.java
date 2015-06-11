@@ -14,6 +14,8 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -23,7 +25,7 @@ import javax.swing.tree.TreeSelectionModel;
 /**
  * PersonSwingApp. 
  * 
- * Seccion 2.3 libro.
+ * Seccion 2.5 libro.
  * 
  * @author ernesto
  */
@@ -35,6 +37,7 @@ public class PersonJFrame extends javax.swing.JFrame {
     private final FamilyTreeManager ftm = FamilyTreeManager.getInstance();
     private Person thePerson = null;
     private static final Logger logger = Logger.getLogger(PersonJFrame.class.getName());
+    private boolean changeOk = false;
    
     
     /**
@@ -70,6 +73,14 @@ public class PersonJFrame extends javax.swing.JFrame {
         ftm.addPropertyChangeListener(familyTreeListener);
         personTree.addTreeSelectionListener(treeSelectionListener);
         updateButton.addActionListener(updateListener);
+        firstTextField.getDocument().addDocumentListener(docListener);
+        middleTextField.getDocument().addDocumentListener(docListener);
+        lastTextField.getDocument().addDocumentListener(docListener);
+        suffixTextField.getDocument().addDocumentListener(docListener);
+        notesTextArea.getDocument().addDocumentListener(docListener);
+        maleButton.addActionListener(radioButtonListener);
+        femaleButton.addActionListener(radioButtonListener);
+        unknownButton.addActionListener(radioButtonListener);
         logger.log(Level.FINE, "Listeners created");
     }
     
@@ -287,6 +298,8 @@ public class PersonJFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        updateButton.setEnabled(false);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -309,7 +322,6 @@ public class PersonJFrame extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PersonJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
         
         /* Create and display the form */
@@ -349,7 +361,8 @@ public class PersonJFrame extends javax.swing.JFrame {
     //del objeto thePerson al form. Cuando selecciono un objeto en el Tree, se ejecuta
     //este método para actualizar la vista.
     private void updateForm(){
-    
+        changeOk = false;
+        updateButton.setEnabled(false);
         firstTextField.setText(thePerson.getFirstName());
         middleTextField.setText(thePerson.getMiddleName());
         lastTextField.setText(thePerson.getLastName());
@@ -364,12 +377,34 @@ public class PersonJFrame extends javax.swing.JFrame {
             unknownButton.setSelected(true);
         }
         notesTextArea.setText(thePerson.getNotes());
-        
+        changeOk = true;
+    }
+    
+    private void modify(){
+        updateButton.setEnabled(true);
+    }
+    
+    private void clearForm(){
+        updateButton.setEnabled(false);
+        changeOk=false;
+        firstTextField.setText("");
+        middleTextField.setText("");
+        lastTextField.setText("");
+        suffixTextField.setText(thePerson.getSuffix());
+        maleButton.setSelected(false);
+        femaleButton.setSelected(false);
+        unknownButton.setSelected(false);
+        genderButtonGroup.clearSelection();
+        notesTextArea.setText("");
     }
     
     //Del form al objeto thePerson- Cuando se da click al boton update, se alimenta
     // el objeto thePerson, para despues mandarse actualizar al FamilyTreeManager.
     private void updateModel(){
+        if(!changeOk){
+            return;
+        }
+        updateButton.setEnabled(false);
         thePerson.setFirstName(firstTextField.getText());
         thePerson.setMiddleName(middleTextField.getText());
         thePerson.setLastName(lastTextField.getText());
@@ -417,6 +452,7 @@ public class PersonJFrame extends javax.swing.JFrame {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) personTree.getLastSelectedPathComponent();
         if(node == null){ //Si el nodo es null
             updateButton.setEnabled(false); //desactivo los botones
+            clearForm();
             return;
         }
         if(node.isLeaf()){ //si el nodo es hoja
@@ -426,8 +462,35 @@ public class PersonJFrame extends javax.swing.JFrame {
         }
         else{ //no es hoja (El nodo Person), desactivo botones.
             updateButton.setEnabled(false);
+            clearForm();
         }
         
+    };
+    
+    private DocumentListener docListener = new DocumentListener() {
+
+        @Override
+        public void insertUpdate(DocumentEvent e) {
+            if(changeOk)
+                modify();
+        }
+
+        @Override
+        public void removeUpdate(DocumentEvent e) {
+            if(changeOk)
+                modify();
+        }
+
+        @Override
+        public void changedUpdate(DocumentEvent e) {
+            if(changeOk)
+                modify();
+        }
+    };
+    
+    private final ActionListener radioButtonListener = (ActionEvent evt)->{
+        if(changeOk)
+            modify();
     };
     
 }
