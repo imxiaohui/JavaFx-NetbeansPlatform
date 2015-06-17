@@ -9,12 +9,14 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -520,7 +522,37 @@ public class PersonJFrame extends javax.swing.JFrame {
     //Despues, actualiza el familyTreeManager
     private final ActionListener updateListener = (ActionEvent evt)->{
         updateModel();
-        ftm.updatePerson(thePerson);
+        final Person person = new Person(thePerson);
+        
+        SwingWorker<Person,Void> worker = new SwingWorker<Person,Void>(){
+
+            @Override
+            protected Person doInBackground() throws Exception {
+                try{
+                    Thread.sleep(10000);
+                }catch(InterruptedException ex){
+                    logger.log(Level.WARNING,null,ex);
+                }
+                
+                logger.log(Level.FINE,"calling ftm for person {0}",person);
+                ftm.updatePerson(person);
+                return person;
+            }
+            
+            @Override
+            protected void done(){
+            
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done saving person {0}",get());
+                    }
+                }catch(InterruptedException | ExecutionException ex){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,ex);
+                }
+            }
+        };
+        
+        worker.execute();
     };
     
     //Listener del boton Delete.
@@ -529,8 +561,38 @@ public class PersonJFrame extends javax.swing.JFrame {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) personTree.getLastSelectedPathComponent();
         //Al nodo lo convierto en persona
         Person person = (Person) node.getUserObject();
-        //Lo mando eliminar del ftm
-        ftm.deletePerson(person);
+        
+        
+        SwingWorker<Person,Void> worker = new SwingWorker<Person,Void>(){
+
+            @Override
+            protected Person doInBackground() throws Exception {
+                try{
+                    Thread.sleep(10000);
+                }catch(InterruptedException ex){
+                    logger.log(Level.WARNING,null,ex);
+                }
+                
+                logger.log(Level.FINE,"calling ftm for person {0}",person);
+                //Lo mando eliminar del ftm
+                ftm.deletePerson(person);
+                return person;
+            }
+            
+            @Override
+            protected void done(){
+            
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done deleting person {0}",get());
+                    }
+                }catch(InterruptedException | ExecutionException ex){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,ex);
+                }
+            }
+        };
+        
+        worker.execute();
     };
     
     //listener del boton create.
@@ -569,8 +631,38 @@ public class PersonJFrame extends javax.swing.JFrame {
     };
     
     public void createPerson(Person person,AddForm createForm){
-        ftm.addPerson(person);
+        
         createForm.dispose();
+        SwingWorker<Person,Void> worker = new SwingWorker<Person,Void>(){
+
+            @Override
+            protected Person doInBackground() throws Exception {
+                try{
+                    Thread.sleep(10000);
+                }catch(InterruptedException ex){
+                    logger.log(Level.WARNING,null,ex);
+                }
+                
+                logger.log(Level.FINE,"calling ftm for person {0}",person);
+                ftm.addPerson(person);
+        
+                return person;
+            }
+            
+            @Override
+            protected void done(){
+            
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done adding person {0}",get());
+                    }
+                }catch(InterruptedException | ExecutionException ex){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,ex);
+                }
+            }
+        };
+        
+        worker.execute();
     }   
 
 

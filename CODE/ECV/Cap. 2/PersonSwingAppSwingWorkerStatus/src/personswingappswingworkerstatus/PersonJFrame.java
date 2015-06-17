@@ -1,4 +1,4 @@
-package personswingappmultithread;
+package personswingappswingworkerstatus;
 
 import com.asgteach.familytree.model.FamilyTreeManager;
 import com.asgteach.familytree.model.Person;
@@ -8,12 +8,16 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -23,8 +27,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
 /**
- * PersonSwingApp. Este ejemplo es el mismo que el de EnhancedUI, pero adecuado
- * para trabajar en multi-thread.
+ * PersonSwingApp. 
  * 
  * Seccion 2.5 libro.
  * 
@@ -82,6 +85,7 @@ public class PersonJFrame extends javax.swing.JFrame {
         maleButton.addActionListener(radioButtonListener);
         femaleButton.addActionListener(radioButtonListener);
         unknownButton.addActionListener(radioButtonListener);
+        processAllButton.addActionListener(processAllLisener);
         logger.log(Level.FINE, "Listeners created");
     }
     
@@ -143,10 +147,16 @@ public class PersonJFrame extends javax.swing.JFrame {
         maleButton = new javax.swing.JRadioButton();
         femaleButton = new javax.swing.JRadioButton();
         unknownButton = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         notesTextArea = new javax.swing.JTextArea();
         updateButton = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        processAllButton = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        statusTextArea = new javax.swing.JTextArea();
+        progressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,7 +194,7 @@ public class PersonJFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
+            .addGap(0, 419, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -257,24 +267,86 @@ public class PersonJFrame extends javax.swing.JFrame {
 
         updateButton.setText("Update");
 
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(updateButton))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(updateButton)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        updateButton.setEnabled(false);
+
+        processAllButton.setText("Process All");
+
+        statusTextArea.setColumns(20);
+        statusTextArea.setRows(5);
+        jScrollPane3.setViewportView(statusTextArea);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(processAllButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(processAllButton)
+                    .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(updateButton)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -285,21 +357,19 @@ public class PersonJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(updateButton)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 19, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-
-        updateButton.setEnabled(false);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -324,6 +394,9 @@ public class PersonJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(PersonJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         
         /* Create and display the form */
         SwingUtilities.invokeLater(()->
@@ -341,13 +414,19 @@ public class PersonJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField lastTextField;
     private javax.swing.JRadioButton maleButton;
     private javax.swing.JTextField middleTextField;
     private javax.swing.JTextArea notesTextArea;
     private javax.swing.JTree personTree;
+    private javax.swing.JButton processAllButton;
+    private javax.swing.JProgressBar progressBar;
+    private javax.swing.JTextArea statusTextArea;
     private javax.swing.JTextField suffixTextField;
     private javax.swing.JRadioButton unknownButton;
     private javax.swing.JButton updateButton;
@@ -426,8 +505,109 @@ public class PersonJFrame extends javax.swing.JFrame {
     //Despues, actualiza el familyTreeManager
     private final ActionListener updateListener = (ActionEvent evt)->{
         updateModel();
-        ftm.updatePerson(thePerson);
+        final Person person = new Person(thePerson); //Guardo una copia del objeto que modificaré
+        SwingWorker<Person,Void> worker = new SwingWorker<Person,Void>(){
+
+            @Override
+            protected Person doInBackground() throws Exception {
+                //simulate long process
+                try{
+                    Thread.sleep(5000);
+                }catch(InterruptedException ex){
+                    logger.log(Level.WARNING,null,ex);
+                }
+                
+                //save in background thread
+                logger.log(Level.FINE,"calling frm for person {0}",person);
+                ftm.updatePerson(person);
+                return person;
+            }
+            
+            @Override
+            protected void done(){
+            
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done saving person {0}",get());
+                    }
+                }catch(InterruptedException | ExecutionException ex){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,ex);
+                }
+            }
+        };
+        worker.execute();
     };
+    
+    
+    private final ActionListener processAllLisener = (ActionEvent evt)->{
+    
+        final Collection<Person> processList = ftm.getAllPeople();
+        processAllButton.setEnabled(false);
+        progressBar.setValue(0);
+        progressBar.setStringPainted(true);
+        logger.log(Level.FINE,"Process All requested for {0}", processList);
+        SwingWorker<Collection<Person>,Person> worker = new SwingWorker<Collection<Person>, Person>() {
+            
+            final int count = processList.size();
+            
+            @Override
+            protected Collection<Person> doInBackground() {
+                int i = 0;
+                for(Person person : processList){
+                    try{
+                        doProcess(person);
+                        logger.log(Level.FINE,"Processing person {0}", person);
+                        publish(person);
+                        setProgress(100*(++i) / count);
+                        Thread.sleep(500);
+                    }catch(InterruptedException e){
+                        logger.log(Level.WARNING,null,e);
+                    }
+                }
+                return processList;
+            }
+            
+            private void doProcess(Person p){
+                p.setFirstName(p.getFirstName().toUpperCase());
+                p.setMiddleName(p.getMiddleName().toUpperCase());
+                p.setLastName(p.getLastName().toUpperCase());
+                p.setSuffix(p.getSuffix().toUpperCase());
+            }
+            
+            @Override
+            protected void done(){
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done! processing all {0}",get());
+                    }
+                }catch(InterruptedException | ExecutionException e){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,e);
+                }
+                
+                progressBar.setValue(0);
+                progressBar.setStringPainted(false);
+                statusTextArea.setText("");
+                processAllButton.setEnabled(true);
+            }
+            
+            @Override
+            protected void process(List<Person> chunks){
+                chunks.stream().forEach((p)->{
+                    statusTextArea.append(p + "\n");
+                });
+            }
+        };
+        
+        worker.addPropertyChangeListener((PropertyChangeEvent e)->{
+            if("progress".equals(e.getPropertyName())){
+                progressBar.setValue((Integer) e.getNewValue());
+            }
+        });
+        
+        
+        worker.execute();
+    };
+    
     
     //Listeners
     private final PropertyChangeListener familyTreeListener = (PropertyChangeEvent evt) -> {

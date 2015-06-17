@@ -8,12 +8,14 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -426,13 +428,37 @@ public class PersonJFrame extends javax.swing.JFrame {
     //Despues, actualiza el familyTreeManager
     private final ActionListener updateListener = (ActionEvent evt)->{
         updateModel();
-        try{
-           Thread.sleep(100000);
-        }catch(InterruptedException exc){
-        
-        }
-        
-        ftm.updatePerson(thePerson);
+        final Person person = new Person(thePerson); //Guardo una copia del objeto que modificaré
+        SwingWorker<Person,Void> worker = new SwingWorker<Person,Void>(){
+
+            @Override
+            protected Person doInBackground() throws Exception {
+                //simulate long process
+                try{
+                    Thread.sleep(5000);
+                }catch(InterruptedException ex){
+                    logger.log(Level.WARNING,null,ex);
+                }
+                
+                //save in background thread
+                logger.log(Level.FINE,"calling frm for person {0}",person);
+                ftm.updatePerson(person);
+                return person;
+            }
+            
+            @Override
+            protected void done(){
+            
+                try{
+                    if(!isCancelled()){
+                        logger.log(Level.FINE,"Done saving person {0}",get());
+                    }
+                }catch(InterruptedException | ExecutionException ex){
+                    Logger.getLogger(PersonJFrame.class.getName()).log(Level.SEVERE,null,ex);
+                }
+            }
+        };
+        worker.execute();
     };
     
     //Listeners
