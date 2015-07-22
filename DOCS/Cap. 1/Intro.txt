@@ -1,0 +1,45 @@
+Netbeans Platform es una plataforma para el desarrollo de aplicaciones de escritorio 
+en Java.
+
+
+Java Swing y JavaFx son dos librerías bien establecidas que brindan muchos componentes para el desarrollo de aplicaciones
+de escritorio. Aun así carecen de un framework. Esto es, un ambiente de desarrollo que facilite tareas laboriosas, como lo 
+son un manejador de ventanas o un enfoque modular.
+
+Es importante saber que la Plataforma de netbeans utiliza principios fundamentales de arquitectura para desarrollo De Java.
+Algunos de estos principios fundamentales son:
+
+ - Java Beans y Bean Properties.
+ - Property Change Events y Listeners.
+ - Swing
+ - Loggin
+ - Background threads.
+
+JavaFx es una nueva librería para creacion de GUI. JavaFX se basa en el uso de escenas.
+
+
+NETBEANS PLATFORM
+
+Se compone de:
+
+
+-Module System Api:
+ La parte más importante de Netbeans Platform. Permite dividir una aplicacion en módulos, con el objetivo poder agregar o eliminar 
+ caracteristicas a las aplicaciones. El Runtime Container permite controlar todos los módulos (Creados por Netbeans o por el 
+ desarrollador).
+
+Un módulo es un archivo jar, el cual cuenta con un XML el cual da indicaciones al Runtime Containter (Contenedor de módulos) de como 
+usarlo.
+
+-Lookup Api: 
+El api de comunicacion entre módulos. El modulo "cliente" solicita por medio de una interfaz o clase abstracta sus necesidades. Existe 
+un proovedor de servicios el cual implementa esa clase.
+
+El lookup es un hashmap en donde la llave es la interfaz que implementa y el valor es la implementacion.
+
+
+-Window System Api:
+Permite crear y manejar ventanas para las aplicaciones de escritorio.
+
+-File System Api:
+Manejo de propiedades por medio de archivos. Consumo y escritura de archivos ademas

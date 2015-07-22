@@ -2,9 +2,9 @@
 
 Qué es un java bean?
 
-Una clase que almacena o encapsula información o datos como campos de la clase.
-Se accede la información mediante métodos llamados setters y se lee la información
-mediante métodos llamados getters.
+Una clase que almacena o encapsula información o datos como campos de la clase. Se accede la información mediante métodos llamados 
+setters y se lee la información mediante métodos llamados getters. Cuando estos nombres siguen el estandar de nombres, se le llama 
+propiedades a los atributos.
 
 Para ser un java bean la clase:
 1.- Debe tener un constructor sin argumentos
@@ -22,3 +22,21 @@ campos se les denomina "propiedades" del java bean.
 
 Es importante recordar que el concepto de java bean es solo un estandar, pero es importante
 ya que se utiliza mucho para desarrollar sobre el netbeans platform.
+
+
+¿Por qué es tan importante que las propiedades sean privadas, y se usen getters y setters?
+Este enfoque nos permite tener mayor control sobre la información que es alimentada a nuestros atributos.
+
+Ejemplo, tenemos la clase Fecha, la cual tiene mes y día.
+
+El día 31 no siempre será correcto asignarlo al atributo día. Esto dependerá del mes. Al tener la propiedad
+	-private int dia;
+
+Se restringe que otra clase pueda hacer fecha.dia. Se forza a pasar por el método setter, el cual puede validar a qué
+mes se hace referencia, para determinar si el día es correcto.
+
+Sobreescritura de métodos de un Java Bean
+
+equals permite comparar a mi objeto con otro objeto. 
+hashCode permite generar un identificador único del objeto para cuando se usan hashes o tablas.
+toString es un método en el que se define la representación en cadena de caracteres del objeto.

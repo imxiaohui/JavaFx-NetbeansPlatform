@@ -2,6 +2,8 @@ package com.asgteach.familytree.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Java Bean de la clase Person.
@@ -21,14 +23,14 @@ import java.util.Objects;
  *
  *  Recordar: Una clase es un java bean si:
  *	1.- Es serializable.
- *	2.- Todos sus atributos o campos son privados
- *	3.- Se accede a sus atributos por medio de getters y setters
+ *	2.- Todos sus atributos o propiedades son privados
+ *	3.- Se accede a sus propiedades por medio de getters y setters
  * 	4.- Tiene un constructor vacio.
  * @author Ernesto Cantú
  */
 public class Person implements Serializable{
 
-    /* Propiedades de la clase.  */
+    /* Propiedades PRIVADAS de la clase.  */
     private final long id;
     private String firstName;
     private String middleName;
@@ -162,6 +164,9 @@ public class Person implements Serializable{
 
     @Override
     public String toString(){
+        
+        Logger.getAnonymousLogger().log(Level.INFO,"toString de la clase person invocado");
+        
 	StringBuilder sb = new StringBuilder();
         if(!firstName.isEmpty()){
 	   sb.append(firstName);
