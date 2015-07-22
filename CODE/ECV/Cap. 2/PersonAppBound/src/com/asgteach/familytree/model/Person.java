@@ -85,7 +85,10 @@ public class Person implements Serializable{
 
     /*
 	¿Cómo funciona el PropertyChangeSupport?
-        Este método me permite crear el propChangeSupport
+        Este método me permite crear el propChangeSupport.
+        Es importante recordar que el PropertyChangeSupport debe ser creado hasta
+        despues de que se creó completamente el objeto. Pueden ocacionarse
+        problemas si no se utiliza de esta forma.
      */
     private PropertyChangeSupport getPropertyChangeSupport(){
 	if(this.propertyChangeSupport == null){
@@ -94,8 +97,7 @@ public class Person implements Serializable{
 	return this.propertyChangeSupport;
     }
 
-    //Agrego y elmimino listeners!!!
-    //Sobrecarga de métodos
+    //Agrego listeners
     public void addPropertyChangeListener(PropertyChangeListener listener){
 	getPropertyChangeSupport().addPropertyChangeListener(listener);
     }
@@ -104,6 +106,7 @@ public class Person implements Serializable{
 	getPropertyChangeSupport().addPropertyChangeListener(property,listener);
     }
 
+    //Elimino Listeners
     public void removePropertyChangeListener(PropertyChangeListener listener){
 	getPropertyChangeSupport().removePropertyChangeListener(listener);
     }

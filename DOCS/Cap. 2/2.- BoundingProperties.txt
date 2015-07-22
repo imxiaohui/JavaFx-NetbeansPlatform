@@ -1,0 +1,46 @@
+Publish-Subscribe Pattern:
+
+Permite informar a los interesados del cambio en una propiedad. Existen dos enfoques para informar cambios:
+
+1.- Informar cambios en propiedades de un objeto.
+2.- Informar cambios en los estados de un objeto.
+
+En este principio se basa la Clase PropertyChangeSuport.
+
+Aquella clase que desea poder ser capaz de notificar cambios en algun atributo o campo, deberá tener un objeto de la clase "PropertyChangeSupport".
+
+Este objeto (Lo llamaremos PCSupported por PropertyChange Supported) debe ser creado despues de que el Java Bean se crea completamente. 
+
+El objeto PropertyChangeSupport tiene una Lista interna de objetos que Implementan la interfase "PropertyChangeListener" (Llamados listeners).  
+
+Cuando un cambio ocurre en el objeto PCSupported, entonces se invoca al método PropertyChange de  cada uno de los listeners.
+
+En el repositorio hay 2 ejercicios de PropertyChangeSupport ubicados en /CODE/ECV/Cap. 2/ llamados
+    -PersonAppBound
+    -PersonAppCoarse
+
+- En el primer ejemplo, se utiliza PCS para identificar cambios puntuales en un Java Bean de la clase Person.
+La clase Person declara textualmente su objeto propertyChangeSupport. 
+
+Proporciona un conjunto de etiquetas para nombrar a las propiedades y se proporciona tambien un método
+para crear un property change support object despues de que el constructor regresó el objeto creado Person.
+
+Ademas cuenta con métodos para agregar y eliminar Listeners de su lista de listeners de Cambios.
+
+Debido a que es solo un ejemplo, la clase interesada es la main. Hay dos enfoques para crear un Listener:
+
+    1.- En la clase que escucha implementar un objeto del tipo PropertyChangeListener por medio de una
+    annonymus class.
+    2.- Declarar explicitamente que la clase interesada implementa PropertyChangeListener e implementar
+    el método PropertyChange
+
+Los setters del bean Person son los que ejecutan el método firePropertyChange, donde se manda ejecutar
+el método propertyChange de todos los listeners
+
+
+
+- En el segundo ejemplo se enfoca a cambios en entidades y no en propiedades. 
+
+Se tiene una Clase (Que no es un JavaBean) que administra a un grupo de objetos Person por medio de un HashMap.
+Implementa el PropertyChangeSupport de la misma manera que la clase person, pero dispara cambios cuando se agregan, actualizan
+o eliminan objetos del HashMap.

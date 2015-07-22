@@ -83,7 +83,7 @@ public class FamilyTreeManager {
     public List<Person> getAllPeople(){
         List<Person> copyList = new ArrayList<>();
         personMap.values().forEach((Person p) -> {
-            copyList.add(p);
+                copyList.add(p);            
         });
         
         return copyList;

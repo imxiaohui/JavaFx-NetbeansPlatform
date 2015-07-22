@@ -9,10 +9,12 @@ package lambdaexpressions;
 public class LambdaExpressions {
 
     public static void main(String[] args) {
-        MyInterface myInterfaceImplementation = ()-> {
-            System.out.println("I'm doing the implementation here in main");
+        //Implementación anonima interna de la interfase MyInterface
+        //SE crea una Clase sin nombre dentro de main y se asigna a un objeto del tipo MyInterface
+        MyInterface myInterfaceImplementation = (String message)-> {
+            System.out.println(message);
         };      
         
-        myInterfaceImplementation.doJob();
+        myInterfaceImplementation.doJob("I'm doing the implementation here in main");
     }
 }

@@ -1,9 +1,9 @@
 2.1 Java Beans and Properties.
 
-Qu√© es un java bean?
+QuÈ es un java bean?
 
-Una clase que almacena o encapsula informaci√≥n o datos como campos de la clase. Se accede la informaci√≥n mediante m√©todos llamados 
-setters y se lee la informaci√≥n mediante m√©todos llamados getters. Cuando estos nombres siguen el estandar de nombres, se le llama 
+Una clase que almacena o encapsula informaciÛn o datos de negocio como campos de la clase. Se accede la informaciÛn mediante mÈtodos llamados 
+setters y se lee la informaciÛn mediante mÈtodos llamados getters. Cuando estos nombres siguen el estandar de nombres, se le llama 
 propiedades a los atributos.
 
 Para ser un java bean la clase:
@@ -17,19 +17,19 @@ Si se siguen todas estas convenciones, entonces la clase es un java bean. Su obj
 
 Representar un objeto de negocio.
 
-Si los m√©todos de acceso a los campos privados siguen un estandar en los nombres, entonces a los 
+Si los mÈtodos de acceso a los campos privados siguen un estandar en los nombres, entonces a los 
 campos se les denomina "propiedades" del java bean.
 
 Es importante recordar que el concepto de java bean es solo un estandar, pero es importante
 ya que se utiliza mucho para desarrollar sobre el netbeans platform.
 
 
-¬øPor qu√© es tan importante que las propiedades sean privadas, y se usen getters y setters?
+øPor quÈ es tan importante que las propiedades sean privadas, y se usen getters y setters?
 Este enfoque nos permite tener mayor control sobre la informaci√≥n que es alimentada a nuestros atributos.
 
 Ejemplo, tenemos la clase Fecha, la cual tiene mes y d√≠a.
 
-El d√≠a 31 no siempre ser√° correcto asignarlo al atributo d√≠a. Esto depender√° del mes. Al tener la propiedad
+El dÌa 31 no siempre ser· correcto asignarlo al atributo d√≠a. Esto depender√° del mes. Al tener la propiedad
 	-private int dia;
 
 Se restringe que otra clase pueda hacer fecha.dia. Se forza a pasar por el m√©todo setter, el cual puede validar a qu√©

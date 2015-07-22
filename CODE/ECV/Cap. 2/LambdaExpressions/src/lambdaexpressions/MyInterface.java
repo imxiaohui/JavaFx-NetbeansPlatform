@@ -6,5 +6,5 @@ package lambdaexpressions;
  */
 public interface MyInterface {
     
-    public void doJob();    
+    public void doJob(String message);    
 }

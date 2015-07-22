@@ -1,19 +1,19 @@
-Normalmente se utilizan interfaces para definir el comportamiento de clases las cuales la implementan.
+Normalmente se utilizan interfaces para definir el comportamiento esperado de clases las cuales la implementan.
 
 Existen varias formas de implementar estas clases:
 
 1.- Crear una clase completamente definida en un archivo .java la cual tenga la palabra
 implements y el nombre de la interface. Esta clase se ve obligada a implementar todos los
-m√©todos definidos en la interface.
+mÈtodos definidos en la interface.
 
-2.- La interface se puede definir de manera autom√°tica al tratar de instanciarla.
+2.- La interface se puede definir de manera autom·tica al tratar de instanciarla.
 Por ejemplo, la clase Comparator:
 
    Comparator c = new Comparator(){
 	//implementacion
    };
 
-Aqu√≠ se realiza la implementacion y la instancia de la clase en el mismo paso.
+AquÌ se realiza la implementacion y la instancia de la clase en el mismo paso.
 
 3.- Expresiones lambda. A las interfaces con un solo m√©todo abstracto les decimos
 Interfaces funcionales. Cuando se trata de implementar interfaces funcionales, se puede hacer

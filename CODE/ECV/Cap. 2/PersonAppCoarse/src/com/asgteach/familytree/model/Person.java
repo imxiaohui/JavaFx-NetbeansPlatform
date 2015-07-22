@@ -1,9 +1,7 @@
 package com.asgteach.familytree.model;
 
-import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.util.Objects;
-import java.beans.PropertyChangeSupport;
 
 /**
     Java Bean Person con property change support.
@@ -24,22 +22,6 @@ public class Person implements Serializable{
     private String suffix;
     private Person.Gender gender;
     private String notes;
-
-    /*
-	Declaro un atributo de la clase PropertyChangeSupport. Este
-	Me permitirá ser fuente de eventos de cambio de propiedades.
-     */
-    private PropertyChangeSupport propertyChangeSupport = null;
-
-    /*
-	Estas etiquetas me permitirán saber a que propiedad me refiero.
-     */
-    public static final String PROP_FIRST = "firstName";
-    public static final String PROP_MIDDLE = "middleName";
-    public static final String PROP_LAST = "lastName";
-    public static final String PROP_SUFFIX = "suffix";
-    public static final String PROP_GENDER = "gender";
-    public static final String PROP_NOTES = "notes";
 
 
     /* Constante de la clase que permite llevar la cuenta de cuantos objetos Person se han creado.  */
@@ -82,38 +64,6 @@ public class Person implements Serializable{
 	this.id = person.getId();
     }
 
-
-    /*
-	¿Cómo funciona el PropertyChangeSupport?
-        Este método me permite crear el propChangeSupport
-     */
-    private PropertyChangeSupport getPropertyChangeSupport(){
-	if(this.propertyChangeSupport == null){
-	   this.propertyChangeSupport = new PropertyChangeSupport(this);
-    	}
-	return this.propertyChangeSupport;
-    }
-
-    //Agrego y elmimino listeners!!!
-    //Sobrecarga de métodos
-    public void addPropertyChangeListener(PropertyChangeListener listener){
-	getPropertyChangeSupport().addPropertyChangeListener(listener);
-    }
-    
-    public void addPropertyChangeListener(String property, PropertyChangeListener listener){
-	getPropertyChangeSupport().addPropertyChangeListener(property,listener);
-    }
-
-    public void removePropertyChangeListener(PropertyChangeListener listener){
-	getPropertyChangeSupport().removePropertyChangeListener(listener);
-    }
-    
-    public void removePropertyChangeListener(String property, PropertyChangeListener listener){
-	getPropertyChangeSupport().removePropertyChangeListener(property,listener);
-    }
-    
-    
-
     /* Getters and setters */
     public long getId(){
 	return id;
@@ -124,9 +74,7 @@ public class Person implements Serializable{
     }    
 
     public void setFirstName(String firstName){
-	String oldFirst = this.firstName;
         this.firstName = firstName;
-        getPropertyChangeSupport().firePropertyChange(PROP_FIRST,oldFirst,firstName);
     }
 
    public String getMiddleName(){
@@ -134,9 +82,7 @@ public class Person implements Serializable{
     }
 
     public void setMiddleName(String middleName){
-        String oldMiddle = this.middleName;
         this.middleName = middleName;
-        getPropertyChangeSupport().firePropertyChange(PROP_MIDDLE,oldMiddle,middleName);
     }
 
     public String getLastName(){
@@ -144,9 +90,7 @@ public class Person implements Serializable{
     }
 
     public void setLastName(String lastName){
-        String oldLast = this.lastName;
         this.lastName = lastName;
-        getPropertyChangeSupport().firePropertyChange(PROP_LAST,oldLast,lastName);
     }
 
     public String getSuffix(){
@@ -154,9 +98,7 @@ public class Person implements Serializable{
     }
 
     public void setSuffix(String suffix){
-        String oldSuffix = this.suffix;
         this.suffix = suffix;
-        getPropertyChangeSupport().firePropertyChange(PROP_SUFFIX,oldSuffix,suffix);
     }
 
     public Person.Gender getGender(){
@@ -164,9 +106,7 @@ public class Person implements Serializable{
     }
 
     public void setGender(Person.Gender gender){
-        Gender oldGender = this.gender;
 	this.gender = gender;
-        getPropertyChangeSupport().firePropertyChange(PROP_GENDER, oldGender, gender);
     }
 
     public String getNotes(){
@@ -174,9 +114,7 @@ public class Person implements Serializable{
     }
 
     public void setNotes(String notes){
-        String oldNotes = this.notes;
 	this.notes = notes;
-        getPropertyChangeSupport().firePropertyChange(PROP_NOTES,oldNotes,notes);
     }
 
     @Override

@@ -4,8 +4,6 @@ import com.asgteach.familytree.model.Person;
 import com.asgteach.familytree.model.Person.Gender;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * PersonAppBound para prueba de Property Change Support
@@ -21,7 +19,6 @@ public class PersonAppBound {
         
         //Implemento la clase PropertyChangeListener aquí
         final PropertyChangeListener pcl = (PropertyChangeEvent evt) ->{
-                Logger.getLogger(PersonAppBound.class.getName()).log(Level.INFO,"Ejecutando propertyChange");
                 System.out.println("Property " + evt.getPropertyName() + " changed for " + evt.getSource());            
             
         };
@@ -50,6 +47,7 @@ public class PersonAppBound {
         homer.setSuffix("Junior");
         marge.setLastName("Jones");
         
+        //Cambio no detectado
         bart.setMiddleName("J.");
         bart.setFirstName("Bartolome");
         
