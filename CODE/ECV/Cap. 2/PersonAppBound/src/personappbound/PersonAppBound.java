@@ -4,6 +4,8 @@ import com.asgteach.familytree.model.Person;
 import com.asgteach.familytree.model.Person.Gender;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * PersonAppBound para prueba de Property Change Support
@@ -18,15 +20,26 @@ public class PersonAppBound {
         Person bart = new Person("Bart", "Simpson", Gender.MALE);
         
         //Implemento la clase PropertyChangeListener aquí
-        final PropertyChangeListener pcl = new PropertyChangeListener(){
-            
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                System.out.println("Property " + evt.getPropertyName() + " changed for " + evt.getSource());
-            }
+        final PropertyChangeListener pcl = (PropertyChangeEvent evt) ->{
+                Logger.getLogger(PersonAppBound.class.getName()).log(Level.INFO,"Ejecutando propertyChange");
+                System.out.println("Property " + evt.getPropertyName() + " changed for " + evt.getSource());            
             
         };
         
+//        final PropertyChangeListener pcl = new PropertyChangeListener(){
+//            
+//            @Override
+//            public void propertyChange(PropertyChangeEvent evt) {
+//                System.out.println("Property " + evt.getPropertyName() + " changed for " + evt.getSource());
+//            }
+//            
+//        };
+        
+        
+        // Aquí le estoy solicitando a los objetos homer, marge y bart que le
+        // den aviso a la clase PersonAppBound que ocurrió un property change event.
+        // Los objetos homer, marge y bart ejecutarán el método propertyChange
+        // del objeto plc de la clase PersonAppBound.
         homer.addPropertyChangeListener(pcl);
         marge.addPropertyChangeListener(pcl);
         bart.addPropertyChangeListener("firstName",pcl);
