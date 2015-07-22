@@ -1,0 +1,11 @@
+¿Qué es swing?
+
+Swing es una librería que permite crear aplicaciones de escritorio. Se basa en el
+concepto de JavaBeans para su uso.
+
+Es importante mencionar que swing es una utilería single thread, esto es, solo puede
+ejecutar una tarea a la vez.
+
+Netbeans proporciona el form Designer para crear la vista gráfica del Form (Pantalla).
+Netbeans a su vez crea todo el código necesario para que el form quede como se diseñó.
+

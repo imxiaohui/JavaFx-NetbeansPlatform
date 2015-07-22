@@ -37,6 +37,19 @@ public class PersonJFrame extends javax.swing.JFrame {
     private static final Logger logger = Logger.getLogger(PersonJFrame.class.getName());
    
     
+    /*
+     * Método que arranca despues de llamar a main para obtener una instancia del frame.
+     * Es importante recordar que para cualquier Swing App el uso de métodos
+     * newInstance nos permite inicializar listener en forma thread-safe.
+     * Una vez que el constructor regresa, se llama al método configureLiseners
+    `* para que los listeners se creen en threadSafe.
+     */
+    public static PersonJFrame newInstance(){
+        PersonJFrame pjf = new PersonJFrame();
+        pjf.configureListeners();
+        return pjf;
+    }
+    
     /**
      * Creates new form PersonJFrame.
      * Constructor Privado. solo puede ser invocado por el método newInstance.
@@ -64,28 +77,6 @@ public class PersonJFrame extends javax.swing.JFrame {
                  TreeSelectionModel.SINGLE_TREE_SELECTION);
         createNodes(top);
     }
-        
-    //Asigna objetos listener a los respectivos generadores de eventos
-    private void configureListeners(){
-        ftm.addPropertyChangeListener(familyTreeListener);
-        personTree.addTreeSelectionListener(treeSelectionListener);
-        updateButton.addActionListener(updateListener);
-        logger.log(Level.FINE, "Listeners created");
-    }
-    
-    
-    /*
-     * Método que arranca despues de llamar a main para obtener una instancia del frame.
-     * Es importante recordar que para cualquier Swing App el uso de métodos
-     * newInstance nos permite inicializar listener en forma thread-safe.
-     * Una vez que el constructor regresa, se llama al método configureLiseners
-    `* para que los listeners se creen en threadSafe.
-     */
-    public static PersonJFrame newInstance(){
-        PersonJFrame pjf = new PersonJFrame();
-        pjf.configureListeners();
-        return pjf;
-    }
     
     //Método de inicialización. Simula la carga de info. No es necesario
     private void buildData(){
@@ -97,13 +88,6 @@ public class PersonJFrame extends javax.swing.JFrame {
         logger.log(Level.FINE,ftm.getAllPeople().toString());
     }
     
-    //Método que obtiene la Lista de personas del familyTreeManager y las agrega
-    //al árbol en forma de nodos.
-    private void createNodes(DefaultMutableTreeNode top){
-        ftm.getAllPeople().forEach(p->top.add(new DefaultMutableTreeNode(p)));
-    }
-       
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -172,33 +156,26 @@ public class PersonJFrame extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(339, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2))
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGap(21, 21, 21)
-                                            .addComponent(jLabel3)))
-                                    .addGap(39, 39, 39))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                    .addGap(11, 11, 11)
-                                    .addComponent(jLabel4)
-                                    .addGap(36, 36, 36)))
+                            .addGap(90, 90, 90)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(firstTextField)
                                 .addComponent(middleTextField)
                                 .addComponent(lastTextField)
                                 .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(68, 68, 68)
+                            .addGap(78, 78, 78)
                             .addComponent(maleButton)
                             .addGap(30, 30, 30)
                             .addComponent(femaleButton)
@@ -208,27 +185,28 @@ public class PersonJFrame extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel2)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel3)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel1)
-                                .addComponent(firstTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(firstTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(56, 56, 56))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(middleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                        .addComponent(middleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(30, 30, 30)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3)
-                        .addComponent(lastTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(30, 30, 30)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4))
+                    .addComponent(suffixTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(31, 31, 31)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(maleButton)
@@ -290,6 +268,22 @@ public class PersonJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     //Método que obtiene la Lista de personas del familyTreeManager y las agrega
+    //al árbol en forma de nodos.
+    private void createNodes(DefaultMutableTreeNode top){
+        ftm.getAllPeople().forEach(p->top.add(new DefaultMutableTreeNode(p)));
+    }
+       
+
+    //Asigna objetos listener a los respectivos generadores de eventos
+    private void configureListeners(){
+        ftm.addPropertyChangeListener(familyTreeListener);
+        personTree.addTreeSelectionListener(treeSelectionListener);
+        updateButton.addActionListener(updateListener);
+        logger.log(Level.FINE, "Listeners created");
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -385,6 +379,9 @@ public class PersonJFrame extends javax.swing.JFrame {
         thePerson.setNotes(notesTextArea.getText());
     }
     
+    
+    /* OBJETOS LISTENERS. INNER CLASSES*/
+    
     //Listener del boton de Update. Actualiza el objeto thePerson con el método updateModel.
     //Despues, actualiza el familyTreeManager
     private final ActionListener updateListener = (ActionEvent evt)->{
@@ -415,7 +412,6 @@ public class PersonJFrame extends javax.swing.JFrame {
         //Obtengo el nodo seleccionado
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) personTree.getLastSelectedPathComponent();
         if(node == null){ //Si el nodo es null
-            updateButton.setEnabled(false); //desactivo los botones
             return;
         }
         if(node.isLeaf()){ //si el nodo es hoja
