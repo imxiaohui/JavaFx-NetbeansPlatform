@@ -32,6 +32,7 @@ public class MyRectangleFXApp extends Application {
                "MyRectangleFX.fxml"));
         
         Scene scene = new Scene(root,Color.LIGHTBLUE);
+        scene.getStylesheets().add("myrectanglefxapp/MyCSS.css");
         stage.setScene(scene);
         stage.show();
     }
