@@ -12,7 +12,7 @@
 <VBox id="VBox" prefHeight="300" prefWidth="400" spacing="20" 
       alignment="CENTER" style="-fx-background-color:lightblue;" 
       xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="racetrackfxapp.RaceTrackFXApp">
+      fx:controller="racetrackfxapp.RaceTrackController">
     
     <children>
         <StackPane>

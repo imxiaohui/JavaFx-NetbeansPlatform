@@ -10,6 +10,11 @@ import java.util.ResourceBundle;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.PathTransition;
+import javafx.beans.binding.When;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -23,6 +28,12 @@ import javafx.util.Duration;
  * @author ernesto
  */
 public class RaceTrackController implements Initializable {
+    
+    private PathTransition pathTransition;
+    
+    final double maxRate = 7.0;
+    final double minRate= .3;
+    final double rateDelta=.3;
     
     @FXML
     private Rectangle rectangle;
@@ -42,7 +53,37 @@ public class RaceTrackController implements Initializable {
     @FXML
     private Button fasterButton;
     
-    private PathTransition pathTransition;
+    @FXML
+    private void slowerAction(ActionEvent evt){
+        double currentRate = pathTransition.getRate();
+        if(currentRate <= minRate)
+           return;
+        pathTransition.setRate(currentRate - rateDelta);
+        System.out.printf("slower rate = %.2f\n" , pathTransition.getRate());
+    }
+    
+    @FXML
+    private void fasterAction(ActionEvent evt){
+        double currentRate = pathTransition.getRate();
+        
+        if(currentRate >= maxRate)
+            return;
+        pathTransition.setRate(currentRate + rateDelta);
+        System.out.printf("faster rate = %.2f\n" , pathTransition.getRate());
+    }
+    
+    
+    @FXML
+    private void startPauseAction(ActionEvent evt){
+        if(pathTransition.getStatus()==Animation.Status.RUNNING){
+            pathTransition.pause();
+        }
+        else
+            pathTransition.play();
+    }
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -54,6 +95,26 @@ public class RaceTrackController implements Initializable {
         pathTransition.setInterpolator(Interpolator.LINEAR);
         
         //3.21 3.22 y 3.23
+        final IntegerProperty lapCounterProperty = new SimpleIntegerProperty(0);
+        pathTransition.currentTimeProperty().addListener((ObservableValue<? extends Duration> ov,Duration oldValue,Duration newValue)->{
+            if(oldValue.greaterThan(newValue)){
+                lapCounterProperty.set(lapCounterProperty.get() + 1);
+            }
+        });
+        text.textProperty().bind(lapCounterProperty.asString("Lap Counter: %s"));
+        
+        
+        startPauseButton.textProperty().bind(
+            new When(pathTransition.statusProperty()
+            .isEqualTo(Animation.Status.RUNNING)).then("Pause").otherwise("Start"));
+        
+        fasterButton.disableProperty().bind(pathTransition.statusProperty().isNotEqualTo(Animation.Status.RUNNING));
+        slowerButton.disableProperty().bind(pathTransition.statusProperty().isNotEqualTo(Animation.Status.RUNNING));
+        
+        fasterButton.setText(">>");
+        slowerButton.setText("<<");
     }    
+    
+    
     
 }
