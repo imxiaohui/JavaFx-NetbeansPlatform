@@ -26,12 +26,12 @@ public class Person implements Serializable {
      * Propiedades de la clase.  
      */
     private final long id;
-    private  final StringProperty firstName = new SimpleStringProperty(this,"firstName","");
-    private  final StringProperty middleName = new SimpleStringProperty(this,"middleName","");
-    private  final StringProperty lastName = new SimpleStringProperty(this,"lastName","");
-    private  final StringProperty suffix = new SimpleStringProperty(this,"suffix","");
+    private final StringProperty firstName = new SimpleStringProperty(this,"firstName","");
+    private final StringProperty middleName = new SimpleStringProperty(this,"middleName","");
+    private final StringProperty lastName = new SimpleStringProperty(this,"lastName","");
+    private final StringProperty suffix = new SimpleStringProperty(this,"suffix","");
     private final ObjectProperty<Person.Gender> gender = new SimpleObjectProperty<>(this,"gender",Gender.UNKNOWN);
-    private  final StringProperty notes = new SimpleStringProperty(this,"notes","");
+    private final StringProperty notes = new SimpleStringProperty(this,"notes","");
     
     
     /*

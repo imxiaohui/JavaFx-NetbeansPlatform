@@ -41,6 +41,14 @@ public class PersonFXAppCoarse {
         
     }
     
+//    private static final MapChangeListener<Long,Person> mapChangeListener = new MapChangeListener<Long, Person>() {
+//
+//        @Override
+//        public void onChanged(MapChangeListener.Change<? extends Long, ? extends Person> change) {
+//            
+//        }
+//    }
+//   Objeto del tipo MapChangeListener(Implementado) Implementado
     private static final MapChangeListener<Long,Person> mapChangeListener = (change) ->{
       if(change.wasAdded() && change.wasRemoved()){
           System.out.println("\tUpdated");
