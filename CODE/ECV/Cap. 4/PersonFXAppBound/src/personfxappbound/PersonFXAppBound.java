@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package personfxappbound;
 
 import javafx.application.Application;
@@ -12,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author ernesto
+ * Ejercicio 1 Capitulo 4. Uso de JavaFX con un objeto Person con JavaFX Properties.
+ * @author Ernesto Cantú.
  */
 public class PersonFXAppBound extends Application {
     
@@ -24,6 +19,7 @@ public class PersonFXAppBound extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Person Bind Example");
         stage.show();
     }
 
