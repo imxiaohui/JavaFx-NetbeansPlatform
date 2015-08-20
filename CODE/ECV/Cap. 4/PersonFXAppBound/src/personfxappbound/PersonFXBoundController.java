@@ -14,7 +14,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 /**
- *
+ * Clase Controller. El FXML tiene acceso a esta clase y puede configurar los elementos
+ * del VBox creado con algunos de los miembros de esta clase.
+ * 
+ * El FXML tiene acceso solo a atributos púbicos, o aquellos marcados con el FXML tag.
+ * 
+ * p. Ej. El label marge, es accedido por el fxml y tiene un bind al fullname de la clase
+ * person.
+ * 
  * @author ernesto
  */
 public class PersonFXBoundController implements Initializable {
@@ -22,24 +29,22 @@ public class PersonFXBoundController implements Initializable {
     @FXML
     private Label margeLabel;
     
-    final Person marge = new Person("Marge", "Simpson",Person.Gender.FEMALE);
+    final Person marge = new Person("Marge","Simpson",Person.Gender.FEMALE);
     
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        margeLabel.textProperty().bind(marge.fullNameProperty());
+    }    
+
     @FXML
     private void changeButtonAction(ActionEvent event) {
         marge.setMiddleName("Louise");
     }
-    
+
     @FXML
-    private void resetButtonAction(ActionEvent event){
+    private void resetButtonAction(ActionEvent event) {
         marge.setMiddleName("");
     }
-    
-    //Este método es ejecutado despues de que la aplicación lee el FXML
-    //Y Crea la Escena.
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        //Mantiene el texto del label siempre igual a la propiedad fullName del objeto Persona.
-        margeLabel.textProperty().bind(marge.fullNameProperty());
-    }    
     
 }

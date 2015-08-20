@@ -6,15 +6,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox id="VBox" prefHeight="200" prefWidth="320" 
-      xmlns:fx="http://javafx.com/fxml/1" 
+
+<VBox prefHeight="200.0" prefWidth="320.0" 
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="personfxappbound.PersonFXBoundController"
-      alignment="CENTER" spacing="20" 
-      style="-fx-background-color: linear-gradient(aliceblue,lightblue);">
-      
-    <Label fx:id="margeLabel"/>
-    <Button text="Change Marge"
-        onAction="#changeButtonAction" />
-    <Button text="Reset Marge"
-        onAction="#resetButtonAction"/>
+      alignment="CENTER" spacing="20.0" 
+      style="-fx-background-color: linear-gradient(aliceblue,lightblue);" >
+   <children>
+      <Label fx:id="margeLabel" text="Label" />
+      <Button mnemonicParsing="false" onAction="#changeButtonAction" text="Change Marge" />
+      <Button mnemonicParsing="false" onAction="#resetButtonAction" text="Reset Marge" />
+   </children>
 </VBox>

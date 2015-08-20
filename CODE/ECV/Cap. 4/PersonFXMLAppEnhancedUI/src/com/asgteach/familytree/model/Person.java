@@ -11,27 +11,22 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * JavaFX Bean de la clase Persona.
- * 
- * Manejo de propiedades.
- * 
- * Binding
- * 
+ * Javafx Bean Person. Model Object Class.
  * @author Ernesto Cantú
- * 05/08/2015
+ * 18 de Agosto del 2015
  */
 public class Person implements Serializable {
     
     /*
-     * Propiedades de la clase.  
-     */
+        JavaFX Properties del bean Person.
+    */
     private final long id;
-    private final StringProperty firstName = new SimpleStringProperty(this,"firstName","");
-    private final StringProperty middleName = new SimpleStringProperty(this,"middleName","");
-    private final StringProperty lastName = new SimpleStringProperty(this,"lastName","");
-    private final StringProperty suffix = new SimpleStringProperty(this,"suffix","");
-    private final ObjectProperty<Person.Gender> gender = new SimpleObjectProperty<>(this,"gender",Gender.UNKNOWN);
-    private final StringProperty notes = new SimpleStringProperty(this,"notes","");
+    private final StringProperty firstName = new SimpleStringProperty(this, "firstName", "");
+    private final StringProperty middleName = new SimpleStringProperty(this, "middleName", "");
+    private final StringProperty lastName = new SimpleStringProperty(this, "lastName", "");
+    private final StringProperty suffix = new SimpleStringProperty(this, "suffix","");
+    private final ObjectProperty<Person.Gender> gender = new SimpleObjectProperty<>(this,"gender",Person.Gender.UNKNOWN);
+    private final StringProperty notes = new SimpleStringProperty(this, "notes","");
     
     
     /*
@@ -66,27 +61,25 @@ public class Person implements Serializable {
         @Override
         protected String computeValue() {
             StringBuilder sb = new StringBuilder();
+            
             if(!firstName.get().isEmpty()){
-               sb.append(firstName.get());
+                sb.append(firstName.get());
             }
-
             if(!middleName.get().isEmpty()){
                sb.append(" ").append(middleName.get());
             }
-
             if(!lastName.get().isEmpty()){
                sb.append(" ").append(lastName.get());
             }
-
             if(!suffix.get().isEmpty()){
                sb.append(" ").append(suffix.get());
             }
-                        
+            
             return sb.toString();
         }
     };
     
-    //Objeto para crear una propiedad de solo Lectura. Dentro contiene un ReadOnlyStringProperty que no cuenta con Setter.
+    //Objeto para crear una propiedad de solo Lectura. Dentro contiene envuelto un ReadOnlyStringProperty que no cuenta con Setter.
     //Similar a las wrapper classes de Integer, Double... etc.
     private final ReadOnlyStringWrapper fullName = new ReadOnlyStringWrapper(this, "fullName");
     
@@ -99,7 +92,7 @@ public class Person implements Serializable {
     public Person() {
         this("","",Gender.UNKNOWN);
     }
-    
+        
     public Person(String firstName,String lastName,Gender gender){
         this.firstName.set(firstName);
         this.lastName.set(lastName);
@@ -109,7 +102,6 @@ public class Person implements Serializable {
     }
     
     public Person(Person person){
-
         this.firstName.set(person.getFirstName());
         this.middleName.set(person.getMiddleName());
         this.lastName.set(person.getLastName());
@@ -121,7 +113,7 @@ public class Person implements Serializable {
     }
     
     public final long getId(){
-        return id;
+        return this.id;
     }
     
     //Getter de la propiedad de solo Lectura fullName. Obtiene la propiedad ReadOnlyStringWrapper y regresa su objeto
@@ -130,7 +122,10 @@ public class Person implements Serializable {
         return fullName.getReadOnlyProperty();
     }
     
-    private final String getFullName(){
+    //Es posible settear algun valor a la propiedad fullName (El objeto ligado utiliza un setter), pero
+    //Al no proveer un setter de full name y al regresar un ReadOnlyProperty en el PropertyGetter
+    //Se previene que código cliente settee esta propiedad de solo lectura.
+    public final String getFullName(){
         return fullName.get();
     }
     
@@ -235,6 +230,4 @@ public class Person implements Serializable {
     public String toString(){
         return fullName.get();
     }
-    
-    
 }

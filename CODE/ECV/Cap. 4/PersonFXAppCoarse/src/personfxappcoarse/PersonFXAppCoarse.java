@@ -2,6 +2,7 @@ package personfxappcoarse;
 
 import com.asgteach.familytree.model.FamilyTreeManager;
 import com.asgteach.familytree.model.Person;
+import javafx.beans.property.StringProperty;
 import javafx.collections.MapChangeListener;
 
 /**
@@ -20,10 +21,11 @@ public class PersonFXAppCoarse {
         final Person homer = new Person("homer","simpson",Person.Gender.MALE);
         final Person marge = new Person("marge","simpson",Person.Gender.FEMALE);
         
-        
+        //Added event fired
         ftm.addPerson(homer);
         ftm.addPerson(marge);
         
+        //event NOT fired
         ftm.addPerson(marge);
         
         homer.setMiddleName("Jay");
@@ -37,8 +39,7 @@ public class PersonFXAppCoarse {
         
         ftm.updatePerson(marge);
         ftm.deletePerson(marge);
-        ftm.deletePerson(marge);
-        
+        ftm.deletePerson(marge);        
     }
     
 //    private static final MapChangeListener<Long,Person> mapChangeListener = new MapChangeListener<Long, Person>() {
@@ -51,18 +52,18 @@ public class PersonFXAppCoarse {
 //   Objeto del tipo MapChangeListener(Implementado) Implementado
     private static final MapChangeListener<Long,Person> mapChangeListener = (change) ->{
       if(change.wasAdded() && change.wasRemoved()){
-          System.out.println("\tUpdated");
+          System.out.println("\tUPDATED");
       }else if(change.wasAdded()){
           System.out.println("\tADDED");
       }else if(change.wasRemoved()){
           System.out.println("\tREMOVED");
       }
-        System.out.println("\tmap = " + change.getMap());
-        System.out.println("\t\t" + change.getValueAdded()
+      
+      System.out.println("\tmap = " + change.getMap());
+      System.out.println("\t\t" + change.getValueAdded()
                 + " was Added [" + change.getKey() + "].");
-        System.out.println("\t\t" + change.getValueRemoved()
+      System.out.println("\t\t" + change.getValueRemoved()
                 + " was Removed [" + change.getKey() + "].");
       
     };
-    
 }

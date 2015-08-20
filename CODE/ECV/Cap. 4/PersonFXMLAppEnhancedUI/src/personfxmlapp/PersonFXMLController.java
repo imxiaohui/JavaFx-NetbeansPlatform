@@ -23,7 +23,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.KeyEvent;
@@ -47,25 +46,23 @@ public class PersonFXMLController implements Initializable {
     @FXML
     private TextField lastNameTextField;
     @FXML
-    private TextField suffixNameTextField;
+    private TextField suffixTextField;
     @FXML
     private RadioButton maleRadioButton;
     @FXML
     private RadioButton femaleRadioButton;
     @FXML
-    private RadioButton unkownRadioButton;
+    private RadioButton unknownRadioButton;
     @FXML
     private TextArea notesTextArea;
     @FXML
-    private ToggleGroup genderToggleGroup;
-    @FXML
-    private TreeView<Person> personTreeView;
+    private TreeView<Person> personTreeView;    
     @FXML
     private Button updateButton;
     
     //Logger
     private static final Logger logger = Logger.getLogger(
-                         PersonFXMLController.class.getName());
+                        PersonFXMLController.class.getName());
     
     //FamilyTreeManager es la clase que maneja y administra el ObservableMap que contiene a las personas.
     private final FamilyTreeManager ftm = FamilyTreeManager.getInstance();
@@ -73,14 +70,16 @@ public class PersonFXMLController implements Initializable {
     //Objeto persona representacion del modelo.
     private Person thePerson = null;
     
-    //Custom binding para la propiedad género.
+    //Custom binding para la propiedad género. Mantiene actualizados el genero del form y del objeto
     private ObjectBinding<Gender> genderBinding;
     
     //Propiedades para manejo de update button
     private boolean changeOk = false;
-    private BooleanProperty enableUpdateProperty;
-
     
+    //Control para el disable property del boton update.
+    private BooleanProperty enableUpdateProperty;
+    
+
     //Primer metodo llamado del controller. Inicializa la clase.
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -98,19 +97,21 @@ public class PersonFXMLController implements Initializable {
             logger.log(Level.FINE,"Created file handler");
         }catch(IOException | SecurityException ex){
             logger.log(Level.SEVERE,"Couldn't create handler");
-        }
-        
+        }    
+
         // creo la propiedad enableUpdate. si no está permitido el Update, disable es verdadero, y el boton está deshabilitado.
         enableUpdateProperty = new SimpleBooleanProperty(this, "enableUpdate", false);
-        //Hago bind entre la propiedad disable y la negacion de enableUpdate
+        //Hago bind entre la propiedad disable y la negacion de enableUpdate. (!false = true... disable prop del boton está
+        //en true, osea, deshabilitado.)
         updateButton.disableProperty().bind(enableUpdateProperty.not());
        
         //Custom binding para la propiedad Genero que está ligada a los radio button.
+        //Si el selected Prop de un radio button cambia, se ejecutará el método computeValue.
         genderBinding = new ObjectBinding<Gender>() {
             {
                 super.bind(maleRadioButton.selectedProperty(),
                            femaleRadioButton.selectedProperty(),
-                           unkownRadioButton.selectedProperty());   
+                           unknownRadioButton.selectedProperty());   
             }
             
             @Override
@@ -134,6 +135,8 @@ public class PersonFXMLController implements Initializable {
         TreeItem<Person> rootNode = new TreeItem<>(new Person("Person", "", Gender.UNKNOWN));
         //Creando nodos con los datos
         buildTreeView(rootNode);
+        
+        //Una vez que construí los nodos hijos del root node, los asigno al person Tree View.
         personTreeView.setRoot(rootNode);
         personTreeView.getRoot().setExpanded(true);
         
@@ -153,7 +156,7 @@ public class PersonFXMLController implements Initializable {
         logger.log(Level.FINE,ftm.getAllPeople().toString());
     }
     
-    
+    //Creo nodos y los agrego al root node.
     private void buildTreeView(TreeItem<Person> root){
         ftm.addListener(familyTreeListener);
         ftm.getAllPeople().stream().forEach((p)-> {
@@ -167,17 +170,26 @@ public class PersonFXMLController implements Initializable {
         //Nodo seleccionado    
        TreeItem<Person> treeItem = newValue;
         logger.log(Level.FINE,"Selected item = {0}",treeItem);
+        
+        //pongo en false el update prop, osea, deshabilito el boton.
         enableUpdateProperty.set(false);
+        //al poner el false changeOk, puedo actualizar el form, sin causar ejecución de listeners
         changeOk=false;
         
+        //si escogí el root node o ningun nodo, limpio la pantalla
         if(treeItem == null || treeItem.equals(personTreeView.getRoot())){
             clearForm();
             return;
         }
         
+        //Guardo a la persona seleccionada en el modelo 
         thePerson = new Person(treeItem.getValue());
         logger.log(Level.FINE,"Selected item = {0}",thePerson);
+        
+        //Creo ligaduras entre el modelo y la pantalla
         configureEditPanelBindings(thePerson);
+        
+        
         if(thePerson.getGender().equals(Person.Gender.MALE)){
             maleRadioButton.setSelected(true);
         }
@@ -185,13 +197,17 @@ public class PersonFXMLController implements Initializable {
             femaleRadioButton.setSelected(true);
         }
         else{
-            unkownRadioButton.setSelected(true);
+            unknownRadioButton.setSelected(true);
         }
+        
+        //ligo el genero de la persona al gender binding, calculado por el radio button seleccionado
         thePerson.genderProperty().bind(genderBinding);
+        
+        //Habilito cambios.
         changeOk=true;
     };
     
-    //change listener para el ObservableMap de FTM.
+    //change listener para el ObservableMap de FTM. 
     // busca el nodo y lo actualiza.
     private final MapChangeListener<Long,Person> familyTreeListener = (change)->{
         if(change.getValueAdded() != null){
@@ -210,19 +226,20 @@ public class PersonFXMLController implements Initializable {
         firstNameTextField.textProperty().bindBidirectional(p.firstNameProperty());
         middleNameTextField.textProperty().bindBidirectional(p.middleNameProperty());
         lastNameTextField.textProperty().bindBidirectional(p.lastNameProperty());
-        suffixNameTextField.textProperty().bindBidirectional(p.suffixProperty());
+        suffixTextField.textProperty().bindBidirectional(p.suffixProperty());
         notesTextArea.textProperty().bindBidirectional(p.notesProperty());
     }
     
+    //limpio la pantalla
     private void clearForm(){
         firstNameTextField.setText("");
         middleNameTextField.setText("");
         lastNameTextField.setText("");
-        suffixNameTextField.setText("");
+        suffixTextField.setText("");
         notesTextArea.setText("");
         maleRadioButton.setSelected(false);
         femaleRadioButton.setSelected(false);
-        unkownRadioButton.setSelected(false);
+        unknownRadioButton.setSelected(false);
     }
     
     //Cuando se selecciona un nodo, se actualiza el formulario, y se pone en changeOk true.
