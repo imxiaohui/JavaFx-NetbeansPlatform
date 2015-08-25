@@ -1,0 +1,8 @@
+Que se necesita para hacer una ventana?
+
+1.- Una fuente de datos.
+2.- Una forma de representar los datos en la pantalla.
+3.- Una forma de representar los datos en el backgroud (modelo).
+4.- Deteccion de cambios en la pantalla
+5.- Forma de actualizar la pantalla.
+6.- Forma de actualizar los datos

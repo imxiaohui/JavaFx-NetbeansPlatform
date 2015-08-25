@@ -391,7 +391,7 @@ public class PersonJFrame extends javax.swing.JFrame {
         firstTextField.setText("");
         middleTextField.setText("");
         lastTextField.setText("");
-        suffixTextField.setText(thePerson.getSuffix());
+        suffixTextField.setText("");
         maleButton.setSelected(false);
         femaleButton.setSelected(false);
         unknownButton.setSelected(false);
