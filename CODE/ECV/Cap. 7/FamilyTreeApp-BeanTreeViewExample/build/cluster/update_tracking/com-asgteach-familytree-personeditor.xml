@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.personeditor">
-    <module_version install_time="1441113107190" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1441126444348" last="true" origin="installer" specification_version="1.0">
         <file crc="2114098571" name="config/Modules/com-asgteach-familytree-personeditor.xml"/>
         <file crc="316297827" name="modules/com-asgteach-familytree-personeditor.jar"/>
     </module_version>
