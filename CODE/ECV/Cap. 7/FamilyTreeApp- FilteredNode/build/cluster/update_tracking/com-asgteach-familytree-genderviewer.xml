@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.genderviewer">
-    <module_version install_time="1441404204363" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1441406869325" last="true" origin="installer" specification_version="1.0">
         <file crc="2604028789" name="config/Modules/com-asgteach-familytree-genderviewer.xml"/>
-        <file crc="6935030" name="modules/com-asgteach-familytree-genderviewer.jar"/>
+        <file crc="2825650245" name="modules/com-asgteach-familytree-genderviewer.jar"/>
     </module_version>
 </module>

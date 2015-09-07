@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.manager.impl">
+    <module_version install_time="1441636704087" last="true" origin="installer" specification_version="1.0">
+        <file crc="2305725087" name="config/Modules/com-asgteach-familytree-manager-impl.xml"/>
+        <file crc="2795829339" name="modules/com-asgteach-familytree-manager-impl.jar"/>
+    </module_version>
+</module>

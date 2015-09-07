@@ -119,10 +119,10 @@ com.asgteach.familytree.genderviewer.PersonFilterNode$1
 com.asgteach.familytree.model.Person$Gender
 java.lang.NoSuchFieldError
 ||:com.asgteach.familytree.genderviewer.GenderTopComponent
-org.openide.explorer.view.BeanTreeView
 org.openide.windows.TopComponent
 org.openide.explorer.ExplorerManager$Provider
 org.openide.util.NbBundle
+org.openide.explorer.view.OutlineView
 com.asgteach.familytree.genderviewer.GenderTopComponent$1
 javax.swing.JPanel
 java.awt.GridLayout
