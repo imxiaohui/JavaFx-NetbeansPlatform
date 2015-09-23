@@ -1,4 +1,4 @@
-#Mon Sep 07 11:11:57 CDT 2015
+#Mon Sep 07 18:25:30 CDT 2015
 org.netbeans.core.startup.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.modules.settings.AutoUpdate-Show-In-Client=false
 org.netbeans.core.startup.OpenIDE-Module-Layer=org/netbeans/core/startup/layer.xml
@@ -100,10 +100,10 @@ org.netbeans.modules.editor.mimelookup.impl.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.bootstrap.OpenIDE-Module-Description=\u0000
 org.netbeans.spi.quicksearch.OpenIDE-Module-Install=\u0000
 org.netbeans.core.OpenIDE-Module-Description=\u0000
-org.openide.nodes.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.libs.jna.platform.AutoUpdate-Show-In-Client=false
-org.netbeans.core.io.ui.AutoUpdate-Show-In-Client=false
+org.openide.nodes.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.modules.uihandler.AutoUpdate-Show-In-Client=false
+org.netbeans.core.io.ui.AutoUpdate-Show-In-Client=false
 org.netbeans.modules.settings.OpenIDE-Module-Description=\u0000
 org.openide.filesystems.OpenIDE-Module-Install=\u0000
 org.netbeans.libs.junit4.AutoUpdate-Show-In-Client=false
@@ -294,8 +294,8 @@ org.netbeans.modules.keyring.impl.AutoUpdate-Show-In-Client=false
 org.netbeans.swing.tabcontrol.OpenIDE-Module-Deprecated=\u0000
 org.netbeans.modules.options.keymap.OpenIDE-Module-Install=\u0000
 org.netbeans.modules.print.OpenIDE-Module-Description=\u0000
-org.netbeans.modules.masterfs.macosx.AutoUpdate-Show-In-Client=false
 org.netbeans.libs.felix.AutoUpdate-Show-In-Client=false
+org.netbeans.modules.masterfs.macosx.AutoUpdate-Show-In-Client=false
 org.netbeans.swing.plaf.OpenIDE-Module-Install=\u0000
 org.openide.util.lookup.AutoUpdate-Show-In-Client=false
 org.netbeans.modules.options.keymap.OpenIDE-Module-Description=\u0000

@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
->Log Session: Monday, September 7, 2015 11:11:23 AM CDT
+>Log Session: Monday, September 7, 2015 6:25:00 PM CDT
 >System Info: 
-  Product Version         = FamilyTreeApp-BeanNode 201411181905
+  Product Version         = FamilyTreeApp-HistoryFeature 201411181905
   Operating System        = Linux version 3.13.0-62-generic running on amd64
   Java; VM; Vendor        = 1.8.0_31; Java HotSpot(TM) 64-Bit Server VM 25.31-b07; Oracle Corporation
   Runtime                 = Java(TM) SE Runtime Environment 1.8.0_31-b13
   Java Home               = /var/lib/jvm/jdk1.8.0_31/jre
   System Locale; Encoding = es_ES (familytreeapp); UTF-8
   Home Directory          = /home/ernesto
-  Current Directory       = /home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature/SelectionHistory
+  Current Directory       = /home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature
   User Directory          = /home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature/build/testuserdir
   Cache Directory         = /home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature/build/testuserdir/var/cache
   Installation            = /home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature/build/cluster
@@ -70,7 +70,7 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.core.io.ui/1 [1.26.1 201411181905]
 	com.asgteach.familytree.selectionhistory [1.0 150907]
 	com.asgteach.familytree.model [1.0 150907]
-	com.asgteach.familytree.manager.impl [1.0 150903]
+	com.asgteach.familytree.manager.impl [1.0 150907]
 	com.asgteach.familytree.genderviewer [1.0 150907]
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy resolver: Gnome
 INFO [org.netbeans.core.network.proxy.gnome.GsettingsNetworkProxy]: GSettings system proxy resolver: direct connection
@@ -88,13 +88,13 @@ Input arguments:
 	-Dnetbeans.logger.console=true
 	-ea
 	-XX:+HeapDumpOnOutOfMemoryError
-	-XX:HeapDumpPath=/home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature/SelectionHistory/../build/testuserdir/var/log/heapdump.hprof
+	-XX:HeapDumpPath=/home/ernesto/Escritorio/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 7/FamilyTreeApp- HistoryFeature/build/testuserdir/var/log/heapdump.hprof
 Compiler: HotSpot 64-Bit Tiered Compilers
 Heap memory usage: initial 62,0MB maximum 868,0MB
 Non heap memory usage: initial 2,4MB maximum -1b
-Garbage collector: PS Scavenge (Collections=10 Total time spent=0s)
+Garbage collector: PS Scavenge (Collections=9 Total time spent=0s)
 Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
-Classes: loaded=5140 total loaded=5141 unloaded 1
+Classes: loaded=5142 total loaded=5143 unloaded 1
 INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4.089.929.728
 INFO [null]: Total physical memory 4.089.929.728
 WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-familytree-genderviewer-GenderTopComponent.shadow, com-asgteach-familytree-selectionhistory-SelectionHistoryTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]

@@ -41,9 +41,10 @@
   <bounds x="426" y="177" width="543" height="326" />
     </editor-area>
     <screen width="1366" height="768"/>
-    <active-mode name="editor"/>
+    <active-mode name="output"/>
     <toolbar configuration="Standard" preferred-icon-size="24"/>
     <tc-list>
+  <tc-id id="SelectionHistoryTopComponent"/>
   <tc-id id="GenderTopComponent"/>
   <tc-id id="properties"/>
     </tc-list>
