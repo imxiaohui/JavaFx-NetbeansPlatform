@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.personeditor">
+    <module_version install_time="1443041495420" last="true" origin="installer" specification_version="1.0">
+        <file crc="1590989601" name="config/Modules/com-asgteach-personeditor.xml"/>
+        <file crc="2896659731" name="modules/com-asgteach-personeditor.jar"/>
+    </module_version>
+</module>
