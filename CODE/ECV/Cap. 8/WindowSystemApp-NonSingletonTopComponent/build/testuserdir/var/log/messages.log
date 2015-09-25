@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Wednesday, September 23, 2015 12:42:53 PM CDT
+>Log Session: Friday, September 25, 2015 5:35:06 PM CDT
 >System Info: 
   Product Version         = WindowSystemApp-NonSingletonTopComponent 201411181905
   Operating System        = Windows 8 version 6.2 running on amd64
@@ -68,7 +68,7 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.core.nativeaccess/1 [1.27.1 201411181905]
 	org.netbeans.core.multitabs/1 [1.8.1.1 1 201411181905]
 	org.netbeans.core.io.ui/1 [1.26.1 201411181905]
-	com.asgteach.personeditor [1.0 150923]
+	com.asgteach.personeditor [1.0 150925]
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy resolver: Windows
 INFO [org.netbeans.core.network.proxy.windows.WindowsNetworkProxy]: Windows system proxy resolver: auto detect
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy reloading succeeded.
@@ -80,6 +80,7 @@ Input arguments:
 	-Dnetbeans.logger.console=true
 	-ea
 	-Djdk.home=C:\Program Files\Java\jdk1.8.0_45
+	-splash:C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-NonSingletonTopComponent\build\testuserdir\var\cache\splash.png
 	-Dnetbeans.home=C:\Program Files\NetBeans 8.0.2\platform
 	-Dnetbeans.user=C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-NonSingletonTopComponent\build\testuserdir
 	-Dnetbeans.default_userdir_root=
@@ -93,7 +94,7 @@ Heap memory usage: initial 64,0MB maximum 891,0MB
 Non heap memory usage: initial 2,4MB maximum -1b
 Garbage collector: PS Scavenge (Collections=6 Total time spent=0s)
 Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
-Classes: loaded=4199 total loaded=4199 unloaded 0
+Classes: loaded=4363 total loaded=4363 unloaded 0
 INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4.197.867.520
 INFO [null]: Total physical memory 4.197.867.520
 WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-personeditor-OpenTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]

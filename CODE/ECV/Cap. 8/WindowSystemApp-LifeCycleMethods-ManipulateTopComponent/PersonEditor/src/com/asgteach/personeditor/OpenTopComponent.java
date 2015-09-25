@@ -77,23 +77,23 @@ public final class OpenTopComponent extends TopComponent {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(openPersonButton)
-                        .addGap(127, 127, 127))
+                        .addGap(128, 128, 128))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(closeTopPersonButton)
-                        .addGap(113, 113, 113))))
+                        .addGap(120, 120, 120))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(93, 93, 93)
+                .addGap(129, 129, 129)
                 .addComponent(openPersonButton)
                 .addGap(18, 18, 18)
                 .addComponent(closeTopPersonButton)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -107,11 +107,8 @@ public final class OpenTopComponent extends TopComponent {
         WindowManager wm = WindowManager.getDefault();
         Mode editorMode = wm.findMode("editor");
         for(TopComponent tc : wm.getOpenedTopComponents(editorMode)){
-            System.out.println("found " + tc.getName());
-            if(tc.isShowing()){
-                if(tc instanceof PersonTopComponent){
-                    tc.close();
-                }
+            if(tc.isShowing() && tc instanceof PersonTopComponent){
+                tc.close();
                 break;
             }
         }

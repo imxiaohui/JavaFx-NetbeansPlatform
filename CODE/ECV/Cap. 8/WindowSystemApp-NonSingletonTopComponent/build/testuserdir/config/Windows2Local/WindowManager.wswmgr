@@ -41,9 +41,11 @@
   <bounds x="450" y="174" width="573" height="320" />
     </editor-area>
     <screen width="1366" height="768"/>
-    <active-mode name="explorer"/>
+    <active-mode name="editor"/>
     <toolbar configuration="Standard" preferred-icon-size="24"/>
     <tc-list>
+  <tc-id id="PersonTopComponent_2"/>
   <tc-id id="OpenTopComponent"/>
+  <tc-id id="PersonTopComponent_1"/>
     </tc-list>
 </windowmanager>

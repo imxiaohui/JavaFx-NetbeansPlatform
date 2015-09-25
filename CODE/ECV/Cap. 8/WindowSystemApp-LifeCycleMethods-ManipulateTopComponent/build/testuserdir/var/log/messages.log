@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Wednesday, September 23, 2015 5:00:08 PM CDT
+>Log Session: Friday, September 25, 2015 6:32:52 PM CDT
 >System Info: 
   Product Version         = WindowSystemApp-LifeCycleMethods-ManipulateTopComponent 201411181905
   Operating System        = Windows 8 version 6.2 running on amd64
@@ -68,43 +68,13 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.core.nativeaccess/1 [1.27.1 201411181905]
 	org.netbeans.core.multitabs/1 [1.8.1.1 1 201411181905]
 	org.netbeans.core.io.ui/1 [1.26.1 201411181905]
-	com.asgteach.personeditor [1.0 150923]
+	com.asgteach.personeditor [1.0 150925]
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy resolver: Windows
 INFO [org.netbeans.core.network.proxy.windows.WindowsNetworkProxy]: Windows system proxy resolver: auto detect
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy reloading succeeded.
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy - mode: direct
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy: fell to default (correct if direct mode went before)
 INFO [org.netbeans.ui.metrics.laf]: USG_LOOK_AND_FEEL
-WARNING [org.netbeans.core.windows.WindowManagerImpl]
-java.lang.IllegalArgumentException: adding a window to a container
-	at java.awt.Container.checkNotAWindow(Container.java:488)
-	at java.awt.Container.addImpl(Container.java:1089)
-	at java.awt.Container.add(Container.java:971)
-	at org.netbeans.core.windows.services.NbPresenter.initializeMessage(NbPresenter.java:387)
-	at org.netbeans.core.windows.services.NbPresenter.initializePresenter(NbPresenter.java:426)
-	at org.netbeans.core.windows.services.NbPresenter.initialize(NbPresenter.java:270)
-	at org.netbeans.core.windows.services.NbPresenter.<init>(NbPresenter.java:202)
-	at org.netbeans.core.windows.services.NbDialog.<init>(NbDialog.java:67)
-	at org.netbeans.core.windows.services.DialogDisplayerImpl$1AWTQuery.showDialog(DialogDisplayerImpl.java:234)
-	at org.netbeans.core.windows.services.DialogDisplayerImpl.notify(DialogDisplayerImpl.java:282)
-	at org.netbeans.core.windows.services.DialogDisplayerImpl.notify(DialogDisplayerImpl.java:173)
-	at com.asgteach.personeditor.ShowMeTheMoney.run(ShowMeTheMoney.java:18)
-[catch] at org.netbeans.core.windows.WindowManagerImpl$Exclusive$1.run(WindowManagerImpl.java:1563)
-	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
-	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
-	at java.awt.EventQueue.access$500(EventQueue.java:97)
-	at java.awt.EventQueue$3.run(EventQueue.java:709)
-	at java.awt.EventQueue$3.run(EventQueue.java:703)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
-	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
-	at org.netbeans.core.TimableEventQueue.dispatchEvent(TimableEventQueue.java:159)
-	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
-	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
-	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
-	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
-	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
-	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
 Diagnostic information
 Input arguments:
 	-Dnetbeans.logger.console=true
@@ -123,7 +93,7 @@ Heap memory usage: initial 64,0MB maximum 891,0MB
 Non heap memory usage: initial 2,4MB maximum -1b
 Garbage collector: PS Scavenge (Collections=6 Total time spent=0s)
 Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
-Classes: loaded=4439 total loaded=4439 unloaded 0
+Classes: loaded=4238 total loaded=4238 unloaded 0
 INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4.197.867.520
 INFO [null]: Total physical memory 4.197.867.520
 WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-personeditor-OpenTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]

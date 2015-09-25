@@ -1,7 +1,7 @@
 C:\Program Files\NetBeans 8.0.2\platform=1426058256548
-cluster.C:/Users/ernesto/Desktop/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 8/WindowSystemApp-LifeCycleMethods-ManipulateTopComponent/build/cluster=1443045607696
+cluster.C:/Users/ernesto/Desktop/JavaFx-NetbeansPlatform/CODE/ECV/Cap. 8/WindowSystemApp-LifeCycleMethods-ManipulateTopComponent/build/cluster=1443223972318
 cluster.C:/Program Files/NetBeans 8.0.2/platform=1426058256548
-user=1443045607696
+user=1443223972318
 crc=7
 locale=es_ES
 branding=windowsystemapp
