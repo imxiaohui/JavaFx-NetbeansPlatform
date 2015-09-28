@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Friday, September 25, 2015 6:32:52 PM CDT
+>Log Session: Monday, September 28, 2015 9:32:09 AM CDT
 >System Info: 
   Product Version         = WindowSystemApp-LifeCycleMethods-ManipulateTopComponent 201411181905
   Operating System        = Windows 8 version 6.2 running on amd64
@@ -8,7 +8,7 @@
   Java Home               = C:\Program Files\Java\jdk1.8.0_45\jre
   System Locale; Encoding = es_ES (windowsystemapp); Cp1252
   Home Directory          = C:\Users\ernesto
-  Current Directory       = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent
+  Current Directory       = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent\PersonEditor
   User Directory          = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent\build\testuserdir
   Cache Directory         = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent\build\testuserdir\var\cache
   Installation            = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent\build\cluster
@@ -80,6 +80,7 @@ Input arguments:
 	-Dnetbeans.logger.console=true
 	-ea
 	-Djdk.home=C:\Program Files\Java\jdk1.8.0_45
+	-splash:C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent\build\testuserdir\var\cache\splash.png
 	-Dnetbeans.home=C:\Program Files\NetBeans 8.0.2\platform
 	-Dnetbeans.user=C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap. 8\WindowSystemApp-LifeCycleMethods-ManipulateTopComponent\build\testuserdir
 	-Dnetbeans.default_userdir_root=
@@ -93,7 +94,7 @@ Heap memory usage: initial 64,0MB maximum 891,0MB
 Non heap memory usage: initial 2,4MB maximum -1b
 Garbage collector: PS Scavenge (Collections=6 Total time spent=0s)
 Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
-Classes: loaded=4238 total loaded=4238 unloaded 0
+Classes: loaded=4228 total loaded=4228 unloaded 0
 INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4.197.867.520
 INFO [null]: Total physical memory 4.197.867.520
 WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-personeditor-OpenTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]
