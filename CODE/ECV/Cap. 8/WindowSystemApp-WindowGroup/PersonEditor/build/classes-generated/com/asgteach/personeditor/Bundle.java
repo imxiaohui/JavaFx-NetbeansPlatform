@@ -52,18 +52,18 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PersonOutputTopComponent");
     }
     /**
-     * @return <i>PersonProperties</i>
-     * @see PersonPropertiesTopComponent
+     * @return <i>PersonProperty</i>
+     * @see PersonPropertyTopComponent
      */
-    static String CTL_PersonPropertiesAction() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PersonPropertiesAction");
+    static String CTL_PersonPropertyAction() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PersonPropertyAction");
     }
     /**
-     * @return <i>PersonProperties Window</i>
-     * @see PersonPropertiesTopComponent
+     * @return <i>PersonProperty Window</i>
+     * @see PersonPropertyTopComponent
      */
-    static String CTL_PersonPropertiesTopComponent() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PersonPropertiesTopComponent");
+    static String CTL_PersonPropertyTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "CTL_PersonPropertyTopComponent");
     }
     /**
      * @return <i>Person Window</i>
@@ -94,11 +94,11 @@ class Bundle {
         return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PersonOutputTopComponent");
     }
     /**
-     * @return <i>This is a PersonProperties window</i>
-     * @see PersonPropertiesTopComponent
+     * @return <i>This is a PersonProperty window</i>
+     * @see PersonPropertyTopComponent
      */
-    static String HINT_PersonPropertiesTopComponent() {
-        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PersonPropertiesTopComponent");
+    static String HINT_PersonPropertyTopComponent() {
+        return org.openide.util.NbBundle.getMessage(Bundle.class, "HINT_PersonPropertyTopComponent");
     }
     /**
      * @return <i>This is a Person window</i>

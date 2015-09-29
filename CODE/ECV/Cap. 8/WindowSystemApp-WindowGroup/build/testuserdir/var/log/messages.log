@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Monday, September 28, 2015 1:15:12 PM CDT
+>Log Session: Tuesday, September 29, 2015 11:25:57 AM CDT
 >System Info: 
   Product Version         = WindowSystemApp-WindowGroup 201411181905
   Operating System        = Windows 8 version 6.2 running on amd64
@@ -68,7 +68,7 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.core.nativeaccess/1 [1.27.1 201411181905]
 	org.netbeans.core.multitabs/1 [1.8.1.1 1 201411181905]
 	org.netbeans.core.io.ui/1 [1.26.1 201411181905]
-	com.asgteach.personeditor [1.0 150928]
+	com.asgteach.personeditor [1.0 150929]
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy resolver: Windows
 INFO [org.netbeans.core.network.proxy.windows.WindowsNetworkProxy]: Windows system proxy resolver: auto detect
 INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy reloading succeeded.
@@ -94,7 +94,53 @@ Heap memory usage: initial 64,0MB maximum 891,0MB
 Non heap memory usage: initial 2,4MB maximum -1b
 Garbage collector: PS Scavenge (Collections=6 Total time spent=0s)
 Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
-Classes: loaded=4239 total loaded=4239 unloaded 0
+Classes: loaded=4202 total loaded=4202 unloaded 0
 INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4.197.867.520
 INFO [null]: Total physical memory 4.197.867.520
-WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-personeditor-MyModeTopComponent.shadow, com-asgteach-personeditor-OpenTopComponent.shadow, com-asgteach-personeditor-PersonOutputTopComponent.shadow, com-asgteach-personeditor-PersonPropertiesTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]
+WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-personeditor-MyModeTopComponent.shadow, com-asgteach-personeditor-OpenTopComponent.shadow, com-asgteach-personeditor-PersonOutputTopComponent.shadow, com-asgteach-personeditor-PersonPropertyTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]
+INFO [org.netbeans.core.nativeaccess.NativeWindowSystemImpl]
+java.lang.UnsupportedOperationException: Set sun.java2d.noddraw=true to enable transparent windows
+	at com.sun.jna.platform.WindowUtils$W32WindowUtils.setWindowAlpha(WindowUtils.java:641)
+	at com.sun.jna.platform.WindowUtils.setWindowAlpha(WindowUtils.java:1533)
+[catch] at org.netbeans.core.nativeaccess.NativeWindowSystemImpl.setWindowAlpha(NativeWindowSystemImpl.java:111)
+	at org.netbeans.core.windows.view.dnd.DragAndDropFeedbackVisualizer.createDragWindow(DragAndDropFeedbackVisualizer.java:111)
+	at org.netbeans.core.windows.view.dnd.DragAndDropFeedbackVisualizer.start(DragAndDropFeedbackVisualizer.java:132)
+	at org.netbeans.core.windows.view.dnd.TopComponentDragSupport.doStartDrag(TopComponentDragSupport.java:427)
+	at org.netbeans.core.windows.view.dnd.TopComponentDragSupport.eventDispatched(TopComponentDragSupport.java:352)
+	at java.awt.Toolkit$SelectiveAWTEventListener.eventDispatched(Toolkit.java:2425)
+	at java.awt.Toolkit$ToolkitEventMulticaster.eventDispatched(Toolkit.java:2316)
+	at java.awt.Toolkit$ToolkitEventMulticaster.eventDispatched(Toolkit.java:2316)
+	at java.awt.Toolkit$ToolkitEventMulticaster.eventDispatched(Toolkit.java:2316)
+	at java.awt.Toolkit$ToolkitEventMulticaster.eventDispatched(Toolkit.java:2316)
+	at java.awt.Toolkit$ToolkitEventMulticaster.eventDispatched(Toolkit.java:2316)
+	at java.awt.Toolkit$ToolkitEventMulticaster.eventDispatched(Toolkit.java:2316)
+	at java.awt.Toolkit.notifyAWTEventListeners(Toolkit.java:2275)
+	at java.awt.Component.dispatchEventImpl(Component.java:4777)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4550)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at org.netbeans.core.TimableEventQueue.dispatchEvent(TimableEventQueue.java:159)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+INFO [org.netbeans.core.windows.persistence]: [PersistenceManager.getTopComponentForID] Problem when deserializing TopComponent for tcID:'PersonTopComponent_1'. Reason: Top component PersonTopComponent_1 could not be located or loaded from Components folder.

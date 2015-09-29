@@ -131,7 +131,7 @@ public final class PersonTopComponent extends TopComponent {
             personGroup.open();
         }
 
-    }
+   }
 
     void writeProperties(java.util.Properties p) {
         System.out.println("writeProperties");

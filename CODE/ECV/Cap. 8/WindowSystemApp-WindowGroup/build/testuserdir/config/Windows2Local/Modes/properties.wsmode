@@ -12,5 +12,6 @@
   </constraints>
   <bounds x="1024" y="407" width="204" height="232" />
   <frame state="0"/>
+    <active-tc  id="PersonPropertyTopComponent"  prev-id="PersonPropertyTopComponent" />
     <empty-behavior permanent="true"/>
 </mode>

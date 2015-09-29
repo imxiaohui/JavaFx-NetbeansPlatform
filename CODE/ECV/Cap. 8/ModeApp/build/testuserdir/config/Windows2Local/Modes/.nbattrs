@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="leftside">
+        <attr name="WinSys-TCRef-Order" stringvalue="LeftSideTopComponent"/>
+    </fileobject>
+    <fileobject name="output">
+        <attr name="WinSys-TCRef-Order" stringvalue="output"/>
+    </fileobject>
+    <fileobject name="properties">
+        <attr name="WinSys-TCRef-Order" stringvalue="properties"/>
+    </fileobject>
+    <fileobject name="rightside">
+        <attr name="WinSys-TCRef-Order" stringvalue="RightSideTopComponent"/>
+    </fileobject>
+    <fileobject name="topbanner">
+        <attr name="WinSys-TCRef-Order" stringvalue="TopBanerTopComponent"/>
+    </fileobject>
+</attributes>

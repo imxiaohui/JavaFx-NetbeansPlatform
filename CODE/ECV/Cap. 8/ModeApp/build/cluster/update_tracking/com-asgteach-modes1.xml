@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.modes1">
+    <module_version install_time="1443567260334" last="true" origin="installer" specification_version="1.0">
+        <file crc="3937538982" name="config/Modules/com-asgteach-modes1.xml"/>
+        <file crc="3894725197" name="modules/com-asgteach-modes1.jar"/>
+    </module_version>
+</module>

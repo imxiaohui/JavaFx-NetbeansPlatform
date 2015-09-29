@@ -2,15 +2,15 @@
 <!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
 <attributes version="1.0">
     <fileobject name="editor">
-        <attr name="WinSys-TCRef-Order" stringvalue="PersonTopComponent"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="PersonTopComponent/MyModeTopComponent/PersonTopComponent_2"/>
     </fileobject>
     <fileobject name="explorer">
         <attr name="WinSys-TCRef-Order" stringvalue="OpenTopComponent"/>
     </fileobject>
     <fileobject name="output">
-        <attr name="WinSys-TCRef-Order" stringvalue="MyModeTopComponent/output/PersonOutputTopComponent"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="output/PersonOutputTopComponent"/>
     </fileobject>
     <fileobject name="properties">
-        <attr name="WinSys-TCRef-Order" stringvalue="properties/PersonPropertiesTopComponent"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="properties/PersonPropertyTopComponent"/>
     </fileobject>
 </attributes>

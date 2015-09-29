@@ -17,9 +17,9 @@
                     <!--com.asgteach.personeditor.PersonOutputTopComponent-->
                     <attr name="hint.originalPublicID" stringvalue="-//com.asgteach.personeditor//PersonOutput//EN"/>
                 </file>
-                <file name="PersonProperties" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
-                    <!--com.asgteach.personeditor.PersonPropertiesTopComponent-->
-                    <attr name="hint.originalPublicID" stringvalue="-//com.asgteach.personeditor//PersonProperties//EN"/>
+                <file name="PersonProperty" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--com.asgteach.personeditor.PersonPropertyTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//com.asgteach.personeditor//PersonProperty//EN"/>
                 </file>
                 <file name="Person" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
                     <!--com.asgteach.personeditor.PersonTopComponent-->
@@ -43,9 +43,9 @@
                             <!--com.asgteach.personeditor.PersonOutputTopComponent-->
                             <attr name="settings.providerPath" stringvalue="xml/lookups//com_asgteach_personeditor/PersonOutput.instance"/>
                         </file>
-                        <file name="PersonPropertiesTopComponent">
-                            <!--com.asgteach.personeditor.PersonPropertiesTopComponent-->
-                            <attr name="settings.providerPath" stringvalue="xml/lookups//com_asgteach_personeditor/PersonProperties.instance"/>
+                        <file name="PersonPropertyTopComponent">
+                            <!--com.asgteach.personeditor.PersonPropertyTopComponent-->
+                            <attr name="settings.providerPath" stringvalue="xml/lookups//com_asgteach_personeditor/PersonProperty.instance"/>
                         </file>
                         <file name="PersonTopComponent">
                             <!--com.asgteach.personeditor.PersonTopComponent-->
@@ -87,14 +87,14 @@
                     <attr name="settings.instanceOf" stringvalue="com.asgteach.personeditor.PersonOutputTopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
-                <file name="PersonProperties.instance">
-                    <!--com.asgteach.personeditor.PersonPropertiesTopComponent-->
+                <file name="PersonProperty.instance">
+                    <!--com.asgteach.personeditor.PersonPropertyTopComponent-->
                     <attr
                         methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
                     <attr
                         methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
-                    <attr name="settings.instanceClass" stringvalue="com.asgteach.personeditor.PersonPropertiesTopComponent"/>
-                    <attr name="settings.instanceOf" stringvalue="com.asgteach.personeditor.PersonPropertiesTopComponent"/>
+                    <attr name="settings.instanceClass" stringvalue="com.asgteach.personeditor.PersonPropertyTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="com.asgteach.personeditor.PersonPropertyTopComponent"/>
                     <attr boolvalue="true" name="xmlproperties.preventStoring"/>
                 </file>
                 <file name="Person.instance">
@@ -124,9 +124,9 @@
                 <!--com.asgteach.personeditor.PersonOutputTopComponent-->
                 <attr name="originalFile" stringvalue="Actions/Window/com-asgteach-personeditor-PersonOutputTopComponent.instance"/>
             </file>
-            <file name="com-asgteach-personeditor-PersonPropertiesTopComponent.shadow">
-                <!--com.asgteach.personeditor.PersonPropertiesTopComponent-->
-                <attr name="originalFile" stringvalue="Actions/Window/com-asgteach-personeditor-PersonPropertiesTopComponent.instance"/>
+            <file name="com-asgteach-personeditor-PersonPropertyTopComponent.shadow">
+                <!--com.asgteach.personeditor.PersonPropertyTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/com-asgteach-personeditor-PersonPropertyTopComponent.instance"/>
             </file>
         </folder>
     </folder>
@@ -153,11 +153,11 @@
   <instance class="com.asgteach.personeditor.PersonOutputTopComponent"/>
 </settings>
 ]]></file>
-            <file name="PersonPropertiesTopComponent.settings">
-                <!--com.asgteach.personeditor.PersonPropertiesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+            <file name="PersonPropertyTopComponent.settings">
+                <!--com.asgteach.personeditor.PersonPropertyTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
 <settings version="1.0">
-  <instance class="com.asgteach.personeditor.PersonPropertiesTopComponent"/>
+  <instance class="com.asgteach.personeditor.PersonPropertyTopComponent"/>
 </settings>
 ]]></file>
             <file name="PersonTopComponent.settings">
@@ -198,11 +198,11 @@
 ]]></file>
             </folder>
             <folder name="properties">
-                <file name="PersonPropertiesTopComponent.wstcref">
-                    <!--com.asgteach.personeditor.PersonPropertiesTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+                <file name="PersonPropertyTopComponent.wstcref">
+                    <!--com.asgteach.personeditor.PersonPropertyTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
 <tc-ref version="2.0">
-  <tc-id id="PersonPropertiesTopComponent"/>
+  <tc-id id="PersonPropertyTopComponent"/>
   <state opened="false"/>
 </tc-ref>
 ]]></file>
@@ -248,14 +248,14 @@
                 <attr
                     bundlevalue="com.asgteach.personeditor.Bundle#CTL_PersonOutputAction" name="displayName"/>
             </file>
-            <file name="com-asgteach-personeditor-PersonPropertiesTopComponent.instance">
-                <!--com.asgteach.personeditor.PersonPropertiesTopComponent-->
+            <file name="com-asgteach-personeditor-PersonPropertyTopComponent.instance">
+                <!--com.asgteach.personeditor.PersonPropertyTopComponent-->
                 <attr
                     methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
-                <attr name="component" newvalue="com.asgteach.personeditor.PersonPropertiesTopComponent"/>
-                <attr name="preferredID" stringvalue="PersonPropertiesTopComponent"/>
+                <attr name="component" newvalue="com.asgteach.personeditor.PersonPropertyTopComponent"/>
+                <attr name="preferredID" stringvalue="PersonPropertyTopComponent"/>
                 <attr
-                    bundlevalue="com.asgteach.personeditor.Bundle#CTL_PersonPropertiesAction" name="displayName"/>
+                    bundlevalue="com.asgteach.personeditor.Bundle#CTL_PersonPropertyAction" name="displayName"/>
             </file>
         </folder>
     </folder>
