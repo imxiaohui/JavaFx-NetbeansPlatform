@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.fxdemomodule">
-    <module_version install_time="1440608017976" last="true" origin="installer" specification_version="1.0">
-        <file crc="3339066904" name="config/Modules/com-asgteach-fxdemomodule.xml"/>
-        <file crc="1556561660" name="modules/com-asgteach-fxdemomodule.jar"/>
-    </module_version>
-</module>

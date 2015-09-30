@@ -1,0 +1,8 @@
+Importante:
+
+Durante la creación de un Layout definido por mí tuve el problema de que Netbeans no encontraba un layout.
+
+Hice 2 cosas: 
+
+1.- Creé un archivo layer.xml
+2.- Cambié el nombre de la carpeta donde se ubicaba el proyecto. Tenia un punto en el nombre de la carpeta
