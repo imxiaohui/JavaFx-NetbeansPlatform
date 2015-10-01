@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="xml">
+        <folder name="entities">
+            <folder name="com_asgteach_familytree_genderviewer">
+                <file name="Gender" url="nbres:/org/netbeans/modules/settings/resources/properties-1_0.dtd">
+                    <!--com.asgteach.familytree.genderviewer.GenderTopComponent-->
+                    <attr name="hint.originalPublicID" stringvalue="-//com.asgteach.familytree.genderviewer//Gender//EN"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="memory">
+            <folder name="com">
+                <folder name="asgteach">
+                    <folder name="familytree">
+                        <folder name="genderviewer">
+                            <file name="GenderTopComponent">
+                                <!--com.asgteach.familytree.genderviewer.GenderTopComponent-->
+                                <attr name="settings.providerPath" stringvalue="xml/lookups//com_asgteach_familytree_genderviewer/Gender.instance"/>
+                            </file>
+                        </folder>
+                    </folder>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="lookups">
+            <folder name="com_asgteach_familytree_genderviewer">
+                <file name="Gender.instance">
+                    <!--com.asgteach.familytree.genderviewer.GenderTopComponent-->
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.create" name="instanceCreate"/>
+                    <attr
+                        methodvalue="org.netbeans.api.settings.Factory.properties" name="settings.convertor"/>
+                    <attr name="settings.instanceClass" stringvalue="com.asgteach.familytree.genderviewer.GenderTopComponent"/>
+                    <attr name="settings.instanceOf" stringvalue="com.asgteach.familytree.genderviewer.GenderTopComponent"/>
+                    <attr boolvalue="true" name="xmlproperties.preventStoring"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="com-asgteach-familytree-genderviewer-GenderTopComponent.shadow">
+                <!--com.asgteach.familytree.genderviewer.GenderTopComponent-->
+                <attr name="originalFile" stringvalue="Actions/Window/com-asgteach-familytree-genderviewer-GenderTopComponent.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="GenderTopComponent.settings">
+                <!--com.asgteach.familytree.genderviewer.GenderTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings PUBLIC "-//NetBeans//DTD Session settings 1.0//EN" "http://www.netbeans.org/dtds/sessionsettings-1_0.dtd">
+<settings version="1.0">
+  <instance class="com.asgteach.familytree.genderviewer.GenderTopComponent"/>
+</settings>
+]]></file>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="GenderTopComponent.wstcref">
+                    <!--com.asgteach.familytree.genderviewer.GenderTopComponent--><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tc-ref PUBLIC "-//NetBeans//DTD Top Component in Mode Properties 2.0//EN" "http://www.netbeans.org/dtds/tc-ref2_0.dtd">
+<tc-ref version="2.0">
+  <tc-id id="GenderTopComponent"/>
+  <state opened="true"/>
+</tc-ref>
+]]></file>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="com-asgteach-familytree-genderviewer-GenderTopComponent.instance">
+                <!--com.asgteach.familytree.genderviewer.GenderTopComponent-->
+                <attr
+                    methodvalue="org.openide.windows.TopComponent.openAction" name="instanceCreate"/>
+                <attr name="component" newvalue="com.asgteach.familytree.genderviewer.GenderTopComponent"/>
+                <attr name="preferredID" stringvalue="GenderTopComponent"/>
+                <attr
+                    bundlevalue="com.asgteach.familytree.genderviewer.Bundle#CTL_GenderAction" name="displayName"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

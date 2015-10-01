@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Tools">
+            <file name="com-asgteach-familytree-actions-CalendarAction.instance">
+                <!--com.asgteach.familytree.actions.CalendarAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_CalendarAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.callback" name="instanceCreate"/>
+                <attr
+                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="fallback"/>
+                <attr name="key" stringvalue="CoolCalendarAction"/>
+                <attr name="delegate" newvalue="com.asgteach.familytree.actions.CalendarAction"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/icon.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-RefreshAction.instance">
+                <!--com.asgteach.familytree.actions.RefreshAction-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_RefreshAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.callback" name="instanceCreate"/>
+                <attr
+                    methodvalue="org.openide.awt.Actions.alwaysEnabled" name="fallback"/>
+                <attr name="key" stringvalue="MyCoolRefreshAction"/>
+                <attr name="delegate" newvalue="com.asgteach.familytree.actions.RefreshAction"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/refresh.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Tools">
+            <file name="com-asgteach-familytree-actions-CalendarAction.shadow">
+                <!--com.asgteach.familytree.actions.CalendarAction-->
+                <attr name="originalFile" stringvalue="Actions/Tools/com-asgteach-familytree-actions-CalendarAction.instance"/>
+                <attr intvalue="0" name="position"/>
+            </file>
+            <file name="com-asgteach-familytree-actions-CalendarAction-separatorAfter.instance">
+                <!--com.asgteach.familytree.actions.CalendarAction-->
+                <attr name="instanceCreate" newvalue="javax.swing.JSeparator"/>
+                <attr intvalue="50" name="position"/>
+            </file>
+        </folder>
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-RefreshAction.shadow">
+                <!--com.asgteach.familytree.actions.RefreshAction-->
+                <attr name="originalFile" stringvalue="Actions/File/com-asgteach-familytree-actions-RefreshAction.instance"/>
+                <attr intvalue="1300" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-CalendarAction.shadow">
+                <!--com.asgteach.familytree.actions.CalendarAction-->
+                <attr name="originalFile" stringvalue="Actions/Tools/com-asgteach-familytree-actions-CalendarAction.instance"/>
+                <attr intvalue="300" name="position"/>
+            </file>
+            <file name="com-asgteach-familytree-actions-RefreshAction.shadow">
+                <!--com.asgteach.familytree.actions.RefreshAction-->
+                <attr name="originalFile" stringvalue="Actions/File/com-asgteach-familytree-actions-RefreshAction.instance"/>
+                <attr intvalue="500" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Shortcuts">
+        <file name="D-E.shadow">
+            <!--com.asgteach.familytree.actions.CalendarAction-->
+            <attr name="originalFile" stringvalue="Actions/Tools/com-asgteach-familytree-actions-CalendarAction.instance"/>
+        </file>
+        <file name="D-R.shadow">
+            <!--com.asgteach.familytree.actions.RefreshAction-->
+            <attr name="originalFile" stringvalue="Actions/File/com-asgteach-familytree-actions-RefreshAction.instance"/>
+        </file>
+    </folder>
+</filesystem>

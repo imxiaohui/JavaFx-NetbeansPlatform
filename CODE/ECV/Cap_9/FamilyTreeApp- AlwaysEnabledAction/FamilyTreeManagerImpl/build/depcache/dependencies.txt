@@ -1,0 +1,15 @@
+||:com.asgteach.familytree.manager.impl.FamilyTreeManagerImpl
+com.asgteach.familytree.model.FamilyTreeManager
+com.asgteach.familytree.manager.impl.FamilyTreeManagerImpl
+com.asgteach.familytree.model.Person
+java.util.List
+java.util.ArrayList
+java.util.Collection
+java.util.Map
+java.util.HashMap
+java.lang.Long
+java.lang.Object
+java.beans.PropertyChangeSupport
+java.lang.invoke.MethodHandles$Lookup
+java.lang.invoke.LambdaMetafactory
+java.lang.invoke.MethodHandles

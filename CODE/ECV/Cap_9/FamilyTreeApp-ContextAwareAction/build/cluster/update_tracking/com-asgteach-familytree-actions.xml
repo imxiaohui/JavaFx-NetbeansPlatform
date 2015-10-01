@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="com.asgteach.familytree.actions">
+    <module_version install_time="1443741855094" last="true" origin="installer" specification_version="1.0">
+        <file crc="2530042619" name="config/Modules/com-asgteach-familytree-actions.xml"/>
+        <file crc="725037736" name="modules/com-asgteach-familytree-actions.jar"/>
+    </module_version>
+</module>

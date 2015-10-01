@@ -1,0 +1,107 @@
+-------------------------------------------------------------------------------
+>Log Session: Thursday, October 1, 2015 3:45:55 PM CDT
+>System Info: 
+  Product Version         = FamilyTreeApp-CallbackActions 201411181905
+  Operating System        = Windows 8 version 6.2 running on amd64
+  Java; VM; Vendor        = 1.8.0_45; Java HotSpot(TM) 64-Bit Server VM 25.45-b02; Oracle Corporation
+  Runtime                 = Java(TM) SE Runtime Environment 1.8.0_45-b15
+  Java Home               = C:\Program Files\Java\jdk1.8.0_45\jre
+  System Locale; Encoding = es_ES (familytreeapp); Cp1252
+  Home Directory          = C:\Users\ernesto
+  Current Directory       = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\FamilyTreeActions
+  User Directory          = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\testuserdir
+  Cache Directory         = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\testuserdir\var\cache
+  Installation            = C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\cluster
+                            C:\Program Files\NetBeans 8.0.2\platform
+                            C:\Program Files\NetBeans 8.0.2\platform
+  Boot & Ext. Classpath   = C:\Program Files\Java\jdk1.8.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_45\jre\classes;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext\zipfs.jar
+  Application Classpath   = C:\Program Files\NetBeans 8.0.2\platform\lib\boot.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\org-openide-modules.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\org-openide-util-lookup.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\org-openide-util.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\boot_ja.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\boot_pt_BR.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\boot_ru.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\boot_zh_CN.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-modules_ja.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-modules_pt_BR.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-modules_ru.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-modules_zh_CN.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util-lookup_ja.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util-lookup_pt_BR.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util-lookup_ru.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util-lookup_zh_CN.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util_ja.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util_pt_BR.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util_ru.jar;C:\Program Files\NetBeans 8.0.2\platform\lib\locale\org-openide-util_zh_CN.jar;C:\Program Files\Java\jdk1.8.0_45\lib\dt.jar;C:\Program Files\Java\jdk1.8.0_45\lib\tools.jar
+  Startup Classpath       = C:\Program Files\NetBeans 8.0.2\platform\core\core.jar;C:\Program Files\NetBeans 8.0.2\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 8.0.2\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\cluster\core\locale\core_familytreeapp.jar
+-------------------------------------------------------------------------------
+INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
+	org.openide.util.lookup [8.25.1 201411181905]
+	org.openide.util [8.39.1 201411181905]
+	org.openide.modules [7.43.1 201411181905]
+	org.netbeans.api.annotations.common/1 [1.24.1 201411181905]
+	org.openide.filesystems [8.12.1 201411181905]
+	org.openide.awt [7.62.1 201411181905]
+	org.netbeans.api.progress/1 [1.38.1 201411181905]
+	org.openide.dialogs [7.38.1 201411181905]
+	org.openide.nodes [7.39.1 201411181905]
+	org.openide.windows [6.71.1 201411181905]
+	org.netbeans.modules.editor.mimelookup/1 [1.36.1 201411181905]
+	org.openide.text [6.62.2 201411181905]
+	org.netbeans.swing.tabcontrol [1.51.1 201411181905]
+	org.netbeans.swing.outline [1.30.1 201411181905]
+	org.openide.explorer [6.57.1 201411181905]
+	org.openide.actions [6.35.1 201411181905]
+	org.netbeans.modules.queries/1 [1.39.1 201411181905]
+	org.openide.loaders [7.57.2 201411181905]
+	org.openide.io [1.45.1 201411181905]
+	org.netbeans.swing.plaf [1.37.1 201411181905]
+	org.netbeans.spi.quicksearch [1.23.1 201411181905]
+	org.netbeans.bootstrap/1 [2.69.3 201411181905]
+	org.netbeans.core.startup/1 [1.55.2 201411181905]
+	org.netbeans.modules.settings/1 [1.45.1 201411181905]
+	org.netbeans.modules.sampler [1.10.1 201411181905]
+	org.netbeans.modules.progress.ui [1.29.2 201411181905]
+	org.netbeans.modules.print [7.22.1 201411181905]
+	org.netbeans.modules.keyring [1.20.1 201411181905]
+	org.netbeans.core/2 [3.46.1 201411181905]
+	org.netbeans.modules.options.api/1 [1.41.1 201411181905]
+	org.netbeans.modules.options.keymap [1.31.1 201411181905]
+	org.netbeans.libs.jna/1 [1.38.1 201411181905]
+	org.netbeans.modules.masterfs/2 [2.48.3 201502261250]
+	org.netbeans.modules.masterfs.windows [1.13.1 201411181905]
+	org.netbeans.modules.masterfs.nio2 [1.12.1 201411181905]
+	org.netbeans.modules.keyring.fallback [1.4.1 201411181905]
+	org.netbeans.modules.keyring.impl [1.20.1 201411181905]
+	org.netbeans.modules.editor.mimelookup.impl/1 [1.27.1 201411181905]
+	org.netbeans.libs.osgi [1.18.1 201411181905]
+	org.netbeans.libs.jna.platform/1 [1.8.1 201411181905]
+	org.netbeans.libs.felix [2.12.1 201411181905]
+	org.netbeans.core.windows/2 [2.77.2 201411181905]
+	org.netbeans.core.ui/1 [1.41.1 201411181905]
+	org.netbeans.core.output2/1 [1.37.1 201411181905]
+	org.netbeans.core.network [1.6.1 201411181905]
+	org.netbeans.core.netigso [1.27.1 201411181905]
+	org.netbeans.core.nativeaccess/1 [1.27.1 201411181905]
+	org.netbeans.core.multitabs/1 [1.8.1.1 1 201411181905]
+	org.netbeans.core.io.ui/1 [1.26.1 201411181905]
+	com.asgteach.familytree.model [1.0 151001]
+	com.asgteach.familytree.manager.impl [1.0 151001]
+	com.asgteach.familytree.genderviewer [1.0 151001]
+	com.asgteach.familytree.actions [1.0 151001]
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy resolver: Windows
+INFO [org.netbeans.core.network.proxy.windows.WindowsNetworkProxy]: Windows system proxy resolver: auto detect
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy reloading succeeded.
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy - mode: direct
+INFO [org.netbeans.core.network.proxy.NetworkProxyReloader]: System network proxy: fell to default (correct if direct mode went before)
+INFO [org.netbeans.ui.metrics.laf]: USG_LOOK_AND_FEEL
+Diagnostic information
+Input arguments:
+	-Dnetbeans.logger.console=true
+	-ea
+	-Djdk.home=C:\Program Files\Java\jdk1.8.0_45
+	-Dnetbeans.home=C:\Program Files\NetBeans 8.0.2\platform
+	-Dnetbeans.user=C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\testuserdir
+	-Dnetbeans.default_userdir_root=
+	-XX:+HeapDumpOnOutOfMemoryError
+	-XX:HeapDumpPath=C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\testuserdir\var\log\heapdump.hprof
+	-Dsun.awt.keepWorkingSetOnMinimize=true
+	-Dnetbeans.dirs=C:\Users\ernesto\Desktop\JavaFx-NetbeansPlatform\CODE\ECV\Cap_9\FamilyTreeApp-CallbackActions\build\cluster;C:\Program Files\NetBeans 8.0.2\platform
+	exit
+Compiler: HotSpot 64-Bit Tiered Compilers
+Heap memory usage: initial 64,0MB maximum 891,0MB
+Non heap memory usage: initial 2,4MB maximum -1b
+Garbage collector: PS Scavenge (Collections=7 Total time spent=0s)
+Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
+Classes: loaded=4872 total loaded=4872 unloaded 0
+INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 4.197.867.520
+INFO [null]: Total physical memory 4.197.867.520
+WARNING [org.openide.filesystems.Ordering]: Not all children in Menu/Window/ marked with the position attribute: [com-asgteach-familytree-genderviewer-GenderTopComponent.shadow], but some are: [org-netbeans-core-io-ui-IOWindowAction.shadow, SwitchToRecentDocumentAction.shadow, Web, Tools, Separator3.instance, ConfigureWindow, org-netbeans-core-windows-actions-ResetWindowsAction.shadow, Separator4.instance, CloseWindowAction.shadow, CloseAllDocumentsAction.shadow, CloseAllButThisAction.shadow, GroupsMenuAction.shadow, DocumentsAction.shadow]
+INFO [com.asgteach.familytree.model.data.DataRemover]: Removing Homer Simpson
+INFO [com.asgteach.familytree.model.data.DataRemover]: Removing Mage Simpson
+INFO [com.asgteach.familytree.model.data.DataRemover]: Removing Bart Simpson
+INFO [com.asgteach.familytree.model.data.DataRemover]: Removing Lisa Simpson
+INFO [com.asgteach.familytree.model.data.DataRemover]: Removing Maggie Simpson
