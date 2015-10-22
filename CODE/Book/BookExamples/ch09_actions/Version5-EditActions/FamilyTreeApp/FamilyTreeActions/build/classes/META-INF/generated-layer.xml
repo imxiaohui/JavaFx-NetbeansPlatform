@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-RefreshAction.instance">
+                <!--com.asgteach.familytree.actions.RefreshAction.REFRESH_ACTION-->
+                <attr
+                    bundlevalue="com.asgteach.familytree.actions.Bundle#CTL_RefreshAction" name="displayName"/>
+                <attr methodvalue="org.openide.awt.Actions.callback" name="instanceCreate"/>
+                <attr name="key" stringvalue="RefreshAction"/>
+                <attr name="iconBase" stringvalue="com/asgteach/familytree/actions/refresh-icon.png"/>
+                <attr boolvalue="false" name="noIconInMenu"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-RefreshAction.shadow">
+                <!--com.asgteach.familytree.actions.RefreshAction.REFRESH_ACTION-->
+                <attr name="originalFile" stringvalue="Actions/File/com-asgteach-familytree-actions-RefreshAction.instance"/>
+                <attr intvalue="1300" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Toolbars">
+        <folder name="File">
+            <file name="com-asgteach-familytree-actions-RefreshAction.shadow">
+                <!--com.asgteach.familytree.actions.RefreshAction.REFRESH_ACTION-->
+                <attr name="originalFile" stringvalue="Actions/File/com-asgteach-familytree-actions-RefreshAction.instance"/>
+                <attr intvalue="500" name="position"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Shortcuts">
+        <file name="M-R.shadow">
+            <!--com.asgteach.familytree.actions.RefreshAction.REFRESH_ACTION-->
+            <attr name="originalFile" stringvalue="Actions/File/com-asgteach-familytree-actions-RefreshAction.instance"/>
+        </file>
+    </folder>
+</filesystem>
